@@ -73,7 +73,30 @@ const MUNICIPALITY_CENTROIDS = [
   ["Östra Göinge", 56.25, 14.07]
 ];
 
-const OUTSIDE_SKANE_HINTS = /\b(laholm|våxtorp|vaxtorp|sölvesborg|solvesborg|olofström|olofstrom|markaryd|älmhult|almhult|alvesta|blekinge|halland|småland|smaland)\b/;
+const SKANE_MUNICIPALITIES = new Set(MUNICIPALITY_CENTROIDS.map(([name]) => name));
+const OUTSIDE_SKANE_HINTS = /\b(laholm|skummeslov[a-z]*|skummesloev[a-z]*|vallasen|våxtorp|vaxtorp|sölvesborg|solvesborg|olofström|olofstrom|markaryd|älmhult|almhult|alvesta|blekinge|halland|småland|smaland)\b/;
+const OSM_REVIEW_OVERRIDES = new Map([
+  ["node/12943570675", {
+    name: "Råå/Västindiegatan - ej verifierad nattplats",
+    place_status: { value: "day_parking", status: "unverified" },
+    overnight_allowed: {
+      value: null,
+      status: "unclear",
+      text: "OSM-punkt nära Råå men inte samma som Råå Hamns verifierade husbilsplats. Kontrollera skyltning."
+    },
+    notes: "Manuellt nedklassad OSM-kandidat efter jämförelse med Råå Hamns egen husbilsinformation."
+  }],
+  ["way/1290116551", {
+    name: "Renhållningsverket Ystad - parkering",
+    place_status: { value: "day_parking", status: "unverified" },
+    overnight_allowed: {
+      value: null,
+      status: "unclear",
+      text: "Kommunens parkeringskarta visar parkering, men inte bekräftad camping/ställplats."
+    },
+    notes: "Manuellt nedklassad OSM-kandidat eftersom kommunal källa verifierar parkering snarare än nattplats."
+  }]
+]);
 
 function toArray(value) {
   return Array.isArray(value) ? value : [];
@@ -147,7 +170,8 @@ function cleanMunicipality(value, point) {
     .replace(/\s+kommun$/i, "")
     .replace(/\s+stad$/i, "")
     .trim();
-  return text || nearestMunicipality(point);
+  if (SKANE_MUNICIPALITIES.has(text)) return text;
+  return nearestMunicipality(point);
 }
 
 function boolField(value, status = "unverified") {
@@ -343,7 +367,7 @@ function placeFromOsm(element) {
     grey_water_disposal: boolField(tags.grey_water_disposal || tags.wastewater_disposal),
     waste: boolField(tags.waste_disposal || tags.waste_basket)
   };
-  return {
+  const place = {
     id,
     name,
     name_status,
@@ -371,6 +395,8 @@ function placeFromOsm(element) {
     osm: { type: element.type, id: element.id, tags },
     images: []
   };
+  const reviewOverride = OSM_REVIEW_OVERRIDES.get(`${element.type}/${element.id}`);
+  return reviewOverride ? { ...place, ...reviewOverride } : place;
 }
 
 function servicePointFromOsm(element) {
@@ -393,17 +419,20 @@ function scoreMatch(seed, place) {
   const target = norm(place.name);
   if (!target || !names.length) return 0;
   if (names.some((name) => target === name)) return 100;
-  if (names.some((name) => target.includes(name) || name.includes(target))) return 80;
   if (seed.coordinates && place.coordinates) {
     const km = distanceKm(seed.coordinates, place.coordinates);
-    if (km <= 0.12) return 90;
+    if (km <= 0.12) return 95;
   }
+  if (names.some((name) => target.includes(name) || name.includes(target))) return 80;
   return 0;
 }
 
 function mergePlaces(osmPlace, seed) {
   const base = osmPlace || {};
   const sourcesById = new Map([...toArray(base.sources), ...toArray(seed.sources)].map((item) => [item.id || item.url, item]));
+  const seedHasVerifiedSource = toArray(seed.sources).some((item) => (
+    item.type === "official" || item.type === "official-tourism" || item.type === "operator"
+  ));
   const facilities = { ...(base.facilities || {}) };
   Object.entries(seed.facilities || {}).forEach(([key, value]) => {
     facilities[key] = mergeField(facilities[key], value);
@@ -422,6 +451,7 @@ function mergePlaces(osmPlace, seed) {
     price: mergeField(base.price, seed.price),
     facilities,
     sources: [...sourcesById.values()],
+    notes: seed.notes ?? (seedHasVerifiedSource ? null : base.notes),
     images: toArray(seed.images).length ? seed.images : toArray(base.images),
     osm: base.osm || null
   };
@@ -507,6 +537,7 @@ async function main() {
   const usedOsmIds = new Set();
   const mergedOfficial = manualPlaces.map((seed) => {
     const match = osmPlaces
+      .filter((place) => !usedOsmIds.has(place.id))
       .map((place) => ({ place, score: scoreMatch(seed, place) }))
       .filter((item) => item.score >= 80)
       .sort((a, b) => b.score - a.score)[0]?.place || null;

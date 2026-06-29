@@ -963,12 +963,26 @@
         ].join(" "));
       }
 
+      function searchRelevance(place, search) {
+        if (!search) return 0;
+        const name = norm(place.name);
+        if (name === search) return 0;
+        if (name.startsWith(search)) return 1;
+        if (name.includes(search)) return 2;
+        return placeSearchText(place).includes(search) ? 3 : 9;
+      }
+
       function sortPlaces(places) {
         const sort = els.sortSelect.value;
+        const search = norm(els.searchInput.value);
         const statusOrder = { active: 0, candidate: 1, closed: 2, prohibited: 3 };
         const riskOrder = { low: 0, medium: 1, high: 2, blocked: 3 };
 
         return [...places].sort((a, b) => {
+          if (search) {
+            const relevance = searchRelevance(a, search) - searchRelevance(b, search);
+            if (relevance) return relevance;
+          }
           if (sort === "name") return collator.compare(a.name, b.name);
           if (sort === "municipality") {
             return collator.compare(a.municipality || "", b.municipality || "")

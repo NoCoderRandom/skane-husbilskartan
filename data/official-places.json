@@ -151,18 +151,19 @@
       "coordinates": { "lat": 55.38933, "lng": 14.06159, "status": "confirmed" },
       "match": ["Kåseberga Ställplats"],
       "place_status": { "value": "active", "status": "unverified" },
-      "overnight_allowed": { "value": true, "status": "unverified" },
-      "price": { "text": "Betald enligt flera kataloger, verifiera aktuell avgift vid betalautomat/operatör.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "capacity": { "value": 97, "status": "confirmed", "text": "97 platser varav 27 med el." },
+      "price": { "text": "230 kr/dygn plus 50 kr/dygn för el enligt IF Ale.", "amount": 230, "currency": "SEK", "period": "day", "status": "confirmed" },
       "facilities": {
         "toilet": { "value": null, "status": "unverified" },
-        "electricity": { "value": null, "status": "unverified" },
+        "electricity": { "value": true, "status": "confirmed" },
         "fresh_water": { "value": null, "status": "unverified" },
         "black_water_disposal": { "value": null, "status": "unverified" },
         "grey_water_disposal": { "value": null, "status": "unverified" }
       },
-      "notes": "Viktig kandidat som återkommer i många källor, men pris/service ska verifieras mot operatör eller platsinformation.",
+      "notes": "IF Ale anger pris, antal platser och elplatser. Övrig service behöver kontrolleras på plats.",
       "sources": [
-        { "id": "kaseberga-osm", "type": "open-data", "title": "OpenStreetMap - Kåseberga Ställplats", "url": "https://www.openstreetmap.org/", "checked_at": "2026-06-29" }
+        { "id": "if-ale-kaseberga", "type": "operator", "title": "IF Ale - Ställplats Kåseberga", "url": "https://www.svenskalag.se/ifale/sida/57430/stallplats-kaseberga", "checked_at": "2026-06-30" }
       ]
     },
     {
@@ -450,7 +451,7 @@
       "municipality": "Höganäs",
       "category": "gästhamn",
       "coordinates": { "lat": 56.1986, "lng": 12.5528, "status": "unverified" },
-      "match": ["Höganäs hamn", "Höganäs"],
+      "match": ["Höganäs hamn"],
       "place_status": { "value": "active", "status": "confirmed" },
       "overnight_allowed": { "value": true, "status": "confirmed" },
       "capacity": { "value": 34, "status": "confirmed" },

@@ -32,20 +32,6 @@
       ]
     },
     {
-      "id": "bastad-skummeslovs-eko-camping",
-      "name": "Skummeslövs Eko-Camping",
-      "municipality": "Båstad",
-      "category": "camping",
-      "coordinates": { "lat": 56.4602607, "lng": 12.9304631, "status": "unverified" },
-      "match": ["Skummeslövs Eko-Camping"],
-      "place_status": { "value": "active", "status": "confirmed" },
-      "overnight_allowed": { "value": true, "status": "confirmed" },
-      "price": { "text": "Pris enligt campingens egen webbplats/bokning.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
-      "sources": [
-        { "id": "skummeslovs-camping", "type": "operator", "title": "Skummeslövs Camping", "url": "https://skummeslovscamping.se/", "checked_at": "2026-06-30" }
-      ]
-    },
-    {
       "id": "vellinge-falsterbo-camping-resort",
       "name": "Falsterbo Camping & Resort",
       "municipality": "Vellinge",
@@ -292,9 +278,17 @@
       "match": ["Hälldala Ranch"],
       "place_status": { "value": "active", "status": "confirmed" },
       "overnight_allowed": { "value": true, "status": "confirmed" },
-      "price": { "text": "Pris enligt platsens egen webbplats/bokning.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "price": { "text": "250 kr/dygn utan el, 300 kr/dygn med el enligt prislista från 2024.", "amount": 250, "currency": "SEK", "period": "day", "status": "confirmed" },
+      "facilities": {
+        "toilet": { "value": true, "status": "confirmed" },
+        "shower": { "value": true, "status": "confirmed" },
+        "electricity": { "value": true, "status": "confirmed" },
+        "fresh_water": { "value": null, "status": "missing" },
+        "black_water_disposal": { "value": null, "status": "missing" }
+      },
       "sources": [
-        { "id": "halldala-ranch", "type": "operator", "title": "Hälldala Ranch", "url": "https://www.halldalaranch.se/", "checked_at": "2026-06-30" }
+        { "id": "halldala-ranch", "type": "operator", "title": "Hälldala Ranch", "url": "https://www.halldalaranch.se/", "checked_at": "2026-06-30" },
+        { "id": "halldala-ranch-pris", "type": "operator", "title": "Hälldala Ranch - prislista", "url": "https://www.halldalaranch.se/our-price-list/", "checked_at": "2026-06-30" }
       ]
     },
     {
@@ -365,6 +359,432 @@
       "price": { "text": "Pris enligt campingens egen webbplats/bokning.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
       "sources": [
         { "id": "lursjobadets-camping", "type": "operator", "title": "Lursjöbadets Camping", "url": "https://www.lursjonscamping.com/", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "hoganas-bananpannkakan",
+      "name": "Bananpannkakan",
+      "municipality": "Höganäs",
+      "category": "ställplats",
+      "coordinates": { "lat": 56.16528, "lng": 12.668914, "status": "unverified" },
+      "match": ["Bananpannkakan"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "capacity": { "value": 15, "status": "confirmed" },
+      "price": { "text": "Pris saknas i kommunens ställplatsinformation. Kontrollera hos platsen.", "amount": null, "currency": "SEK", "period": "night", "status": "missing" },
+      "facilities": {
+        "toilet": { "value": true, "status": "confirmed" },
+        "shower": { "value": true, "status": "confirmed" },
+        "electricity": { "value": true, "status": "confirmed" },
+        "fresh_water": { "value": true, "status": "confirmed" },
+        "black_water_disposal": { "value": true, "status": "confirmed" },
+        "waste": { "value": true, "status": "confirmed" }
+      },
+      "sources": [
+        { "id": "hoganas-stallplatser-bananpannkakan", "type": "official", "title": "Höganäs kommun - Bananpannkakan", "url": "https://www.hoganas.se/boende-trafik--miljo/trafik/parkering/parkering-och-stallplats-for-husbilar/bananpannkakan.html", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "hoganas-blasinge-gard-camping",
+      "name": "Bläsinge Gård Camping",
+      "municipality": "Höganäs",
+      "category": "camping",
+      "coordinates": { "lat": 56.237646, "lng": 12.6554442, "status": "unverified" },
+      "match": ["Bläsinge Gård Camping"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "capacity": { "value": 50, "status": "confirmed" },
+      "price": { "text": "Pris saknas i kommunens ställplatsinformation. Kontrollera hos platsen.", "amount": null, "currency": "SEK", "period": "night", "status": "missing" },
+      "facilities": {
+        "toilet": { "value": true, "status": "confirmed" },
+        "shower": { "value": true, "status": "confirmed" },
+        "electricity": { "value": true, "status": "confirmed" },
+        "fresh_water": { "value": true, "status": "confirmed" },
+        "black_water_disposal": { "value": true, "status": "confirmed" },
+        "waste": { "value": true, "status": "confirmed" }
+      },
+      "sources": [
+        { "id": "hoganas-stallplatser-blasinge", "type": "official", "title": "Höganäs kommun - Bläsinge gård i Jonstorp", "url": "https://www.hoganas.se/boende-trafik--miljo/trafik/parkering/parkering-och-stallplats-for-husbilar/blasinge-gard-i-jonstorp.html", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "hoganas-lerbergets-camping",
+      "name": "Lerbergets Camping",
+      "municipality": "Höganäs",
+      "category": "camping",
+      "coordinates": { "lat": 56.1858011, "lng": 12.5574581, "status": "unverified" },
+      "match": ["Lerbergets Camping"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "capacity": { "value": 155, "status": "confirmed" },
+      "price": { "text": "Pris saknas i kommunens ställplatsinformation. Kontrollera hos campingens bokning.", "amount": null, "currency": "SEK", "period": "night", "status": "missing" },
+      "facilities": {
+        "toilet": { "value": true, "status": "confirmed" },
+        "shower": { "value": true, "status": "confirmed" },
+        "electricity": { "value": true, "status": "confirmed" },
+        "fresh_water": { "value": true, "status": "confirmed" },
+        "black_water_disposal": { "value": true, "status": "confirmed", "text": "Ja, mot avgift enligt kommunen." },
+        "waste": { "value": true, "status": "confirmed" }
+      },
+      "sources": [
+        { "id": "hoganas-stallplatser-lerberget", "type": "official", "title": "Höganäs kommun - Lerbergets camping", "url": "https://www.hoganas.se/boende-trafik--miljo/trafik/parkering/parkering-och-stallplats-for-husbilar/lerbergets-camping.html", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "hoganas-paradiset-pa-kulla",
+      "name": "Paradiset på Kulla",
+      "municipality": "Höganäs",
+      "category": "ställplats",
+      "coordinates": { "lat": 56.1988554, "lng": 12.7002028, "status": "unverified" },
+      "match": ["Paradiset på Kulla"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "capacity": { "value": 50, "status": "confirmed" },
+      "price": { "text": "Pris saknas i kommunens ställplatsinformation. Kontrollera hos platsens bokning.", "amount": null, "currency": "SEK", "period": "night", "status": "missing" },
+      "facilities": {
+        "toilet": { "value": true, "status": "confirmed" },
+        "shower": { "value": true, "status": "confirmed" },
+        "electricity": { "value": true, "status": "confirmed" },
+        "fresh_water": { "value": true, "status": "confirmed" },
+        "black_water_disposal": { "value": true, "status": "confirmed" },
+        "waste": { "value": true, "status": "confirmed" }
+      },
+      "sources": [
+        { "id": "hoganas-stallplatser-paradiset", "type": "official", "title": "Höganäs kommun - Paradiset på Kulla", "url": "https://www.hoganas.se/boende-trafik--miljo/trafik/parkering/parkering-och-stallplats-for-husbilar/paradiset-pa-kulla.html", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "hoganas-st-arilds-golfklubb",
+      "name": "St Arilds Golfklubb",
+      "municipality": "Höganäs",
+      "category": "ställplats",
+      "coordinates": { "lat": 56.255058, "lng": 12.5952312, "status": "unverified" },
+      "match": ["St Arilds Golfklubb", "S:t Arild Golfklubb", "Sankt Arild Golfklubb"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "capacity": { "value": 8, "status": "confirmed" },
+      "price": { "text": "Pris saknas i kommunens ställplatsinformation. Kontrollera hos golfklubben.", "amount": null, "currency": "SEK", "period": "night", "status": "missing" },
+      "facilities": {
+        "toilet": { "value": true, "status": "confirmed" },
+        "shower": { "value": true, "status": "confirmed" },
+        "electricity": { "value": true, "status": "confirmed" },
+        "fresh_water": { "value": true, "status": "confirmed" },
+        "black_water_disposal": { "value": false, "status": "confirmed" },
+        "waste": { "value": true, "status": "confirmed" }
+      },
+      "sources": [
+        { "id": "hoganas-stallplatser-st-arild", "type": "official", "title": "Höganäs kommun - St. Arilds golfklubb", "url": "https://www.hoganas.se/boende-trafik--miljo/trafik/parkering/parkering-och-stallplats-for-husbilar/st.-arilds-golfklubb.html", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "hoganas-svanshalls-hamn",
+      "name": "Svanshalls hamn",
+      "municipality": "Höganäs",
+      "category": "ställplats",
+      "coordinates": { "lat": 56.2524117, "lng": 12.6618387, "status": "unverified" },
+      "match": ["Svanshalls hamn", "Svanshalls Hamn"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed", "text": "Max 24 timmar enligt kommunen." },
+      "capacity": { "value": 6, "status": "confirmed" },
+      "price": { "text": "Betalningsinformation finns på plats enligt kommunen. Belopp saknas i kommunens text.", "amount": null, "currency": "SEK", "period": "night", "status": "missing" },
+      "facilities": {
+        "toilet": { "value": true, "status": "confirmed" },
+        "shower": { "value": false, "status": "confirmed" },
+        "electricity": { "value": true, "status": "confirmed" },
+        "fresh_water": { "value": true, "status": "confirmed" },
+        "black_water_disposal": { "value": false, "status": "confirmed" },
+        "waste": { "value": false, "status": "confirmed" }
+      },
+      "sources": [
+        { "id": "hoganas-stallplatser-svanshall", "type": "official", "title": "Höganäs kommun - Svanshalls hamn", "url": "https://www.hoganas.se/boende-trafik--miljo/trafik/parkering/parkering-och-stallplats-for-husbilar/svanshalls-hamn.html", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "hoganas-vikens-hamn",
+      "name": "Vikens hamn",
+      "municipality": "Höganäs",
+      "category": "ställplats",
+      "coordinates": { "lat": 56.1420377, "lng": 12.5783245, "status": "unverified" },
+      "match": ["Vikens hamn", "Vikens Hamn"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "capacity": { "value": 7, "status": "confirmed" },
+      "price": { "text": "300 kr/natt enligt Höganäs kommuns ställplatsinformation.", "amount": 300, "currency": "SEK", "period": "night", "status": "confirmed" },
+      "facilities": {
+        "toilet": { "value": true, "status": "confirmed" },
+        "shower": { "value": true, "status": "confirmed" },
+        "electricity": { "value": true, "status": "confirmed" },
+        "fresh_water": { "value": true, "status": "confirmed" },
+        "black_water_disposal": { "value": true, "status": "confirmed" },
+        "waste": { "value": true, "status": "confirmed" }
+      },
+      "sources": [
+        { "id": "hoganas-stallplatser-viken", "type": "official", "title": "Höganäs kommun - Vikens hamn", "url": "https://www.hoganas.se/boende-trafik--miljo/trafik/parkering/parkering-och-stallplats-for-husbilar/vikens-hamn.html", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "ystad-solans-mack",
+      "name": "Solans Mack",
+      "municipality": "Ystad",
+      "category": "ställplats",
+      "coordinates": { "lat": 55.3913653, "lng": 14.1099885, "status": "unverified" },
+      "match": ["Solans Mack"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "capacity": { "value": 40, "status": "confirmed" },
+      "price": { "text": "Pris saknas i operatörens öppna text. Kontrollera hos Solans Mack.", "amount": null, "currency": "SEK", "period": "night", "status": "missing" },
+      "facilities": {
+        "toilet": { "value": true, "status": "confirmed" },
+        "shower": { "value": null, "status": "missing" },
+        "electricity": { "value": true, "status": "unverified", "text": "Operatören anger laddningsstationer, OSM anger power_supply." },
+        "fresh_water": { "value": null, "status": "missing" },
+        "black_water_disposal": { "value": null, "status": "missing" }
+      },
+      "notes": "Operatören bekräftar 40 ställplatser, toaletter och tvättmöjligheter.",
+      "sources": [
+        { "id": "solans-mack-stallplats", "type": "operator", "title": "Solans Mack - ställplatser", "url": "https://www.solans.se/stallplatser/", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "simrishamn-baskemolla-camping",
+      "name": "Baskemölla Camping",
+      "municipality": "Simrishamn",
+      "category": "camping",
+      "coordinates": { "lat": 55.5954742, "lng": 14.3104756, "status": "unverified" },
+      "match": ["Baskemölla Camping"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "capacity": { "value": 30, "status": "confirmed" },
+      "season": { "text": "1 maj till 30 september enligt Baskemölla IF.", "status": "confirmed" },
+      "price": { "text": "200 kr/natt enligt Baskemölla IF.", "amount": 200, "currency": "SEK", "period": "night", "status": "confirmed" },
+      "facilities": {
+        "toilet": { "value": true, "status": "confirmed" },
+        "shower": { "value": true, "status": "confirmed", "text": "Duschautomat 10 kr enligt operatören." },
+        "electricity": { "value": false, "status": "confirmed" }
+      },
+      "notes": "Operatören anger 30 platser utan el, toaletter, duschar, tvättmaskin och gemensamt kök.",
+      "sources": [
+        { "id": "baskemolla-if-camping", "type": "operator", "title": "Baskemölla IF - camping", "url": "http://www.xn--baskemllaif-wfb.se/camping.htm", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "ystad-nybrostrands-camping",
+      "name": "Nybrostrands camping",
+      "municipality": "Ystad",
+      "category": "camping",
+      "coordinates": { "lat": 55.4343868, "lng": 13.9274988, "status": "unverified" },
+      "match": ["Nybrostrands camping", "Nybrostrands Camping"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "season": { "text": "4 april till 27 september 2026 enligt campingens prislista.", "status": "confirmed" },
+      "price": { "text": "2026: husbil utan el 380 kr högsäsong/325 kr lågsäsong, med el 430 kr högsäsong/375 kr lågsäsong.", "amount": 380, "currency": "SEK", "period": "night", "status": "confirmed" },
+      "facilities": {
+        "toilet": { "value": true, "status": "confirmed" },
+        "shower": { "value": true, "status": "confirmed", "text": "Dusch 5 kr enligt campingens regler." },
+        "electricity": { "value": true, "status": "confirmed" },
+        "fresh_water": { "value": true, "status": "confirmed" },
+        "black_water_disposal": { "value": true, "status": "confirmed" },
+        "waste": { "value": true, "status": "confirmed" }
+      },
+      "sources": [
+        { "id": "nybrostrands-camping", "type": "operator", "title": "Nybrostrands camping", "url": "https://nybrostrandscamping.n.nu/", "checked_at": "2026-06-30" },
+        { "id": "nybrostrands-camping-info", "type": "operator", "title": "Nybrostrands camping - prislista och regler", "url": "https://nybrostrandscamping.n.nu/info", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "sjobo-orebackens-camping",
+      "name": "Orebackens Camping",
+      "municipality": "Sjöbo",
+      "category": "camping",
+      "coordinates": { "lat": 55.6259947, "lng": 13.7220714, "status": "unverified" },
+      "match": ["Orebackens Camping"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "price": { "text": "Pris enligt campingens egen webbplats/bokning.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "facilities": {
+        "toilet": { "value": true, "status": "confirmed" },
+        "shower": { "value": true, "status": "confirmed" },
+        "black_water_disposal": { "value": true, "status": "confirmed" }
+      },
+      "sources": [
+        { "id": "orebackens-camping", "type": "operator", "title": "Orebackens Camping", "url": "https://www.orebacken.se/", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "skurup-abbekas-golfklubb",
+      "name": "Abbekås Golfklubb",
+      "municipality": "Skurup",
+      "category": "ställplats",
+      "coordinates": { "lat": 55.4101886, "lng": 13.6033802, "status": "unverified" },
+      "match": ["Abbekås", "Abbekås Golfklubb", "Abbekås GK"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "capacity": { "value": 6, "status": "confirmed" },
+      "price": { "text": "200 kr/natt för golfande gäster och 300 kr/natt för övriga enligt Abbekås GK.", "amount": 200, "currency": "SEK", "period": "night", "status": "confirmed" },
+      "facilities": {
+        "electricity": { "value": true, "status": "confirmed" }
+      },
+      "notes": "Klubbhusfaciliteter/omklädning är tillgängliga 07-22 under högsäsong enligt golfklubben.",
+      "sources": [
+        { "id": "abbekas-golfklubb-stallplats", "type": "operator", "title": "Abbekås Golfklubb - ställplats husvagn och husbil", "url": "https://abbekasgk.se/boende/camping/", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "klippan-elfdalens-camping",
+      "name": "Elfdalens Camping",
+      "municipality": "Klippan",
+      "category": "camping",
+      "coordinates": { "lat": 56.1349199, "lng": 13.1635154, "status": "unverified" },
+      "match": ["Elfdalens Camping"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "price": { "text": "Pris enligt campingens egen webbplats/bokning.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "sources": [
+        { "id": "elfdalens-camping", "type": "operator", "title": "Elfdalens Camping", "url": "https://www.elfdalenscamping.se/", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "orkelljunga-bengt-stallplats",
+      "name": "Bengt i Örkelljunga",
+      "municipality": "Örkelljunga",
+      "category": "ställplats",
+      "coordinates": { "lat": 56.2861128, "lng": 13.3414471, "status": "unverified" },
+      "match": ["Bengt i Örkelljunga", "Ställplats i Örkelljunga"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "capacity": { "value": 10, "status": "confirmed" },
+      "price": { "text": "250 kr/dygn enligt företagets ställplatssida.", "amount": 250, "currency": "SEK", "period": "day", "status": "confirmed" },
+      "facilities": {
+        "toilet": { "value": true, "status": "confirmed" },
+        "shower": { "value": true, "status": "confirmed" },
+        "electricity": { "value": true, "status": "confirmed" },
+        "fresh_water": { "value": null, "status": "missing" },
+        "black_water_disposal": { "value": null, "status": "missing" }
+      },
+      "sources": [
+        { "id": "bengt-i-orkelljunga-stallplats", "type": "operator", "title": "Bengt i Örkelljunga - ställplats", "url": "https://www.bengtiorkelljunga.se/stallplats/", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "helsingborg-raa-hamn",
+      "name": "Råå hamn",
+      "municipality": "Helsingborg",
+      "category": "gästhamn",
+      "coordinates": { "lat": 55.9948899, "lng": 12.7459435, "status": "unverified" },
+      "match": ["Råå hamn", "Råå Hamnförening"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "capacity": { "value": 24, "status": "confirmed" },
+      "season": { "text": "1 juni till omkring 15 september enligt Råå Hamn.", "status": "confirmed" },
+      "price": { "text": "325 kr/dygn enligt Råå Hamn.", "amount": 325, "currency": "SEK", "period": "day", "status": "confirmed" },
+      "facilities": {
+        "toilet": { "value": true, "status": "confirmed" },
+        "shower": { "value": true, "status": "confirmed" },
+        "electricity": { "value": true, "status": "confirmed" },
+        "fresh_water": { "value": true, "status": "confirmed", "text": "Säsongsvis enligt Råå Hamn." },
+        "black_water_disposal": { "value": true, "status": "confirmed" },
+        "grey_water_disposal": { "value": true, "status": "confirmed" }
+      },
+      "sources": [
+        { "id": "raa-hamn-husbil", "type": "operator", "title": "Råå Hamn - information till husbilsägare", "url": "https://raahamn.se/hamn#husbilinfo", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "helsingborg-domstens-hamn",
+      "name": "Domstens hamn",
+      "municipality": "Helsingborg",
+      "category": "gästhamn",
+      "coordinates": { "lat": 56.1166316, "lng": 12.6041256, "status": "unverified" },
+      "match": ["Domstens hamn", "Domstens Båtklubb"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "price": { "text": "Betalning via båtklubbens länk vid ankomst. Belopp saknas i öppen text.", "amount": null, "currency": "SEK", "period": "night", "status": "missing" },
+      "sources": [
+        { "id": "domstens-batklubb-stallplats", "type": "operator", "title": "Domstens Båtklubb - ställplats", "url": "https://www.domstensbatklubb.se/", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "landskrona-borstahusens-campingresort",
+      "name": "Borstahusens Campingresort",
+      "municipality": "Landskrona",
+      "category": "camping",
+      "coordinates": { "lat": 55.9060563, "lng": 12.80881, "status": "unverified" },
+      "match": ["Borstahusens camping", "Borstahusens Campingresort"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "price": { "text": "Bokningspris enligt campingens egen webbplats.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "facilities": {
+        "toilet": { "value": true, "status": "confirmed" },
+        "shower": { "value": true, "status": "confirmed" },
+        "electricity": { "value": true, "status": "confirmed" },
+        "fresh_water": { "value": true, "status": "confirmed" },
+        "grey_water_disposal": { "value": true, "status": "confirmed" },
+        "waste": { "value": true, "status": "confirmed" }
+      },
+      "sources": [
+        { "id": "borstahusen-campingtomt-husbil", "type": "operator", "title": "Borstahusen Campingresort - campingtomt tält/husbil", "url": "https://borstahusen.se/var-anlaggning/camping/campingtomt-talt-husbil/", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "landskrona-glumslovs-camping",
+      "name": "Glumslövs Camping",
+      "municipality": "Landskrona",
+      "category": "camping",
+      "coordinates": { "lat": 55.943909, "lng": 12.771312, "status": "unverified" },
+      "match": ["Glumslövs Camping", "Ställplats i Landskrona"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "price": { "text": "Ställplats 200 kr/dygn, husbil camping 250 kr/dygn och el 50 kr/dygn enligt operatören.", "amount": 200, "currency": "SEK", "period": "day", "status": "confirmed" },
+      "facilities": {
+        "toilet": { "value": true, "status": "confirmed" },
+        "shower": { "value": true, "status": "confirmed" },
+        "electricity": { "value": true, "status": "confirmed", "text": "Mot avgift enligt operatören." },
+        "fresh_water": { "value": true, "status": "confirmed" }
+      },
+      "sources": [
+        { "id": "glumslovs-camping", "type": "operator", "title": "Glumslövs Camping", "url": "https://glumslovscamping.se/", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "malmo-lagunen-husbilsparkering",
+      "name": "Lagunen Husbilsparkering",
+      "municipality": "Malmö",
+      "category": "ställplats",
+      "coordinates": { "lat": 55.5959409, "lng": 12.932853, "status": "unverified" },
+      "match": ["Lagunen Husbilsparkering"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "capacity": { "value": 60, "status": "confirmed" },
+      "price": { "text": "Pris saknas i den öppna texten. Kontrollera hos Lagunen.", "amount": null, "currency": "SEK", "period": "night", "status": "missing" },
+      "facilities": {
+        "toilet": { "value": true, "status": "confirmed" },
+        "shower": { "value": true, "status": "confirmed" },
+        "electricity": { "value": true, "status": "confirmed" },
+        "fresh_water": { "value": true, "status": "confirmed" },
+        "waste": { "value": true, "status": "confirmed" }
+      },
+      "sources": [
+        { "id": "lagunen-husbil", "type": "operator", "title": "Lagunen - husbil", "url": "https://lagunen.nu/husbil/", "checked_at": "2026-06-30" },
+        { "id": "lagunen-praktisk-info", "type": "operator", "title": "Lagunen - praktisk info", "url": "https://lagunen.nu/praktisk-info/", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "vellinge-solhejdans-naturistcamping",
+      "name": "Solhejdans Naturistcamping",
+      "municipality": "Vellinge",
+      "category": "camping",
+      "coordinates": { "lat": 55.4337164, "lng": 12.8569763, "status": "unverified" },
+      "match": ["Solhejdans Naturistcamping"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "season": { "text": "Gästcamping öppen 30 april till 13 september 2026 enligt operatören.", "status": "confirmed" },
+      "price": { "text": "Husvagn/husbil från 520 kr/dygn för ej medlem enligt avgifter 2026.", "amount": 520, "currency": "SEK", "period": "day", "status": "confirmed" },
+      "facilities": {
+        "electricity": { "value": true, "status": "confirmed" }
+      },
+      "sources": [
+        { "id": "solhejdan-camping", "type": "operator", "title": "Solhejdan - camping", "url": "https://solhejdan.se/camping/", "checked_at": "2026-06-30" },
+        { "id": "solhejdan-avgifter", "type": "operator", "title": "Solhejdan - avgifter 2026", "url": "https://solhejdan.se/camping/avgifter/", "checked_at": "2026-06-30" }
       ]
     }
   ]
