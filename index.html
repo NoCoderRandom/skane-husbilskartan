@@ -1,0 +1,1239 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Skånes husbilskarta</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIINfQhFcXkY48GpYGxAg5nF3GlNUPT4Rfk="
+      crossorigin=""
+    >
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f4f6f1;
+        --panel: #ffffff;
+        --ink: #182021;
+        --muted: #5f6a68;
+        --line: #d9e0dc;
+        --soft: #edf3ef;
+        --accent: #167067;
+        --accent-strong: #0d5960;
+        --good: #146b44;
+        --good-bg: #e3f5e9;
+        --warn: #8a5a00;
+        --warn-bg: #fff3cf;
+        --bad: #a83232;
+        --bad-bg: #fde2df;
+        --unknown: #687176;
+        --unknown-bg: #eef1f1;
+        --shadow: 0 18px 45px rgba(31, 45, 38, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.45;
+      }
+
+      button,
+      input,
+      select {
+        font: inherit;
+      }
+
+      a {
+        color: var(--accent-strong);
+        text-decoration-thickness: 0.08em;
+        text-underline-offset: 0.18em;
+      }
+
+      .page {
+        width: min(1480px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 26px 0 42px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: 18px;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin-bottom: 8px;
+        font-size: clamp(2.25rem, 6vw, 5.1rem);
+        line-height: 0.95;
+        letter-spacing: 0;
+      }
+
+      .lead {
+        max-width: 980px;
+        margin-bottom: 0;
+        color: var(--muted);
+        font-size: clamp(1rem, 2vw, 1.35rem);
+      }
+
+      .top-actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 10px;
+        min-width: 260px;
+      }
+
+      .pill,
+      .chip,
+      .mini {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 34px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--panel);
+        color: var(--ink);
+        font-weight: 750;
+        white-space: nowrap;
+      }
+
+      .pill {
+        padding: 8px 14px;
+        box-shadow: 0 8px 22px rgba(31, 45, 38, 0.05);
+      }
+
+      .pill.good {
+        border-color: #b8e2c9;
+        background: var(--good-bg);
+        color: var(--good);
+      }
+
+      .pill.warn {
+        border-color: #f0d78e;
+        background: var(--warn-bg);
+        color: var(--warn);
+      }
+
+      .panel {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        box-shadow: var(--shadow);
+      }
+
+      .filters {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(150px, 1fr));
+        gap: 12px;
+        padding: 16px;
+        margin-bottom: 16px;
+      }
+
+      .field {
+        display: grid;
+        gap: 6px;
+      }
+
+      .field label,
+      .toggle label {
+        color: var(--muted);
+        font-size: 0.82rem;
+        font-weight: 850;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+      }
+
+      input[type="search"],
+      select {
+        width: 100%;
+        min-height: 48px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fbfcfb;
+        color: var(--ink);
+        padding: 0 14px;
+        font-weight: 680;
+      }
+
+      .toggle-row {
+        grid-column: 1 / -1;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 40px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: #fbfcfb;
+        padding: 7px 12px;
+      }
+
+      .toggle input {
+        width: 18px;
+        height: 18px;
+        accent-color: var(--accent);
+      }
+
+      .layout {
+        display: grid;
+        grid-template-columns: minmax(360px, 0.95fr) minmax(460px, 1.4fr);
+        gap: 16px;
+        align-items: start;
+      }
+
+      .map-panel {
+        min-height: 660px;
+        overflow: hidden;
+      }
+
+      #map {
+        height: 660px;
+        min-height: 480px;
+        background: #dce7df;
+      }
+
+      .list-panel {
+        display: grid;
+        min-height: 660px;
+        overflow: hidden;
+      }
+
+      .list-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 16px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .list-head h2 {
+        margin: 0;
+        font-size: 1.18rem;
+      }
+
+      .places {
+        display: grid;
+        align-content: start;
+        max-height: 596px;
+        overflow: auto;
+      }
+
+      .place-card {
+        display: grid;
+        gap: 10px;
+        border: 0;
+        border-bottom: 1px solid var(--line);
+        background: var(--panel);
+        color: inherit;
+        padding: 16px;
+        text-align: left;
+        cursor: pointer;
+      }
+
+      .place-card:hover,
+      .place-card:focus-visible,
+      .place-card.active {
+        outline: 0;
+        background: #f4faf7;
+      }
+
+      .place-card.active {
+        box-shadow: inset 5px 0 0 var(--accent);
+      }
+
+      .card-title {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 12px;
+        align-items: start;
+      }
+
+      .card-title strong {
+        font-size: 1.1rem;
+        line-height: 1.15;
+      }
+
+      .meta {
+        color: var(--muted);
+        font-weight: 620;
+      }
+
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+      }
+
+      .chip {
+        min-height: 28px;
+        padding: 4px 9px;
+        font-size: 0.88rem;
+      }
+
+      .chip.good {
+        border-color: #b7e1c8;
+        background: var(--good-bg);
+        color: var(--good);
+      }
+
+      .chip.warn {
+        border-color: #f0d78e;
+        background: var(--warn-bg);
+        color: var(--warn);
+      }
+
+      .chip.bad {
+        border-color: #f0bab4;
+        background: var(--bad-bg);
+        color: var(--bad);
+      }
+
+      .chip.unknown {
+        background: var(--unknown-bg);
+        color: var(--unknown);
+      }
+
+      .empty {
+        padding: 42px 18px;
+        color: var(--muted);
+        font-size: 1.08rem;
+      }
+
+      .detail {
+        margin-top: 16px;
+        padding: 20px;
+      }
+
+      .detail-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+        margin: 16px 0;
+      }
+
+      .fact {
+        min-height: 92px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fbfcfb;
+        padding: 12px;
+      }
+
+      .fact b {
+        display: block;
+        margin-bottom: 3px;
+        font-size: 1.05rem;
+      }
+
+      .fact span {
+        color: var(--muted);
+        font-size: 0.9rem;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .detail-sections {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .section {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 14px;
+        background: #fbfcfb;
+      }
+
+      .section h3 {
+        margin-bottom: 8px;
+        font-size: 1rem;
+      }
+
+      .section p,
+      .section ul {
+        margin-bottom: 0;
+        color: var(--muted);
+      }
+
+      .section ul {
+        display: grid;
+        gap: 5px;
+        padding-left: 20px;
+      }
+
+      .source-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .source-list a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--panel);
+        padding: 6px 10px;
+        font-weight: 750;
+      }
+
+      .notice {
+        margin-top: 14px;
+        border-left: 4px solid var(--accent);
+        background: #edf7f3;
+        padding: 12px 14px;
+        color: #24413b;
+        font-weight: 650;
+      }
+
+      .notice.warn {
+        border-color: #d29b22;
+        background: var(--warn-bg);
+        color: var(--warn);
+      }
+
+      .notice.bad {
+        border-color: #d04d45;
+        background: var(--bad-bg);
+        color: var(--bad);
+      }
+
+      footer {
+        margin-top: 20px;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .leaflet-popup-content {
+        margin: 12px;
+        min-width: 210px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      .leaflet-container {
+        overflow: hidden;
+        position: relative;
+        outline-offset: 1px;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .leaflet-pane,
+      .leaflet-tile,
+      .leaflet-marker-icon,
+      .leaflet-marker-shadow,
+      .leaflet-tile-container,
+      .leaflet-pane > svg,
+      .leaflet-pane > canvas,
+      .leaflet-zoom-box,
+      .leaflet-image-layer,
+      .leaflet-layer {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      .leaflet-tile,
+      .leaflet-marker-icon,
+      .leaflet-marker-shadow {
+        -webkit-user-drag: none;
+        user-select: none;
+      }
+
+      .leaflet-tile {
+        visibility: hidden;
+      }
+
+      .leaflet-tile-loaded {
+        visibility: inherit;
+      }
+
+      .leaflet-zoom-animated {
+        transform-origin: 0 0;
+      }
+
+      .leaflet-interactive {
+        cursor: pointer;
+      }
+
+      .leaflet-control-container .leaflet-top,
+      .leaflet-control-container .leaflet-bottom {
+        position: absolute;
+        z-index: 1000;
+        pointer-events: none;
+      }
+
+      .leaflet-top {
+        top: 0;
+      }
+
+      .leaflet-right {
+        right: 0;
+      }
+
+      .leaflet-bottom {
+        bottom: 0;
+      }
+
+      .leaflet-left {
+        left: 0;
+      }
+
+      .leaflet-control {
+        position: relative;
+        z-index: 800;
+        clear: both;
+        pointer-events: auto;
+      }
+
+      .leaflet-left .leaflet-control {
+        float: left;
+        margin-left: 10px;
+      }
+
+      .leaflet-right .leaflet-control {
+        float: right;
+        margin-right: 10px;
+      }
+
+      .leaflet-top .leaflet-control {
+        margin-top: 10px;
+      }
+
+      .leaflet-bottom .leaflet-control {
+        margin-bottom: 10px;
+      }
+
+      .leaflet-bar {
+        border: 1px solid rgba(0, 0, 0, 0.18);
+        border-radius: 6px;
+        background: #fff;
+      }
+
+      .leaflet-bar a {
+        display: block;
+        width: 30px;
+        height: 30px;
+        border-bottom: 1px solid var(--line);
+        color: #111;
+        text-align: center;
+        text-decoration: none;
+        font-size: 20px;
+        line-height: 30px;
+      }
+
+      .leaflet-bar a:last-child {
+        border-bottom: 0;
+      }
+
+      .leaflet-popup {
+        position: absolute;
+        text-align: center;
+      }
+
+      .leaflet-popup-content-wrapper {
+        border-radius: 8px;
+        background: #fff;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+      }
+
+      .leaflet-popup-content {
+        line-height: 1.35;
+      }
+
+      .leaflet-popup-tip-container {
+        overflow: hidden;
+        width: 40px;
+        height: 20px;
+        margin: 0 auto;
+      }
+
+      .leaflet-popup-tip {
+        width: 17px;
+        height: 17px;
+        margin: -10px auto 0;
+        transform: rotate(45deg);
+        background: #fff;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+      }
+
+      .leaflet-container a.leaflet-popup-close-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 24px;
+        height: 24px;
+        color: #333;
+        text-align: center;
+        text-decoration: none;
+        font: 18px/24px monospace;
+      }
+
+      .leaflet-control-attribution {
+        margin: 0;
+        background: rgba(255, 255, 255, 0.85);
+        padding: 3px 7px;
+        font-size: 11px;
+      }
+
+      .popup-title {
+        margin-bottom: 5px;
+        font-weight: 850;
+      }
+
+      .popup-button {
+        width: 100%;
+        min-height: 36px;
+        margin-top: 8px;
+        border: 0;
+        border-radius: 8px;
+        background: var(--accent);
+        color: #fff;
+        font-weight: 850;
+        cursor: pointer;
+      }
+
+      @media (max-width: 1180px) {
+        .filters {
+          grid-template-columns: repeat(3, minmax(160px, 1fr));
+        }
+
+        .layout {
+          grid-template-columns: 1fr;
+        }
+
+        .map-panel,
+        .list-panel,
+        #map {
+          min-height: 520px;
+          height: 520px;
+        }
+
+        .places {
+          max-height: 520px;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .page {
+          width: min(100% - 20px, 1480px);
+          padding-top: 18px;
+        }
+
+        .topbar {
+          display: grid;
+        }
+
+        .top-actions {
+          justify-content: flex-start;
+          min-width: 0;
+        }
+
+        .filters {
+          grid-template-columns: 1fr;
+          padding: 12px;
+        }
+
+        .detail-grid,
+        .detail-sections {
+          grid-template-columns: 1fr;
+        }
+
+        #map,
+        .map-panel {
+          height: 430px;
+          min-height: 430px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header class="topbar">
+        <div>
+          <h1>Skånes husbilskarta</h1>
+          <p class="lead">Ställplatser, campingar och gästhamnar där husbil kan stå över natten. Bekräftade källor väger tyngst; OSM-träffar visas som kandidater tills pris och regler är verifierade.</p>
+        </div>
+        <div class="top-actions" aria-live="polite">
+          <span id="dataStatus" class="pill good">Laddar data</span>
+          <span id="totalCount" class="pill">0 platser</span>
+        </div>
+      </header>
+
+      <main>
+        <section class="panel filters" aria-label="Filter">
+          <div class="field">
+            <label for="searchInput">Sök</label>
+            <input id="searchInput" type="search" placeholder="Plats, kommun eller service">
+          </div>
+          <div class="field">
+            <label for="municipalitySelect">Kommun</label>
+            <select id="municipalitySelect">
+              <option value="">Alla kommuner</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="categorySelect">Typ</label>
+            <select id="categorySelect">
+              <option value="">Alla typer</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="statusSelect">Status</label>
+            <select id="statusSelect">
+              <option value="usable">Tillåtna + kandidater</option>
+              <option value="active">Endast bekräftade</option>
+              <option value="candidate">Endast kandidater</option>
+              <option value="problem">Stängda/förbjudna</option>
+              <option value="">Alla statusar</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="priceSelect">Pris</label>
+            <select id="priceSelect">
+              <option value="">Alla priser</option>
+              <option value="free">Gratis enligt källa</option>
+              <option value="paid">Betald plats</option>
+              <option value="unknown">Pris saknas</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="sortSelect">Sortering</label>
+            <select id="sortSelect">
+              <option value="quality">Säkrast info först</option>
+              <option value="name">Namn A-Ö</option>
+              <option value="municipality">Kommun</option>
+              <option value="service">Mest service</option>
+            </select>
+          </div>
+          <div class="toggle-row" aria-label="Servicefilter">
+            <label class="toggle"><input type="checkbox" id="toiletFilter"> <span>Toalett</span></label>
+            <label class="toggle"><input type="checkbox" id="latrineFilter"> <span>Latrintömning</span></label>
+            <label class="toggle"><input type="checkbox" id="electricityFilter"> <span>El</span></label>
+            <label class="toggle"><input type="checkbox" id="waterFilter"> <span>Färskvatten</span></label>
+            <label class="toggle"><input type="checkbox" id="servicePointsFilter" checked> <span>Visa servicepunkter på kartan</span></label>
+          </div>
+        </section>
+
+        <section class="layout">
+          <div class="panel list-panel">
+            <div class="list-head">
+              <h2>Platser</h2>
+              <span id="visibleCount" class="pill">0 visas</span>
+            </div>
+            <div id="placesList" class="places" aria-live="polite"></div>
+          </div>
+
+          <div class="panel map-panel">
+            <div id="map" role="application" aria-label="Karta över husbilsplatser i Skåne"></div>
+          </div>
+        </section>
+
+        <section id="detailPanel" class="panel detail" aria-live="polite"></section>
+
+        <footer>
+          <p id="dataFootnote">Data läses från lokal GitHub Pages-fil. Kartdata från OpenStreetMap contributors, ODbL.</p>
+        </footer>
+      </main>
+    </div>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script>
+      const DATA_URL = "data/places.json";
+      const FIELD_LABELS = {
+        toilet: "Toalett",
+        shower: "Dusch",
+        electricity: "El",
+        fresh_water: "Färskvatten",
+        black_water_disposal: "Latrintömning",
+        grey_water_disposal: "Gråvatten",
+        waste: "Sopor"
+      };
+      const STATUS_LABELS = {
+        active: "Bekräftad",
+        candidate: "Kandidat",
+        closed: "Stängd",
+        prohibited: "Ej tillåten"
+      };
+      const CATEGORY_LABELS = {
+        "ställplats": "Ställplats",
+        "camping": "Camping",
+        "gästhamn": "Gästhamn",
+        "parkering": "Parkering",
+        "kandidat": "Kandidat"
+      };
+      const collator = new Intl.Collator("sv-SE", { sensitivity: "base" });
+
+      const state = {
+        data: null,
+        places: [],
+        visible: [],
+        selectedId: "",
+        map: null,
+        markers: new Map(),
+        serviceLayer: null,
+        mapRefreshTimer: null
+      };
+
+      const els = {
+        dataStatus: document.querySelector("#dataStatus"),
+        totalCount: document.querySelector("#totalCount"),
+        visibleCount: document.querySelector("#visibleCount"),
+        placesList: document.querySelector("#placesList"),
+        detailPanel: document.querySelector("#detailPanel"),
+        dataFootnote: document.querySelector("#dataFootnote"),
+        searchInput: document.querySelector("#searchInput"),
+        municipalitySelect: document.querySelector("#municipalitySelect"),
+        categorySelect: document.querySelector("#categorySelect"),
+        statusSelect: document.querySelector("#statusSelect"),
+        priceSelect: document.querySelector("#priceSelect"),
+        sortSelect: document.querySelector("#sortSelect"),
+        toiletFilter: document.querySelector("#toiletFilter"),
+        latrineFilter: document.querySelector("#latrineFilter"),
+        electricityFilter: document.querySelector("#electricityFilter"),
+        waterFilter: document.querySelector("#waterFilter"),
+        servicePointsFilter: document.querySelector("#servicePointsFilter")
+      };
+
+      function escapeHtml(value) {
+        return String(value ?? "")
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+      }
+
+      function norm(value) {
+        return String(value || "")
+          .toLocaleLowerCase("sv-SE")
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .trim();
+      }
+
+      function statusClass(place) {
+        const status = place.place_status?.value;
+        if (status === "active") return "good";
+        if (status === "closed" || status === "prohibited") return "bad";
+        return "warn";
+      }
+
+      function statusText(place) {
+        return STATUS_LABELS[place.place_status?.value] || "Osäker";
+      }
+
+      function categoryText(place) {
+        return CATEGORY_LABELS[place.category] || place.category || "Plats";
+      }
+
+      function boolInfo(field) {
+        if (!field || field.value === null || field.value === undefined) {
+          return { text: "Okänt", cls: "unknown" };
+        }
+        if (field.value === true) return { text: "Ja", cls: field.status === "confirmed" ? "good" : "warn" };
+        if (field.value === false) return { text: "Nej", cls: "unknown" };
+        return { text: "Okänt", cls: "unknown" };
+      }
+
+      function priceKind(place) {
+        const price = place.price || {};
+        const text = norm(price.text);
+        if (price.is_free === true || text.includes("gratis")) return "free";
+        if (price.is_free === false || price.amount || text.includes("betald") || text.includes("kr/")) return "paid";
+        return "unknown";
+      }
+
+      function serviceScore(place) {
+        return Object.keys(FIELD_LABELS).reduce((score, key) => {
+          return score + (place.facilities?.[key]?.value === true ? 1 : 0);
+        }, 0);
+      }
+
+      function hasService(place, key) {
+        return place.facilities?.[key]?.value === true;
+      }
+
+      function placeSearchText(place) {
+        return norm([
+          place.name,
+          place.municipality,
+          place.category,
+          place.notes,
+          place.price?.text,
+          Object.entries(place.facilities || {})
+            .filter(([, field]) => field?.value === true)
+            .map(([key]) => FIELD_LABELS[key])
+            .join(" ")
+        ].join(" "));
+      }
+
+      function sortPlaces(places) {
+        const sort = els.sortSelect.value;
+        const statusOrder = { active: 0, candidate: 1, closed: 2, prohibited: 3 };
+        const riskOrder = { low: 0, medium: 1, high: 2, blocked: 3 };
+
+        return [...places].sort((a, b) => {
+          if (sort === "name") return collator.compare(a.name, b.name);
+          if (sort === "municipality") {
+            return collator.compare(a.municipality || "", b.municipality || "")
+              || collator.compare(a.name, b.name);
+          }
+          if (sort === "service") {
+            return serviceScore(b) - serviceScore(a)
+              || (statusOrder[a.place_status?.value] ?? 9) - (statusOrder[b.place_status?.value] ?? 9)
+              || collator.compare(a.name, b.name);
+          }
+          return (statusOrder[a.place_status?.value] ?? 9) - (statusOrder[b.place_status?.value] ?? 9)
+            || (riskOrder[a.quality?.risk_level] ?? 9) - (riskOrder[b.quality?.risk_level] ?? 9)
+            || collator.compare(a.municipality || "", b.municipality || "")
+            || collator.compare(a.name, b.name);
+        });
+      }
+
+      function filterPlaces() {
+        const search = norm(els.searchInput.value);
+        const municipality = els.municipalitySelect.value;
+        const category = els.categorySelect.value;
+        const status = els.statusSelect.value;
+        const price = els.priceSelect.value;
+
+        const filtered = state.places.filter((place) => {
+          const placeStatus = place.place_status?.value || "";
+          if (municipality && place.municipality !== municipality) return false;
+          if (category && place.category !== category) return false;
+          if (status === "usable" && (placeStatus === "closed" || placeStatus === "prohibited")) return false;
+          if (status === "active" && placeStatus !== "active") return false;
+          if (status === "candidate" && placeStatus !== "candidate") return false;
+          if (status === "problem" && placeStatus !== "closed" && placeStatus !== "prohibited") return false;
+          if (price && priceKind(place) !== price) return false;
+          if (els.toiletFilter.checked && !hasService(place, "toilet")) return false;
+          if (els.latrineFilter.checked && !hasService(place, "black_water_disposal")) return false;
+          if (els.electricityFilter.checked && !hasService(place, "electricity")) return false;
+          if (els.waterFilter.checked && !hasService(place, "fresh_water")) return false;
+          if (search && !placeSearchText(place).includes(search)) return false;
+          return true;
+        });
+
+        state.visible = sortPlaces(filtered);
+        if (!state.visible.some((place) => place.id === state.selectedId)) {
+          state.selectedId = state.visible[0]?.id || "";
+        }
+        render();
+      }
+
+      function buildChip(text, cls = "") {
+        return `<span class="chip ${cls}">${escapeHtml(text)}</span>`;
+      }
+
+      function serviceChips(place) {
+        const chips = Object.entries(FIELD_LABELS)
+          .map(([key, label]) => ({ label, ...boolInfo(place.facilities?.[key]) }))
+          .filter((item) => item.text === "Ja")
+          .map((item) => buildChip(item.label, item.cls));
+        return chips.length ? chips.join("") : buildChip("Service ej bekräftad", "unknown");
+      }
+
+      function cardHtml(place, index) {
+        const selected = place.id === state.selectedId ? " active" : "";
+        const status = statusClass(place);
+        const price = priceKind(place);
+        const priceLabel = price === "free" ? "Gratis" : price === "paid" ? "Betald" : "Pris okänt";
+        return `
+          <button class="place-card${selected}" type="button" data-id="${escapeHtml(place.id)}">
+            <span class="card-title">
+              <strong>${index + 1}. ${escapeHtml(place.name)}</strong>
+              ${buildChip(statusText(place), status)}
+            </span>
+            <span class="meta">${escapeHtml(place.municipality || "Kommun okänd")} · ${escapeHtml(categoryText(place))}</span>
+            <span class="chips">
+              ${buildChip(priceLabel, price === "unknown" ? "unknown" : price === "free" ? "good" : "warn")}
+              ${serviceChips(place)}
+            </span>
+          </button>
+        `;
+      }
+
+      function renderList() {
+        els.visibleCount.textContent = `${state.visible.length} visas`;
+        if (!state.visible.length) {
+          els.placesList.innerHTML = `<div class="empty">Ingen plats matchar filtren.</div>`;
+          return;
+        }
+        els.placesList.innerHTML = state.visible.map(cardHtml).join("");
+        els.placesList.querySelectorAll(".place-card").forEach((button) => {
+          button.addEventListener("click", () => selectPlace(button.dataset.id, true));
+        });
+      }
+
+      function markerColor(place) {
+        const status = place.place_status?.value;
+        if (status === "active") return "#167067";
+        if (status === "closed" || status === "prohibited") return "#b33b35";
+        return "#c18418";
+      }
+
+      function markerIcon(place) {
+        return L.divIcon({
+          className: "husbil-marker",
+          html: `<span style="display:block;width:22px;height:22px;border:3px solid #fff;border-radius:50%;background:${markerColor(place)};box-shadow:0 4px 14px rgba(0,0,0,.28)"></span>`,
+          iconSize: [22, 22],
+          iconAnchor: [11, 11],
+          popupAnchor: [0, -12]
+        });
+      }
+
+      function renderMap() {
+        state.map.invalidateSize();
+        state.markers.forEach((marker) => marker.remove());
+        state.markers.clear();
+
+        const bounds = [];
+        state.visible.forEach((place) => {
+          if (!place.coordinates) return;
+          const marker = L.marker([place.coordinates.lat, place.coordinates.lng], { icon: markerIcon(place) });
+          marker.bindPopup(`
+            <div class="popup-title">${escapeHtml(place.name)}</div>
+            <div>${escapeHtml(place.municipality || "Kommun okänd")} · ${escapeHtml(categoryText(place))}</div>
+            <button class="popup-button" type="button" data-popup-id="${escapeHtml(place.id)}">Visa plats</button>
+          `);
+          marker.on("click", () => selectPlace(place.id, false));
+          marker.addTo(state.map);
+          state.markers.set(place.id, marker);
+          bounds.push([place.coordinates.lat, place.coordinates.lng]);
+        });
+
+        if (state.serviceLayer) state.serviceLayer.remove();
+        state.serviceLayer = L.layerGroup();
+        if (els.servicePointsFilter.checked) {
+          (state.data?.servicePoints || []).forEach((point) => {
+            const circle = L.circleMarker([point.coordinates.lat, point.coordinates.lng], {
+              radius: 6,
+              color: "#0d5960",
+              fillColor: "#d7f0f4",
+              fillOpacity: 0.95,
+              weight: 2
+            }).bindPopup(`<strong>${escapeHtml(point.name)}</strong><br>Tömnings-/servicepunkt<br><a href="${escapeHtml(point.source)}" target="_blank" rel="noreferrer">OSM-källa</a>`);
+            state.serviceLayer.addLayer(circle);
+          });
+          state.serviceLayer.addTo(state.map);
+        }
+
+        if (bounds.length) {
+          state.map.fitBounds(bounds, { padding: [26, 26], maxZoom: 11 });
+        } else {
+          state.map.setView([55.93, 13.48], 8);
+        }
+        clearTimeout(state.mapRefreshTimer);
+        state.mapRefreshTimer = setTimeout(() => {
+          state.map.invalidateSize(true);
+          if (bounds.length) {
+            state.map.fitBounds(bounds, { padding: [26, 26], maxZoom: 11 });
+          }
+        }, 300);
+      }
+
+      function popupClickHandler(event) {
+        const button = event.target.closest("[data-popup-id]");
+        if (button) selectPlace(button.dataset.popupId, true);
+      }
+
+      function renderDetail() {
+        const place = state.places.find((item) => item.id === state.selectedId);
+        if (!place) {
+          els.detailPanel.innerHTML = `<p class="empty">Välj en plats i listan eller på kartan.</p>`;
+          return;
+        }
+
+        const stay = boolInfo(place.overnight_allowed);
+        const priceLabel = place.price?.text || "Pris saknas.";
+        const sourceLinks = (place.sources || []).map((source) => (
+          `<a href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer">${escapeHtml(source.title || source.url)}</a>`
+        )).join("");
+        const noticeClass = place.place_status?.value === "closed" || place.place_status?.value === "prohibited"
+          ? "bad"
+          : place.place_status?.value === "candidate" || place.quality?.risk_level !== "low"
+            ? "warn"
+            : "";
+        const noticeText = place.place_status?.value === "closed"
+          ? "Platsen är markerad som stängd i källorna och ska inte räknas som nattplats."
+          : place.place_status?.value === "prohibited"
+            ? "Källan säger att nattparkering inte är tillåten här."
+            : place.place_status?.value === "candidate"
+              ? "Detta är en kandidat från öppen data. Kontrollera länkad källa eller skyltning innan du planerar övernattning."
+              : place.quality?.risk_level === "low"
+                ? "Den viktigaste informationen är bekräftad av kommun, operatör eller officiell turismkälla."
+                : "Platsen har bekräftad källa men vissa detaljer, ofta pris eller service, behöver kontrolleras hos operatören.";
+
+        const facilityFacts = Object.entries(FIELD_LABELS).map(([key, label]) => {
+          const info = boolInfo(place.facilities?.[key]);
+          return `<div class="fact"><b>${escapeHtml(info.text)}</b><span>${escapeHtml(label)}</span></div>`;
+        }).join("");
+
+        els.detailPanel.innerHTML = `
+          <div class="card-title">
+            <div>
+              <h2>${escapeHtml(place.name)}</h2>
+              <p class="meta">${escapeHtml(place.municipality || "Kommun okänd")} · ${escapeHtml(categoryText(place))} · senast kontrollerad ${escapeHtml(place.last_checked || state.data?.generatedAt?.slice(0, 10) || "okänt")}</p>
+            </div>
+            ${buildChip(statusText(place), statusClass(place))}
+          </div>
+
+          <div class="notice ${noticeClass}">${escapeHtml(noticeText)}</div>
+
+          <div class="detail-grid">
+            <div class="fact"><b>${escapeHtml(stay.text)}</b><span>Tillåten nattplats</span></div>
+            <div class="fact"><b>${escapeHtml(priceKind(place) === "free" ? "Gratis" : priceKind(place) === "paid" ? "Betald" : "Okänt")}</b><span>Prisnivå</span></div>
+            <div class="fact"><b>${escapeHtml(place.capacity?.text || place.capacity?.value || "Okänt")}</b><span>Antal platser</span></div>
+            <div class="fact"><b>${escapeHtml(place.season?.text || "Ej angivet")}</b><span>Säsong</span></div>
+            ${facilityFacts}
+          </div>
+
+          <div class="detail-sections">
+            <div class="section">
+              <h3>Pris och regler</h3>
+              <p>${escapeHtml(priceLabel)}</p>
+              ${place.notes ? `<p style="margin-top:8px">${escapeHtml(place.notes)}</p>` : ""}
+            </div>
+            <div class="section">
+              <h3>Service</h3>
+              <p>${serviceChips(place)}</p>
+            </div>
+            <div class="section">
+              <h3>Källor</h3>
+              <div class="source-list">${sourceLinks || "Källa saknas."}</div>
+            </div>
+            <div class="section">
+              <h3>Bilder</h3>
+              <p>${(place.images || []).length ? "Bilddata finns i platsens källfält." : "Inga verifierade fria bilder är kopplade ännu."}</p>
+            </div>
+          </div>
+        `;
+      }
+
+      function render() {
+        renderList();
+        renderMap();
+        renderDetail();
+      }
+
+      function selectPlace(id, openPopup) {
+        state.selectedId = id;
+        renderList();
+        renderDetail();
+        const marker = state.markers.get(id);
+        const place = state.places.find((item) => item.id === id);
+        if (marker && place) {
+          state.map.setView([place.coordinates.lat, place.coordinates.lng], Math.max(state.map.getZoom(), 12), { animate: true });
+          if (openPopup) marker.openPopup();
+        }
+        const selectedCard = els.placesList.querySelector(`[data-id="${CSS.escape(id)}"]`);
+        if (selectedCard) selectedCard.scrollIntoView({ block: "nearest" });
+      }
+
+      function populateFilters() {
+        const municipalities = [...new Set(state.places.map((place) => place.municipality).filter(Boolean))]
+          .sort(collator.compare);
+        const categories = [...new Set(state.places.map((place) => place.category).filter(Boolean))]
+          .sort(collator.compare);
+
+        els.municipalitySelect.innerHTML = `<option value="">Alla kommuner</option>`
+          + municipalities.map((item) => `<option value="${escapeHtml(item)}">${escapeHtml(item)}</option>`).join("");
+        els.categorySelect.innerHTML = `<option value="">Alla typer</option>`
+          + categories.map((item) => `<option value="${escapeHtml(item)}">${escapeHtml(categoryText({ category: item }))}</option>`).join("");
+      }
+
+      function initMap() {
+        state.map = L.map("map", {
+          scrollWheelZoom: true,
+          fadeAnimation: false,
+          zoomAnimation: false
+        }).setView([55.93, 13.48], 8);
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          maxZoom: 19,
+          keepBuffer: 6,
+          updateWhenIdle: false,
+          attribution: "&copy; OpenStreetMap contributors"
+        }).addTo(state.map);
+        document.querySelector("#map").addEventListener("click", popupClickHandler);
+      }
+
+      function wireFilters() {
+        [
+          els.searchInput,
+          els.municipalitySelect,
+          els.categorySelect,
+          els.statusSelect,
+          els.priceSelect,
+          els.sortSelect,
+          els.toiletFilter,
+          els.latrineFilter,
+          els.electricityFilter,
+          els.waterFilter,
+          els.servicePointsFilter
+        ].forEach((el) => {
+          const eventName = el.type === "search" ? "input" : "change";
+          el.addEventListener(eventName, filterPlaces);
+        });
+      }
+
+      async function loadData() {
+        try {
+          const response = await fetch(`${DATA_URL}?v=${Date.now()}`, { cache: "no-store" });
+          if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
+          state.data = await response.json();
+          state.places = state.data.places || [];
+          state.selectedId = "";
+          els.dataStatus.textContent = `Data ${state.data.generatedAt ? state.data.generatedAt.slice(0, 10) : "okänt datum"}`;
+          els.totalCount.textContent = `${state.places.length} platser`;
+          els.dataFootnote.textContent = `${state.data.attribution || "Kartdata från OpenStreetMap contributors, ODbL."} ${state.data.warning || ""}`;
+          populateFilters();
+          filterPlaces();
+        } catch (error) {
+          els.dataStatus.textContent = "Kunde inte ladda data";
+          els.dataStatus.classList.remove("good");
+          els.dataStatus.classList.add("warn");
+          els.placesList.innerHTML = `<div class="empty">Datafilen kunde inte laddas: ${escapeHtml(error.message)}</div>`;
+          els.detailPanel.innerHTML = "";
+        }
+      }
+
+      initMap();
+      wireFilters();
+      loadData();
+    </script>
+  </body>
+</html>
