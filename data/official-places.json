@@ -430,7 +430,7 @@
       "municipality": "Höganäs",
       "category": "ställplats",
       "coordinates": { "lat": 56.27092, "lng": 12.52929, "status": "confirmed" },
-      "match": ["Mölle kapell", "Firstcamp Mölle", "Firstcamp Mölle – Höganäs"],
+      "match": ["Mölle kapell"],
       "place_status": { "value": "active", "status": "confirmed" },
       "overnight_allowed": { "value": true, "status": "confirmed" },
       "capacity": { "value": 9, "status": "confirmed" },

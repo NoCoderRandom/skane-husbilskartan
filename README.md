@@ -10,6 +10,8 @@ kommun eller skyltning.
 ## Data
 
 - `data/official-places.json` innehåller manuellt kontrollerade seed-källor.
+- `data/operator-places.json` innehåller operatörs-/kommunverifierade kandidater.
+- `data/place-images.json` innehåller kuraterade fria bilder med licensuppgifter.
 - `data/osm-cache.json` är cache från Overpass/OpenStreetMap.
 - `data/places.json` är den färdiga filen som sidan läser.
 - `scripts/build-data.mjs` bygger om `places.json`.

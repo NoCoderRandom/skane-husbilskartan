@@ -1,0 +1,371 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-06-30",
+  "source": "Operator- och kommunwebbplatser som svarade vid kontroll. Pris och detaljer ska fortfarande verifieras hos respektive plats innan resa.",
+  "places": [
+    {
+      "id": "bromolla-ivo-camping",
+      "name": "Ivö Camping",
+      "municipality": "Bromölla",
+      "category": "camping",
+      "coordinates": { "lat": 56.110315, "lng": 14.384663, "status": "unverified" },
+      "match": ["Ivö Camping"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "price": { "text": "Pris enligt campingens egen webbplats/bokning.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "sources": [
+        { "id": "ivo-camping", "type": "operator", "title": "Ivö Camping", "url": "http://ivo-camping.nu/", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "bromolla-strandangens-camping",
+      "name": "Strandängens Camping & Vandrarhem",
+      "municipality": "Bromölla",
+      "category": "camping",
+      "coordinates": { "lat": 56.0662801, "lng": 14.4548745, "status": "unverified" },
+      "match": ["Strandängens Camping & Vandrarhem"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "price": { "text": "Pris enligt campingens egen webbplats/bokning.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "sources": [
+        { "id": "bromolla-camping", "type": "operator", "title": "Bromölla Camping", "url": "https://www.bromollacamping.se/", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "bastad-skummeslovs-eko-camping",
+      "name": "Skummeslövs Eko-Camping",
+      "municipality": "Båstad",
+      "category": "camping",
+      "coordinates": { "lat": 56.4602607, "lng": 12.9304631, "status": "unverified" },
+      "match": ["Skummeslövs Eko-Camping"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "price": { "text": "Pris enligt campingens egen webbplats/bokning.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "sources": [
+        { "id": "skummeslovs-camping", "type": "operator", "title": "Skummeslövs Camping", "url": "https://skummeslovscamping.se/", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "vellinge-falsterbo-camping-resort",
+      "name": "Falsterbo Camping & Resort",
+      "municipality": "Vellinge",
+      "category": "camping",
+      "coordinates": { "lat": 55.3981976, "lng": 12.863371, "status": "unverified" },
+      "match": ["Falsterbo Camping & Resort"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "price": { "text": "Pris enligt campingens egen webbplats/bokning.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "sources": [
+        { "id": "falsterbo-resort", "type": "operator", "title": "Falsterbo Resort", "url": "https://falsterboresort.se/", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "hassleholm-tykarpsgrottan-camping",
+      "name": "Tykarpsgrottans Camping",
+      "municipality": "Hässleholm",
+      "category": "camping",
+      "coordinates": { "lat": 56.1175599, "lng": 13.8264638, "status": "unverified" },
+      "match": ["Tykarpsgrottan's Camping", "Tykarpsgrottans Camping"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "price": { "text": "Pris enligt operatörens egen webbplats/bokning.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "sources": [
+        { "id": "tykarpsgrottan-camping", "type": "operator", "title": "Tykarpsgrottan - camping och stugor", "url": "https://tykarpsgrottan.net/camping-stugor", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "hoganas-destination-strandbaden",
+      "name": "Destination Strandbaden",
+      "municipality": "Höganäs",
+      "category": "camping",
+      "coordinates": { "lat": 56.2249501, "lng": 12.540964, "status": "unverified" },
+      "match": ["Destination Strandbaden"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "price": { "text": "Pris enligt campingens egen webbplats/bokning.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "sources": [
+        { "id": "destination-strandbaden-camping", "type": "operator", "title": "Destination Strandbaden camping", "url": "https://www.visitorestrand.se/english/camping-eng", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "hoganas-firstcamp-molle",
+      "name": "First Camp Mölle - Höganäs",
+      "municipality": "Höganäs",
+      "category": "camping",
+      "coordinates": { "lat": 56.2699404, "lng": 12.5297504, "status": "unverified" },
+      "match": ["Firstcamp Mölle – Höganäs", "First Camp Mölle - Höganäs"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "price": { "text": "Pris enligt First Camps bokning/prislista.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "sources": [
+        { "id": "firstcamp-molle-hoganas", "type": "operator", "title": "First Camp Mölle - Höganäs", "url": "https://firstcamp.se/destinationer/molle-hoganas", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "horby-kulturhuset-oster-sallerup",
+      "name": "Kulturhuset Öster Sallerup",
+      "municipality": "Hörby",
+      "category": "ställplats",
+      "coordinates": { "lat": 55.8008758, "lng": 13.7302434, "status": "unverified" },
+      "match": ["Kulturhuset Öster Sallerup"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "price": { "text": "Pris enligt platsens egen ställplatssida.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "sources": [
+        { "id": "kulturhuset-oster-sallerup-stallplats", "type": "operator", "title": "Kulturhuset Öster Sallerup - ställplatser för husbilar", "url": "https://www.kulturhusetosallerup.com/post/st%C3%A4llplatser-f%C3%B6r-husbilar", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "horby-ringsjostrand-camping",
+      "name": "Ringsjöstrands Camping",
+      "municipality": "Hörby",
+      "category": "camping",
+      "coordinates": { "lat": 55.8497063, "lng": 13.5871449, "status": "unverified" },
+      "match": ["Ringsjöstrands Camping"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "price": { "text": "Pris enligt campingens egen webbplats/bokning.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "sources": [
+        { "id": "ringsjostrand", "type": "operator", "title": "Ringsjöstrand", "url": "https://www.ringsjostrand.se/", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "hoor-jagersbo-camping",
+      "name": "Jägersbo Camping",
+      "municipality": "Höör",
+      "category": "camping",
+      "coordinates": { "lat": 55.9021922, "lng": 13.5645184, "status": "unverified" },
+      "match": ["Jägersbo Camping"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "price": { "text": "Pris enligt campingens egen webbplats/bokning.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "sources": [
+        { "id": "jagersbo-camping", "type": "operator", "title": "Jägersbo Camping", "url": "https://www.jagersbocamping.se/", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "klippan-skaralids-camping",
+      "name": "Skäralids Camping",
+      "municipality": "Klippan",
+      "category": "camping",
+      "coordinates": { "lat": 56.0398326, "lng": 13.2569029, "status": "unverified" },
+      "match": ["Skäralids Camping"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "price": { "text": "Pris enligt campingens egen webbplats/bokning.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "sources": [
+        { "id": "skaralids-camping", "type": "operator", "title": "Skäralids Camping", "url": "https://www.skaralidscamping.se/", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "kristianstad-charlottsborgs-camping",
+      "name": "Charlottsborgs Camping-Vandrarhem",
+      "municipality": "Kristianstad",
+      "category": "camping",
+      "coordinates": { "lat": 56.0199497, "lng": 14.1266137, "status": "unverified" },
+      "match": ["Charlottsborgs Camping-Vandrarhem"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "price": { "text": "Pris enligt campingens egen webbplats/bokning.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "sources": [
+        { "id": "charlottsborgs-camping", "type": "operator", "title": "Charlottsborgs Camping", "url": "https://charlottsborgs-camping.se/", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "kavlinge-aboda-golf-stallplats",
+      "name": "Åboda",
+      "municipality": "Kävlinge",
+      "category": "ställplats",
+      "coordinates": { "lat": 55.7931962, "lng": 13.1536596, "status": "unverified" },
+      "match": ["Åboda"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "price": { "text": "Pris enligt golfklubbens webbplats/bokning.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "sources": [
+        { "id": "kavlinge-gk", "type": "operator", "title": "Kävlinge GK", "url": "https://kavlingegk.se/", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "malmo-limhamn-smabatshamnen",
+      "name": "Småbåtshamnen i Limhamn AB",
+      "municipality": "Malmö",
+      "category": "ställplats",
+      "coordinates": { "lat": 55.5841858, "lng": 12.9195301, "status": "unverified" },
+      "match": ["Småbåtshamnen i Limhamn AB"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "price": { "text": "Pris enligt hamnens bokningssida.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "sources": [
+        { "id": "limhamn-smabatshamnen-booking", "type": "operator", "title": "Småbåtshamnen i Limhamn bokning", "url": "https://booking.smabatshamnen.se/en/", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "lomma-camping",
+      "name": "Lomma Camping",
+      "municipality": "Lomma",
+      "category": "camping",
+      "coordinates": { "lat": 55.6898079, "lng": 13.0589392, "status": "unverified" },
+      "match": ["Lomma Camping"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "price": { "text": "Pris enligt campingens egen webbplats/bokning.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "sources": [
+        { "id": "lomma-camping", "type": "operator", "title": "Lomma Camping", "url": "https://lommacamping.se/", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "lund-kallby-camping",
+      "name": "Källby Friluftsbad & Camping",
+      "municipality": "Lund",
+      "category": "camping",
+      "coordinates": { "lat": 55.6894813, "lng": 13.1716931, "status": "unverified" },
+      "match": ["Källby Friluftsbad & Camping"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "price": { "text": "Pris enligt Lunds kommuns campingsida/bokning.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "sources": [
+        { "id": "lund-kallby-camping", "type": "official", "title": "Lunds kommun - Källby camping", "url": "https://lund.se/uppleva-och-gora/natur-lekplatser-och-parker/camping", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "ystad-loderups-strandbads-camping",
+      "name": "Löderups Strandbads Camping",
+      "municipality": "Ystad",
+      "category": "camping",
+      "coordinates": { "lat": 55.381719, "lng": 14.1291571, "status": "unverified" },
+      "match": ["Löderups Strandbads camping", "Löderups Strandbads Camping"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "price": { "text": "Pris enligt campingens egen webbplats/bokning.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "sources": [
+        { "id": "loderups-camping", "type": "operator", "title": "Löderups Strandbads Camping", "url": "https://www.loderupscamping.se/", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "simrishamn-ekogarden",
+      "name": "Ekogården",
+      "municipality": "Simrishamn",
+      "category": "ställplats",
+      "coordinates": { "lat": 55.6069591, "lng": 14.2346059, "status": "unverified" },
+      "match": ["Ekogården"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "price": { "text": "Pris enligt platsens egen webbplats/bokning.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "sources": [
+        { "id": "ekogarden", "type": "operator", "title": "Ekogården", "url": "https://ekogarden.org/", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "sjobo-romeleasens-golfklubb",
+      "name": "Romeleåsens Golfklubb Husbilar",
+      "municipality": "Sjöbo",
+      "category": "ställplats",
+      "coordinates": { "lat": 55.5938357, "lng": 13.5156955, "status": "unverified" },
+      "match": ["Romeleåsens Golfklubb Husbilar"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "price": { "text": "Pris enligt golfklubbens ställplatssida.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "sources": [
+        { "id": "romeleasens-gk-stallplats", "type": "operator", "title": "Romeleåsens Golfklubb - ställplats för husbil och husvagn", "url": "https://ragk.se/boende/stallplats-for-husbil-och-husvagn/", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "skurup-skateholms-camping",
+      "name": "Skateholms Camping",
+      "municipality": "Skurup",
+      "category": "camping",
+      "coordinates": { "lat": 55.377054, "lng": 13.469371, "status": "unverified" },
+      "match": ["Skateholms Camping"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "price": { "text": "Pris enligt campingens egen webbplats/bokning.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "sources": [
+        { "id": "skateholms-camping", "type": "operator", "title": "Skateholms Camping", "url": "https://skateholmscamping.com/", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "tomelilla-halldala-ranch",
+      "name": "Hälldala Ranch",
+      "municipality": "Tomelilla",
+      "category": "ställplats",
+      "coordinates": { "lat": 55.5277713, "lng": 14.068079, "status": "unverified" },
+      "match": ["Hälldala Ranch"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "price": { "text": "Pris enligt platsens egen webbplats/bokning.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "sources": [
+        { "id": "halldala-ranch", "type": "operator", "title": "Hälldala Ranch", "url": "https://www.halldalaranch.se/", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "trelleborg-nybostrand-camping",
+      "name": "Camping Nybostrand",
+      "municipality": "Trelleborg",
+      "category": "camping",
+      "coordinates": { "lat": 55.3540642, "lng": 13.2427209, "status": "unverified" },
+      "match": ["Camping Nybostrand"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "price": { "text": "Pris enligt campingens egen webbplats/bokning.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "sources": [
+        { "id": "nybostrand-camping", "type": "operator", "title": "Nybostrand Camping", "url": "https://nybostrand.se/", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "trelleborg-strand-camping",
+      "name": "Trelleborg Strand",
+      "municipality": "Trelleborg",
+      "category": "camping",
+      "coordinates": { "lat": 55.3633274, "lng": 13.2091935, "status": "unverified" },
+      "match": ["Trelleborg Strand"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "price": { "text": "Pris enligt campingens egen webbplats/bokning.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "sources": [
+        { "id": "trelleborg-strand", "type": "operator", "title": "Trelleborg Strand", "url": "https://trelleborgstrand.se", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "kristianstad-first-camp-ahus",
+      "name": "First Camp Åhus - Kristianstad",
+      "municipality": "Kristianstad",
+      "category": "camping",
+      "coordinates": { "lat": 55.9418753, "lng": 14.3124287, "status": "unverified" },
+      "match": ["First Camp Åhus - Kristianstad"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "price": { "text": "Pris enligt First Camps bokning/prislista.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "sources": [
+        { "id": "firstcamp-ahus", "type": "operator", "title": "First Camp Åhus - Kristianstad", "url": "https://firstcamp.se/ahus/", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "ostra-goinge-immelns-camping",
+      "name": "Immelns Camping & Vandrarhem",
+      "municipality": "Östra Göinge",
+      "category": "camping",
+      "coordinates": { "lat": 56.2073596, "lng": 14.2493005, "status": "unverified" },
+      "match": ["Immelns Camping & Vandrarhem"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "price": { "text": "Pris enligt campingens egen webbplats/bokning.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "sources": [
+        { "id": "immelns-camping", "type": "operator", "title": "Immelns Camping", "url": "https://immeln.camp/", "checked_at": "2026-06-30" }
+      ]
+    },
+    {
+      "id": "ostra-goinge-lursjobadets-camping",
+      "name": "Lursjöbadets Camping",
+      "municipality": "Östra Göinge",
+      "category": "camping",
+      "coordinates": { "lat": 56.2719435, "lng": 13.8947791, "status": "unverified" },
+      "match": ["Lursjöbadets Camping"],
+      "place_status": { "value": "active", "status": "confirmed" },
+      "overnight_allowed": { "value": true, "status": "confirmed" },
+      "price": { "text": "Pris enligt campingens egen webbplats/bokning.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "sources": [
+        { "id": "lursjobadets-camping", "type": "operator", "title": "Lursjöbadets Camping", "url": "https://www.lursjonscamping.com/", "checked_at": "2026-06-30" }
+      ]
+    }
+  ]
+}

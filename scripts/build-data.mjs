@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const officialPath = resolve(root, "data", "official-places.json");
+const operatorPath = resolve(root, "data", "operator-places.json");
 const imagesPath = resolve(root, "data", "place-images.json");
 const osmCachePath = resolve(root, "data", "osm-cache.json");
 const outputPath = resolve(root, "data", "places.json");
@@ -95,6 +96,10 @@ function slug(value) {
     .replace(/\s+/g, "-")
     .replace(/^-|-$/g, "")
     || "plats";
+}
+
+function compactNorm(value) {
+  return norm(value).replace(/\s+/g, "");
 }
 
 function parseNumber(value) {
@@ -386,13 +391,13 @@ function servicePointFromOsm(element) {
 function scoreMatch(seed, place) {
   const names = [seed.name, ...toArray(seed.match)].map(norm).filter(Boolean);
   const target = norm(place.name);
-  if (seed.coordinates && place.coordinates) {
-    const km = distanceKm(seed.coordinates, place.coordinates);
-    if (km <= 0.12) return 95;
-  }
   if (!target || !names.length) return 0;
   if (names.some((name) => target === name)) return 100;
   if (names.some((name) => target.includes(name) || name.includes(target))) return 80;
+  if (seed.coordinates && place.coordinates) {
+    const km = distanceKm(seed.coordinates, place.coordinates);
+    if (km <= 0.12) return 90;
+  }
   return 0;
 }
 
@@ -428,19 +433,49 @@ function mergePlaces(osmPlace, seed) {
   return merged;
 }
 
+function sourceStrength(place) {
+  const statusWeight = {
+    active: 40,
+    closed: 40,
+    prohibited: 40,
+    day_parking: 30,
+    candidate: 10
+  }[place.place_status?.value] ?? 0;
+  const sourceWeight = toArray(place.sources).reduce((score, item) => {
+    if (item.type === "official") return Math.max(score, 40);
+    if (item.type === "official-tourism") return Math.max(score, 35);
+    if (item.type === "operator") return Math.max(score, 30);
+    return score;
+  }, 0);
+  return statusWeight + sourceWeight;
+}
+
+function mergeDuplicatePlaces(existing, incoming) {
+  return sourceStrength(existing) >= sourceStrength(incoming)
+    ? mergePlaces(incoming, existing)
+    : mergePlaces(existing, incoming);
+}
+
 function dedupePlaces(places) {
   const merged = [];
   for (const place of places) {
     const placeName = norm(place.name);
+    const placeNameCompact = compactNorm(place.name);
     const existingIndex = merged.findIndex((candidate) => {
       if (!candidate.coordinates || !place.coordinates) return false;
       const candidateName = norm(candidate.name);
+      const candidateNameCompact = compactNorm(candidate.name);
       const close = distanceKm(candidate.coordinates, place.coordinates) < 0.45;
-      const sameName = candidateName && placeName && (candidateName === placeName || candidateName.includes(placeName) || placeName.includes(candidateName));
+      const sameName = candidateName && placeName && (
+        candidateName === placeName
+        || candidateName.includes(placeName)
+        || placeName.includes(candidateName)
+        || candidateNameCompact === placeNameCompact
+      );
       return close && sameName;
     });
     if (existingIndex >= 0) {
-      merged[existingIndex] = mergePlaces(merged[existingIndex], place);
+      merged[existingIndex] = mergeDuplicatePlaces(merged[existingIndex], place);
     } else {
       merged.push(place);
     }
@@ -450,6 +485,10 @@ function dedupePlaces(places) {
 
 async function main() {
   const official = JSON.parse(await readFile(officialPath, "utf8"));
+  const operator = existsSync(operatorPath)
+    ? JSON.parse(await readFile(operatorPath, "utf8"))
+    : { places: [] };
+  const manualPlaces = [...toArray(official.places), ...toArray(operator.places)];
   const imageData = existsSync(imagesPath)
     ? JSON.parse(await readFile(imagesPath, "utf8"))
     : { places: [] };
@@ -466,7 +505,7 @@ async function main() {
     .filter(Boolean);
 
   const usedOsmIds = new Set();
-  const mergedOfficial = toArray(official.places).map((seed) => {
+  const mergedOfficial = manualPlaces.map((seed) => {
     const match = osmPlaces
       .map((place) => ({ place, score: scoreMatch(seed, place) }))
       .filter((item) => item.score >= 80)
@@ -498,7 +537,11 @@ async function main() {
     counts: {
       places: places.length,
       officialSeeds: toArray(official.places).length,
-      osmCandidates: remainingOsm.length,
+      operatorSeeds: toArray(operator.places).length,
+      manualSeeds: manualPlaces.length,
+      osmCandidatesRaw: remainingOsm.length,
+      finalCandidates: places.filter((place) => place.place_status?.value === "candidate").length,
+      confirmedActive: places.filter((place) => place.place_status?.value === "active").length,
       withImages: places.filter((place) => toArray(place.images).length).length,
       servicePoints: servicePoints.length
     },
