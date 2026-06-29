@@ -102,6 +102,16 @@
       "id": "hoganas-hamn",
       "images": [
         {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Hoganas_hamn.jpg/960px-Hoganas_hamn.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Hoganas_hamn.jpg",
+          "title": "Höganäs hamn",
+          "caption": "Höganäs hamn",
+          "author": "GORANDJ",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "status": "free-license"
+        },
+        {
           "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/RescueLarsLindfeltHoganas20090410.JPG/960px-RescueLarsLindfeltHoganas20090410.JPG",
           "source_url": "https://commons.wikimedia.org/wiki/File:RescueLarsLindfeltHoganas20090410.JPG",
           "title": "Höganäs hamn",
@@ -109,6 +119,201 @@
           "author": "Patrik Nylin",
           "license": "CC BY-SA 4.0",
           "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
+      "id": "helsingborg-norra-hamnen",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Norra_hamnen_2009-05-30.jpg/960px-Norra_hamnen_2009-05-30.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Norra_hamnen_2009-05-30.jpg",
+          "title": "Norra hamnen",
+          "caption": "Norra hamnen i Helsingborg",
+          "author": "Jsdo1980",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
+      "id": "hoganas-molle-kapell",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/M%C3%B6lle_Kapell%2CKullaberg-11.jpg/960px-M%C3%B6lle_Kapell%2CKullaberg-11.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:M%C3%B6lle_Kapell,Kullaberg-11.jpg",
+          "title": "Mölle kapell",
+          "caption": "Mölle kapell",
+          "author": "Cyhall",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
+      "id": "hassleholm-tykarpsgrottan-camping",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Tykarpsgrottan.jpg/960px-Tykarpsgrottan.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Tykarpsgrottan.jpg",
+          "title": "Tykarpsgrottan",
+          "caption": "Tykarpsgrottan, närområde till campingen",
+          "author": "Susanne Nilsson",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
+      "id": "klippan-skaralids-camping",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Sk%C3%A4ralid_in_S%C3%B6der%C3%A5sen_National_Park_121020_01.jpg/960px-Sk%C3%A4ralid_in_S%C3%B6der%C3%A5sen_National_Park_121020_01.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Sk%C3%A4ralid_in_S%C3%B6der%C3%A5sen_National_Park_121020_01.jpg",
+          "title": "Skäralid",
+          "caption": "Skäralid i Söderåsen, närområde till campingen",
+          "author": "Auquamitzi",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
+      "id": "kristianstad-first-camp-ahus",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/First_Camp_aahus.jpg/960px-First_Camp_aahus.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:First_Camp_aahus.jpg",
+          "title": "First Camp Åhus",
+          "caption": "First Camp Åhus",
+          "author": "First Camp",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
+      "id": "kristianstad-naturum",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/20210522_Naturum_Vattenriket_Kristianstad_%2851214948258%29.jpg/960px-20210522_Naturum_Vattenriket_Kristianstad_%2851214948258%29.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:20210522_Naturum_Vattenriket_Kristianstad_(51214948258).jpg",
+          "title": "Naturum Vattenriket",
+          "caption": "Naturum Vattenriket i Kristianstad",
+          "author": "Jenny Andersson / News Oresund",
+          "license": "CC BY 2.0",
+          "license_url": "https://creativecommons.org/licenses/by/2.0/",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
+      "id": "kavlinge-barsebackstrand",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Lund%C3%A5krabukten.jpg/960px-Lund%C3%A5krabukten.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Lund%C3%A5krabukten.jpg",
+          "title": "Lundåkrabukten",
+          "caption": "Lundåkrabukten från Barsebäcks camping",
+          "author": "Jorchr",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
+      "id": "malmo-limhamn-smabatshamnen",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Limhamn_med_%C3%96reundsbron.jpg/960px-Limhamn_med_%C3%96reundsbron.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Limhamn_med_%C3%96reundsbron.jpg",
+          "title": "Limhamn med Öresundsbron",
+          "caption": "Limhamns småbåtshamn",
+          "author": "Johan Jönsson",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
+      "id": "simrishamn-borrbystrand",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Borrby_strand.jpg/960px-Borrby_strand.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Borrby_strand.jpg",
+          "title": "Borrby strand",
+          "caption": "Borrby strand",
+          "author": "Jorchr",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
+      "id": "simrishamn-kivik",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/View_over_Kivik.jpg/960px-View_over_Kivik.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:View_over_Kivik.jpg",
+          "title": "Kivik",
+          "caption": "Utsikt över Kivik",
+          "author": "Jsdo1980",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
+      "id": "skurup-skateholms-camping",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Skateholm.jpg/960px-Skateholm.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Skateholm.jpg",
+          "title": "Skateholm",
+          "caption": "Skateholms strand",
+          "author": "Jorchr",
+          "license": "CC BY 3.0",
+          "license_url": "https://creativecommons.org/licenses/by/3.0/",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
+      "id": "falsterbokanalen",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Falsterbo-Kanal_Luftaufnahme_%282021%29.jpg/960px-Falsterbo-Kanal_Luftaufnahme_%282021%29.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Falsterbo-Kanal_Luftaufnahme_(2021).jpg",
+          "title": "Falsterbokanalen",
+          "caption": "Falsterbokanalen",
+          "author": "HaSe",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
+      "id": "angelholm-vejbystrand",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Vejbystrands_hamn_07_juli_2022.jpg/960px-Vejbystrands_hamn_07_juli_2022.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Vejbystrands_hamn_07_juli_2022.jpg",
+          "title": "Vejbystrands hamn",
+          "caption": "Vejbystrands hamn",
+          "author": "David Castor",
+          "license": "CC0",
+          "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
           "status": "free-license"
         }
       ]
