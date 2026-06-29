@@ -166,7 +166,8 @@
       }
 
       input[type="search"],
-      select {
+      select,
+      .reset-button {
         width: 100%;
         min-height: 48px;
         border: 1px solid var(--line);
@@ -175,6 +176,19 @@
         color: var(--ink);
         padding: 0 14px;
         font-weight: 680;
+      }
+
+      .reset-button {
+        background: var(--accent);
+        color: #fff;
+        cursor: pointer;
+        font-weight: 850;
+      }
+
+      .reset-button:hover,
+      .reset-button:focus-visible {
+        background: var(--accent-strong);
+        outline: 0;
       }
 
       .toggle-row {
@@ -405,6 +419,47 @@
         background: var(--panel);
         padding: 6px 10px;
         font-weight: 750;
+      }
+
+      .image-strip {
+        display: flex;
+        gap: 10px;
+        overflow-x: auto;
+        padding-bottom: 4px;
+      }
+
+      .image-card {
+        flex: 0 0 min(260px, 80vw);
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+      }
+
+      .image-card img {
+        display: block;
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        background: var(--soft);
+      }
+
+      .image-card a {
+        display: block;
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .image-meta {
+        display: grid;
+        gap: 3px;
+        padding: 9px;
+        color: var(--muted);
+        font-size: 0.86rem;
+      }
+
+      .image-meta strong {
+        color: var(--ink);
       }
 
       .notice {
@@ -713,7 +768,7 @@
               <option value="usable">Tillåtna + kandidater</option>
               <option value="active">Endast bekräftade</option>
               <option value="candidate">Endast kandidater</option>
-              <option value="problem">Stängda/förbjudna</option>
+              <option value="problem">Stängda/förbjudna/dagparkering</option>
               <option value="">Alla statusar</option>
             </select>
           </div>
@@ -734,6 +789,10 @@
               <option value="municipality">Kommun</option>
               <option value="service">Mest service</option>
             </select>
+          </div>
+          <div class="field">
+            <label for="resetFilters">Rensa</label>
+            <button id="resetFilters" class="reset-button" type="button">Rensa filter</button>
           </div>
           <div class="toggle-row" aria-label="Servicefilter">
             <label class="toggle"><input type="checkbox" id="toiletFilter"> <span>Toalett</span></label>
@@ -785,6 +844,7 @@
       const STATUS_LABELS = {
         active: "Bekräftad",
         candidate: "Kandidat",
+        day_parking: "Dagparkering",
         closed: "Stängd",
         prohibited: "Ej tillåten"
       };
@@ -825,7 +885,8 @@
         latrineFilter: document.querySelector("#latrineFilter"),
         electricityFilter: document.querySelector("#electricityFilter"),
         waterFilter: document.querySelector("#waterFilter"),
-        servicePointsFilter: document.querySelector("#servicePointsFilter")
+        servicePointsFilter: document.querySelector("#servicePointsFilter"),
+        resetFilters: document.querySelector("#resetFilters")
       };
 
       function escapeHtml(value) {
@@ -849,6 +910,7 @@
         const status = place.place_status?.value;
         if (status === "active") return "good";
         if (status === "closed" || status === "prohibited") return "bad";
+        if (status === "day_parking") return "bad";
         return "warn";
       }
 
@@ -935,10 +997,10 @@
           const placeStatus = place.place_status?.value || "";
           if (municipality && place.municipality !== municipality) return false;
           if (category && place.category !== category) return false;
-          if (status === "usable" && (placeStatus === "closed" || placeStatus === "prohibited")) return false;
+          if (status === "usable" && (placeStatus === "closed" || placeStatus === "prohibited" || placeStatus === "day_parking")) return false;
           if (status === "active" && placeStatus !== "active") return false;
           if (status === "candidate" && placeStatus !== "candidate") return false;
-          if (status === "problem" && placeStatus !== "closed" && placeStatus !== "prohibited") return false;
+          if (status === "problem" && placeStatus !== "closed" && placeStatus !== "prohibited" && placeStatus !== "day_parking") return false;
           if (price && priceKind(place) !== price) return false;
           if (els.toiletFilter.checked && !hasService(place, "toilet")) return false;
           if (els.latrineFilter.checked && !hasService(place, "black_water_disposal")) return false;
@@ -967,6 +1029,28 @@
         return chips.length ? chips.join("") : buildChip("Service ej bekräftad", "unknown");
       }
 
+      function imagesHtml(place) {
+        const images = place.images || [];
+        if (!images.length) {
+          return "<p>Inga verifierade fria bilder är kopplade ännu.</p>";
+        }
+        return `
+          <div class="image-strip">
+            ${images.map((image) => `
+              <article class="image-card">
+                <a href="${escapeHtml(image.source_url || image.url)}" target="_blank" rel="noreferrer">
+                  <img src="${escapeHtml(image.url)}" alt="${escapeHtml(image.caption || image.title || place.name)}" loading="lazy">
+                  <span class="image-meta">
+                    <strong>${escapeHtml(image.caption || image.title || "Bild från området")}</strong>
+                    <span>${escapeHtml([image.author, image.license].filter(Boolean).join(" · "))}</span>
+                  </span>
+                </a>
+              </article>
+            `).join("")}
+          </div>
+        `;
+      }
+
       function cardHtml(place, index) {
         const selected = place.id === state.selectedId ? " active" : "";
         const status = statusClass(place);
@@ -981,6 +1065,7 @@
             <span class="meta">${escapeHtml(place.municipality || "Kommun okänd")} · ${escapeHtml(categoryText(place))}</span>
             <span class="chips">
               ${buildChip(priceLabel, price === "unknown" ? "unknown" : price === "free" ? "good" : "warn")}
+              ${place.name_status === "derived" ? buildChip("Namn från OSM/adress", "unknown") : ""}
               ${serviceChips(place)}
             </span>
           </button>
@@ -1092,6 +1177,8 @@
           ? "Platsen är markerad som stängd i källorna och ska inte räknas som nattplats."
           : place.place_status?.value === "prohibited"
             ? "Källan säger att nattparkering inte är tillåten här."
+            : place.place_status?.value === "day_parking"
+              ? "Detta är en OSM-träff för husbilsparkering, men övernattning är inte styrkt. Den visas som kontrollpunkt, inte som rekommenderad nattplats."
             : place.place_status?.value === "candidate"
               ? "Detta är en kandidat från öppen data. Kontrollera länkad källa eller skyltning innan du planerar övernattning."
               : place.quality?.risk_level === "low"
@@ -1138,7 +1225,7 @@
             </div>
             <div class="section">
               <h3>Bilder</h3>
-              <p>${(place.images || []).length ? "Bilddata finns i platsens källfält." : "Inga verifierade fria bilder är kopplade ännu."}</p>
+              ${imagesHtml(place)}
             </div>
           </div>
         `;
@@ -1192,8 +1279,10 @@
       }
 
       function wireFilters() {
+        els.searchInput.addEventListener("input", filterPlaces);
+        els.searchInput.addEventListener("search", filterPlaces);
+        els.searchInput.addEventListener("change", filterPlaces);
         [
-          els.searchInput,
           els.municipalitySelect,
           els.categorySelect,
           els.statusSelect,
@@ -1204,9 +1293,20 @@
           els.electricityFilter,
           els.waterFilter,
           els.servicePointsFilter
-        ].forEach((el) => {
-          const eventName = el.type === "search" ? "input" : "change";
-          el.addEventListener(eventName, filterPlaces);
+        ].forEach((el) => el.addEventListener("change", filterPlaces));
+        els.resetFilters.addEventListener("click", () => {
+          els.searchInput.value = "";
+          els.municipalitySelect.value = "";
+          els.categorySelect.value = "";
+          els.statusSelect.value = "usable";
+          els.priceSelect.value = "";
+          els.sortSelect.value = "quality";
+          els.toiletFilter.checked = false;
+          els.latrineFilter.checked = false;
+          els.electricityFilter.checked = false;
+          els.waterFilter.checked = false;
+          els.servicePointsFilter.checked = true;
+          filterPlaces();
         });
       }
 

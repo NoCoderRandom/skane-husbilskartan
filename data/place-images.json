@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-06-30",
+  "source": "Kuraterade fria bilder från Wikimedia Commons. Bilderna visar platsen eller närområdet och är inte hämtade från kommersiella kataloger.",
+  "places": [
+    {
+      "id": "skanor-hamn",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Skan%C3%B6rs_hamn_02.JPG/960px-Skan%C3%B6rs_hamn_02.JPG",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Skan%C3%B6rs_hamn_02.JPG",
+          "title": "Skanörs hamn",
+          "caption": "Skanörs hamn",
+          "author": "Jan Ainali",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "status": "free-license"
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Skan%C3%B6rs_fiskr%C3%B6geri_01.JPG/960px-Skan%C3%B6rs_fiskr%C3%B6geri_01.JPG",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Skan%C3%B6rs_fiskr%C3%B6geri_01.JPG",
+          "title": "Skanörs fiskrögeri",
+          "caption": "Närområde vid Skanörs hamn",
+          "author": "Jan Ainali",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
+      "id": "ystads-smabatshamn",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Marina_w_Ystad_-_panoramio.jpg/960px-Marina_w_Ystad_-_panoramio.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Marina_w_Ystad_-_panoramio.jpg",
+          "title": "Marina i Ystad",
+          "caption": "Ystads marina",
+          "author": "7alaskan",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
+      "id": "kaseberga-stallplats",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/K%C3%A5seberga_hamn1.jpg/960px-K%C3%A5seberga_hamn1.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:K%C3%A5seberga_hamn1.jpg",
+          "title": "Kåseberga hamn",
+          "caption": "Kåseberga hamn",
+          "author": "Anders Lagerås",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "status": "free-license"
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Kaseberga_Hafen.JPG/960px-Kaseberga_Hafen.JPG",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Kaseberga_Hafen.JPG",
+          "title": "Kåseberga hamn",
+          "caption": "Kåseberga hamnområde",
+          "author": "Olaf Meister",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
+      "id": "simrishamn-tobisvik",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Tobisvik%2C_bron.jpg/960px-Tobisvik%2C_bron.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Tobisvik,_bron.jpg",
+          "title": "Tobisvik",
+          "caption": "Tobisvik",
+          "author": "Jorchr",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
+      "id": "angelholm-skaldervikens-hamn",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/MJK_55058_R%C3%B6nne_%C3%A5_%28Sk%C3%A4lderviken%29.jpg/960px-MJK_55058_R%C3%B6nne_%C3%A5_%28Sk%C3%A4lderviken%29.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:MJK_55058_R%C3%B6nne_%C3%A5_(Sk%C3%A4lderviken).jpg",
+          "title": "Rönne å vid Skälderviken",
+          "caption": "Närområde vid Skälderviken",
+          "author": "Martin Kraft",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
+      "id": "hoganas-hamn",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/RescueLarsLindfeltHoganas20090410.JPG/960px-RescueLarsLindfeltHoganas20090410.JPG",
+          "source_url": "https://commons.wikimedia.org/wiki/File:RescueLarsLindfeltHoganas20090410.JPG",
+          "title": "Höganäs hamn",
+          "caption": "Hamn-/kustområde i Höganäs",
+          "author": "Patrik Nylin",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "status": "free-license"
+        }
+      ]
+    }
+  ]
+}

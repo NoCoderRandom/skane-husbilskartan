@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const officialPath = resolve(root, "data", "official-places.json");
+const imagesPath = resolve(root, "data", "place-images.json");
 const osmCachePath = resolve(root, "data", "osm-cache.json");
 const outputPath = resolve(root, "data", "places.json");
 const OVERPASS_ENDPOINTS = [
@@ -155,7 +156,14 @@ function boolField(value, status = "unverified") {
 function mergeField(base, override) {
   if (!override) return base;
   if (!base) return override;
-  return { ...base, ...override };
+  const merged = { ...base, ...override };
+  if (!("text" in override) && "value" in override && override.value !== base.value) {
+    delete merged.text;
+  }
+  if (!("text" in override) && override.status === "confirmed") {
+    delete merged.text;
+  }
+  return merged;
 }
 
 function fieldValue(field) {
@@ -169,6 +177,7 @@ function source(id, type, title, url, checkedAt) {
 function qualityFromStatus(place) {
   const placeStatus = place.place_status?.value;
   if (placeStatus === "closed" || placeStatus === "prohibited") return "blocked";
+  if (placeStatus === "day_parking") return "high";
   const critical = [place.overnight_allowed, place.price, place.coordinates];
   if (critical.some((item) => item?.status === "unclear")) return "high";
   if (critical.some((item) => item?.status === "unverified" || item?.status === "missing")) return "medium";
@@ -262,14 +271,64 @@ function categoryFromTags(tags) {
   return "kandidat";
 }
 
+function labelFromCategory(category) {
+  if (category === "camping") return "Camping";
+  if (category === "parkering") return "Husbilsparkering";
+  if (category === "gästhamn") return "Gästhamn";
+  return "Ställplats";
+}
+
+function placeNameFromTags(element, point) {
+  const tags = element.tags || {};
+  if (tags.name || tags.operator) {
+    return { name: tags.name || tags.operator, name_status: "confirmed" };
+  }
+
+  const category = categoryFromTags(tags);
+  const municipality = cleanMunicipality(tags["addr:municipality"] || tags["is_in:municipality"] || tags["addr:city"], point);
+  const street = [tags["addr:street"], tags["addr:housenumber"]].filter(Boolean).join(" ");
+  if (street) {
+    return { name: `${labelFromCategory(category)} ${street}`, name_status: "derived" };
+  }
+  if (tags["caravan_site:type"] === "farm_shop") {
+    return { name: `Gårdsställplats i ${municipality || "Skåne"}`, name_status: "derived" };
+  }
+  return { name: `${labelFromCategory(category)} i ${municipality || "Skåne"}`, name_status: "derived" };
+}
+
+function overnightFromTags(tags) {
+  const explicit = norm(tags["motorhome:overnight"] || tags["caravan:overnight"] || tags.overnight || "");
+  if (["yes", "ja", "true", "designated", "permissive"].includes(explicit)) {
+    return { value: true, status: "unverified", text: "OSM anger övernattning för husbil." };
+  }
+  if (["no", "nej", "false"].includes(explicit)) {
+    return { value: false, status: "unverified", text: "OSM anger att övernattning inte gäller." };
+  }
+  if (tags.amenity === "parking") {
+    const hours = String(tags.opening_hours || "");
+    if (hours && !/24\/7/i.test(hours)) {
+      return { value: false, status: "unverified", text: `OSM anger öppettid ${hours}, alltså inte tydlig nattplats.` };
+    }
+    return { value: null, status: "unclear", text: "Parkering för husbil i OSM, men nattparkering är inte bekräftad." };
+  }
+  if (tags.tourism === "caravan_site" || tags.tourism === "camp_site") {
+    return { value: true, status: "unverified", text: "OSM klassar platsen som camping/ställplats." };
+  }
+  return { value: null, status: "missing" };
+}
+
 function placeFromOsm(element) {
   const tags = element.tags || {};
-  const name = tags.name || tags.operator || `OSM-plats ${element.type}/${element.id}`;
   const point = elementPoint(element);
+  const { name, name_status } = placeNameFromTags(element, point);
   const id = `osm-${element.type}-${element.id}`;
   const feeText = tags.fee || tags.charge || "";
   const isFree = norm(feeText) === "no" ? true : norm(feeText) === "yes" || !!tags.charge ? false : null;
   const website = tags.website || tags.url || "";
+  const overnight = overnightFromTags(tags);
+  const placeStatus = overnight.value === false
+    ? { value: "day_parking", status: "unverified" }
+    : { value: "candidate", status: "unverified" };
   const facilities = {
     toilet: boolField(tags.toilets),
     shower: boolField(tags.shower),
@@ -282,11 +341,12 @@ function placeFromOsm(element) {
   return {
     id,
     name,
+    name_status,
     municipality: cleanMunicipality(tags["addr:municipality"] || tags["is_in:municipality"] || tags["addr:city"], point),
     category: categoryFromTags(tags),
     coordinates: point,
-    place_status: { value: "candidate", status: "unverified" },
-    overnight_allowed: { value: tags.tourism === "caravan_site" || tags.tourism === "camp_site" ? true : null, status: "unverified" },
+    place_status: placeStatus,
+    overnight_allowed: overnight,
     price: {
       text: feeText ? `OSM anger fee=${feeText}. Verifiera pris hos platsen.` : "Pris saknas i OSM.",
       amount: null,
@@ -296,7 +356,9 @@ function placeFromOsm(element) {
       is_free: isFree
     },
     facilities,
-    notes: "Kandidat från OpenStreetMap. Pris, regler och övernattning måste verifieras mot officiell källa eller skyltning.",
+    notes: overnight.value === false
+      ? "OSM-kandidat som inte ska räknas som säker nattplats utan ny kontroll av skyltning och lokal källa."
+      : "Kandidat från OpenStreetMap. Pris, regler och övernattning måste verifieras mot officiell källa eller skyltning.",
     sources: [
       source(`osm-${element.type}-${element.id}`, "open-data", `OpenStreetMap ${element.type}/${element.id}`, `https://www.openstreetmap.org/${element.type}/${element.id}`, CHECKED_AT),
       ...(website ? [source(`osm-website-${element.type}-${element.id}`, "operator", "Webbplats från OSM", website, CHECKED_AT)] : [])
@@ -324,6 +386,10 @@ function servicePointFromOsm(element) {
 function scoreMatch(seed, place) {
   const names = [seed.name, ...toArray(seed.match)].map(norm).filter(Boolean);
   const target = norm(place.name);
+  if (seed.coordinates && place.coordinates) {
+    const km = distanceKm(seed.coordinates, place.coordinates);
+    if (km <= 0.12) return 95;
+  }
   if (!target || !names.length) return 0;
   if (names.some((name) => target === name)) return 100;
   if (names.some((name) => target.includes(name) || name.includes(target))) return 80;
@@ -342,6 +408,7 @@ function mergePlaces(osmPlace, seed) {
     ...seed,
     id: seed.id || base.id,
     name: seed.name || base.name,
+    name_status: seed.name_status || (seed.name ? "confirmed" : base.name_status),
     municipality: seed.municipality || base.municipality || "",
     category: seed.category || base.category || "ställplats",
     coordinates: seed.coordinates?.lat && seed.coordinates?.lng ? seed.coordinates : base.coordinates || seed.coordinates,
@@ -383,6 +450,10 @@ function dedupePlaces(places) {
 
 async function main() {
   const official = JSON.parse(await readFile(officialPath, "utf8"));
+  const imageData = existsSync(imagesPath)
+    ? JSON.parse(await readFile(imagesPath, "utf8"))
+    : { places: [] };
+  const imagesByPlaceId = new Map(toArray(imageData.places).map((item) => [item.id, toArray(item.images)]));
   const osmData = await fetchOverpass();
   await mkdir(dirname(osmCachePath), { recursive: true });
   await writeFile(osmCachePath, `${JSON.stringify(osmData)}\n`, "utf8");
@@ -410,6 +481,7 @@ async function main() {
   });
   const places = dedupePlaces([...mergedOfficial, ...remainingOsm])
     .filter((place) => place.coordinates && Number.isFinite(place.coordinates.lat) && Number.isFinite(place.coordinates.lng))
+    .map((place) => imagesByPlaceId.has(place.id) ? { ...place, images: imagesByPlaceId.get(place.id) } : place)
     .sort((a, b) => {
       const statusOrder = { active: 0, candidate: 1, closed: 2, prohibited: 3 };
       return (statusOrder[a.place_status?.value] ?? 9) - (statusOrder[b.place_status?.value] ?? 9)
@@ -427,6 +499,7 @@ async function main() {
       places: places.length,
       officialSeeds: toArray(official.places).length,
       osmCandidates: remainingOsm.length,
+      withImages: places.filter((place) => toArray(place.images).length).length,
       servicePoints: servicePoints.length
     },
     places,
