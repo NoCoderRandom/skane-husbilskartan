@@ -1383,19 +1383,56 @@
         "value": true,
         "status": "confirmed"
       },
+      "capacity": {
+        "value": 14,
+        "status": "confirmed"
+      },
       "price": {
-        "text": "Pris enligt golfklubbens ställplatssida.",
-        "amount": null,
+        "text": "Ordinarie pris 300 kr/natt inkl. el och 200 kr/natt vid golfspel enligt Romeleåsens GK.",
+        "amount": 200,
         "currency": "SEK",
         "period": "night",
-        "status": "unverified"
+        "status": "confirmed",
+        "is_free": false
       },
+      "season": {
+        "text": "Öppet 29 mars till 31 oktober enligt Romeleåsens GK.",
+        "status": "confirmed"
+      },
+      "facilities": {
+        "toilet": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Samtliga 14 platser har el enligt Romeleåsens GK."
+        },
+        "grey_water_disposal": {
+          "value": null,
+          "status": "planned",
+          "text": "Golfklubben anger att förberedelser pågår för möjlighet att tömma gråvatten."
+        }
+      },
+      "notes": "Ställplatserna ligger intill tee på hål 9, nära klubbhus, Romele Kro och första tee. Incheckning från 14:00 och utcheckning senast 13:00 enligt klubben. Klubben anger att förberedelser pågår för möjlighet att tömma gråvatten.",
       "sources": [
         {
           "id": "romeleasens-gk-stallplats",
           "type": "operator",
           "title": "Romeleåsens Golfklubb - ställplats för husbil och husvagn",
           "url": "https://ragk.se/boende/stallplats-for-husbil-och-husvagn/",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "romeleasens-gk-boka-stallplats",
+          "type": "operator",
+          "title": "Romeleåsens GK - boka ställplats",
+          "url": "https://ragk.se/bo/boka-stallplats/",
           "checked_at": "2026-06-30"
         }
       ]
@@ -2636,12 +2673,18 @@
         "value": true,
         "status": "confirmed"
       },
+      "capacity": {
+        "value": 100,
+        "status": "confirmed",
+        "text": "Cirka 100 campingtomter enligt Romeleslingan."
+      },
       "price": {
-        "text": "Pris enligt campingens egen webbplats/bokning.",
+        "text": "Betald campingplats; aktuell dygnsavgift visas i Orebackens bokning.",
         "amount": null,
         "currency": "SEK",
         "period": "night",
-        "status": "unverified"
+        "status": "unverified",
+        "is_free": false
       },
       "facilities": {
         "toilet": {
@@ -2655,14 +2698,27 @@
         "black_water_disposal": {
           "value": true,
           "status": "confirmed"
+        },
+        "laundry": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Tvättstuga med tvättmaskin och torktumlare enligt Orebackens Camping."
         }
       },
+      "notes": "Camping nära Orans friluftsområde och Orebadet. Servicehus med tillgänglighetsanpassad toalett, dusch, diskutrymme, kök och tvättstuga.",
       "sources": [
         {
           "id": "orebackens-camping",
           "type": "operator",
           "title": "Orebackens Camping",
           "url": "https://www.orebacken.se/",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "romeleslingan-orebackens-camping",
+          "type": "official-tourism",
+          "title": "Romeleslingan - Orebackens camping",
+          "url": "https://romeleslingan.se/orebackens-camping/",
           "checked_at": "2026-06-30"
         }
       ]
