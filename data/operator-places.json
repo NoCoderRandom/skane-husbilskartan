@@ -1130,11 +1130,12 @@
         "status": "confirmed"
       },
       "price": {
-        "text": "Pris enligt hamnens bokningssida.",
+        "text": "Betald motorhome pitch via hamnens bokningssida; aktuellt belopp visas i bokningen.",
         "amount": null,
         "currency": "SEK",
         "period": "night",
-        "status": "unverified"
+        "status": "unverified",
+        "is_free": false
       },
       "sources": [
         {
@@ -1245,12 +1246,49 @@
         "status": "confirmed"
       },
       "price": {
-        "text": "Pris enligt Lunds kommuns campingsida/bokning.",
-        "amount": null,
+        "text": "325 kr per dygn för husbil, husvagn eller bil med tält för max 4 personer enligt Lunds kommun. El kostar 55 kr extra.",
+        "amount": 325,
         "currency": "SEK",
         "period": "night",
-        "status": "unverified"
+        "status": "confirmed",
+        "is_free": false
       },
+      "capacity": {
+        "value": 20,
+        "status": "confirmed",
+        "text": "Plats för 20 husvagnar eller husbilar enligt Lunds kommun."
+      },
+      "facilities": {
+        "toilet": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Elavgift 55 kr enligt Lunds kommun."
+        },
+        "black_water_disposal": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Lunds kommun anger att husvagnstoaletter och fasta tankar bara får tömmas på anvisad plats."
+        },
+        "grey_water_disposal": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Lunds kommun anger att fasta tankar bara får tömmas på anvisad plats."
+        },
+        "laundry": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Tvättmaskin och torktumlare ingår vid köp av campingplats enligt Lunds kommun."
+        }
+      },
+      "notes": "Max 7 dygn. Vid köp av campingplats ingår inträde till Källbybadet samt tillgång till dusch, toalett, kök, kyl, frys, mikrougn, tvättmaskin och torktumlare. Friluftsbadet har kiosk under badets öppettider.",
       "sources": [
         {
           "id": "lund-kallby-camping",
@@ -3147,11 +3185,12 @@
         "status": "confirmed"
       },
       "price": {
-        "text": "Gästhamnsguiden anger avgift 300 kr, inklusive el, dusch/toalett, färskvatten och septitömning. Kontrollera aktuellt pris hos Lagunen.",
-        "amount": 300,
+        "text": "325 kr per natt enligt Lagunen. Priset inkluderar el, vatten, latrintömning, wifi och dusch/wc.",
+        "amount": 325,
         "currency": "SEK",
         "period": "night",
-        "status": "unverified"
+        "status": "confirmed",
+        "is_free": false
       },
       "facilities": {
         "toilet": {
@@ -3170,11 +3209,27 @@
           "value": true,
           "status": "confirmed"
         },
+        "black_water_disposal": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Lagunen anger tömning av svart vatten i gästavgiften."
+        },
+        "grey_water_disposal": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Lagunen anger tömning av gråvatten i gästavgiften."
+        },
         "waste": {
           "value": true,
           "status": "confirmed"
+        },
+        "wifi": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Wifi ingår enligt Lagunens gästsida; täckningen anges som begränsad till husbilsparkering och klubbhusområdet."
         }
       },
+      "notes": "Ingen bokning behövs enligt Lagunen. Parkeringen är öppen året runt i mån av plats, med 60 platser under sommarsäsongen och 24 på vintern.",
       "sources": [
         {
           "id": "lagunen-husbil",
@@ -3188,6 +3243,13 @@
           "type": "operator",
           "title": "Lagunen - praktisk info",
           "url": "https://lagunen.nu/praktisk-info/",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "lagunen-gaster",
+          "type": "operator",
+          "title": "Lagunen - gäster och ställplats",
+          "url": "https://lagunen.nu/gaster/",
           "checked_at": "2026-06-30"
         },
         {
@@ -4775,7 +4837,8 @@
         "amount": null,
         "currency": "SEK",
         "period": "night",
-        "status": "unverified"
+        "status": "confirmed",
+        "is_free": false
       },
       "facilities": {
         "toilet": {
@@ -4795,12 +4858,27 @@
           "status": "confirmed",
           "text": "First Camp anger fast latrintömning på campingen."
         },
+        "fresh_water": {
+          "value": true,
+          "status": "confirmed",
+          "text": "First Camp anger påfyllning av vatten vid tömningsstationen."
+        },
         "waste": {
           "value": true,
           "status": "confirmed"
+        },
+        "wifi": {
+          "value": true,
+          "status": "confirmed",
+          "text": "First Camp anger gratis surfzon."
+        },
+        "laundry": {
+          "value": true,
+          "status": "confirmed",
+          "text": "First Camp anger att passagebricka kan laddas för bland annat tvättmaskiner."
         }
       },
-      "notes": "Camping vid Strandgatan 101 i Limhamn med campingplatser för husbil/husvagn/tält enligt First Camp.",
+      "notes": "Camping vid Strandgatan 101 i Limhamn med campingplatser för husbil/husvagn/tält enligt First Camp. Dusch ingår, servicehus finns på området och vissa vattenposter/latrintömning kan vara begränsade vid kallare väder.",
       "sources": [
         {
           "id": "first-camp-sibbarp-malmo",
