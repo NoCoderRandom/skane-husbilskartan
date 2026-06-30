@@ -919,11 +919,12 @@
         "status": "confirmed"
       },
       "price": {
-        "text": "Kontrollera lokal skyltning och kommunens sida.",
+        "text": "Övernattning på markerad del sker mot avgift enligt Kristianstads kommun. Belopp saknas i kommuntexten.",
         "amount": null,
         "currency": "SEK",
         "period": "night",
-        "status": "unverified"
+        "status": "unverified",
+        "is_free": false
       },
       "facilities": {},
       "notes": "Kommunal sida anger övernattning vid markerad del.",
@@ -959,14 +960,30 @@
         "value": true,
         "status": "confirmed"
       },
+      "season": {
+        "text": "Öppet året runt enligt Rigelejestrand Camping.",
+        "status": "confirmed"
+      },
       "price": {
-        "text": "Pris hos extern camping/operatör.",
+        "text": "Betald camping/bokningsförfrågan hos Rigelejestrand Camping; exakt dygnspris saknas i öppen text.",
         "amount": null,
         "currency": "SEK",
         "period": "night",
-        "status": "unverified"
+        "status": "unverified",
+        "is_free": false
       },
-      "facilities": {},
+      "facilities": {
+        "toilet": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Nybyggt servicehus med familjedusch, individuella duschar och toaletter enligt Rigelejestrand Camping."
+        }
+      },
+      "notes": "Mindre, privatägd havscamping vid Rigeleje. Operatören anger platser för husvagnar och husbilar samt servicehus, kök, utedisk och reception.",
       "sources": [
         {
           "id": "kristianstad-husbil",
@@ -974,6 +991,13 @@
           "title": "Kristianstads kommun - husbil",
           "url": "https://www.kristianstad.se/trafikochresor/trafikochgator/parkering/husbil.4469.html",
           "checked_at": "2026-06-29"
+        },
+        {
+          "id": "rigelejestrand-camping",
+          "type": "operator",
+          "title": "Rigelejestrand Camping",
+          "url": "https://www.rigelejestrand.se/",
+          "checked_at": "2026-06-30"
         }
       ]
     },

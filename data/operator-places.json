@@ -1013,13 +1013,53 @@
         "value": true,
         "status": "confirmed"
       },
+      "capacity": {
+        "value": 83,
+        "status": "confirmed",
+        "text": "53 platser med el och cirka 30 platser utan el enligt Charlottsborgs Camping."
+      },
       "price": {
-        "text": "Pris enligt campingens egen webbplats/bokning.",
-        "amount": null,
+        "text": "Prislista 2026: ställplats 200 kr, camping utan el 300 kr och camping med el 350 kr; extra person 50 kr enligt Charlottsborgs Camping.",
+        "amount": 200,
         "currency": "SEK",
         "period": "night",
-        "status": "unverified"
+        "status": "confirmed"
       },
+      "season": {
+        "text": "Högsäsong 15 maj till 30 september enligt prislistan 2026.",
+        "status": "confirmed"
+      },
+      "facilities": {
+        "toilet": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Ställplatspriset anger endast toalett; campingområdet anger toaletter."
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed",
+          "text": "53 platser med el enligt Charlottsborgs Camping."
+        },
+        "fresh_water": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "black_water_disposal": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Latrintömning enligt Charlottsborgs Camping."
+        },
+        "grey_water_disposal": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Gråvattentömning enligt Charlottsborgs Camping."
+        }
+      },
+      "notes": "Fullservice nära Kristianstad centrum med servicebyggnad, tvättstuga, reception, grillzoner och lekplats enligt kommunen/operatören.",
       "sources": [
         {
           "id": "charlottsborgs-camping",
@@ -1563,18 +1603,72 @@
         "status": "confirmed"
       },
       "price": {
-        "text": "Pris enligt First Camps bokning/prislista.",
+        "text": "Betald campingplats; pris visas i First Camps bokning och varierar efter datum och plats.",
         "amount": null,
         "currency": "SEK",
         "period": "night",
-        "status": "unverified"
+        "status": "unverified",
+        "is_free": false
       },
+      "season": {
+        "text": "Öppet året om enligt First Camp.",
+        "status": "confirmed"
+      },
+      "facilities": {
+        "toilet": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Tillgång till servicehus ingår."
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Dusch är gratis enligt First Camp."
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed",
+          "text": "På platser med el ingår ström i priset."
+        },
+        "fresh_water": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Kristianstads kommun anger möjlighet att fylla på färskvatten."
+        },
+        "black_water_disposal": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Tömningsstation finns i servicehusen enligt First Camp."
+        },
+        "grey_water_disposal": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Station för fasta tankar finns vid husbilsplatserna enligt First Camp."
+        },
+        "waste": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "wifi": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Wifi finns på hela campingområdet enligt First Camp."
+        }
+      },
+      "notes": "Asfalterade husbilsplatser med uteplatser nära Täppets strand. Servicebutik och andra enheter är säsongsberoende.",
       "sources": [
         {
           "id": "firstcamp-ahus",
           "type": "operator",
           "title": "First Camp Åhus - Kristianstad",
           "url": "https://firstcamp.se/ahus/",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "kristianstad-husbil-firstcamp",
+          "type": "official",
+          "title": "Kristianstads kommun - First Camp Åhus",
+          "url": "https://www.kristianstad.se/trafikochresor/trafikochgator/parkering/husbil.4469.html",
           "checked_at": "2026-06-30"
         }
       ]
