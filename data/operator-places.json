@@ -695,13 +695,64 @@
         "value": true,
         "status": "confirmed"
       },
+      "capacity": {
+        "value": 18,
+        "status": "confirmed",
+        "text": "18 motorhome/caravan sites plus 5 tent spots according to Visit Örestrand."
+      },
       "price": {
-        "text": "Pris enligt campingens egen webbplats/bokning.",
-        "amount": null,
+        "text": "Motorhome/caravan pitch 375 kr before 17 June 2026; high season 450-500 kr depending on zone according to Visit Örestrand.",
+        "amount": 375,
         "currency": "SEK",
         "period": "night",
-        "status": "unverified"
+        "status": "confirmed"
       },
+      "facilities": {
+        "toilet": {
+          "value": true,
+          "status": "confirmed",
+          "text": "7 toilets during summer according to Visit Örestrand."
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed",
+          "text": "5 showers during summer according to Visit Örestrand."
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Electricity is included on all motorhome/caravan pitches."
+        },
+        "fresh_water": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "black_water_disposal": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Chemical disposal is available on-site according to Visit Örestrand."
+        },
+        "grey_water_disposal": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Greywater disposal is available at the port of Höganäs according to Visit Örestrand."
+        },
+        "waste": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Recycling station at Visit Örestrand."
+        },
+        "wifi": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "laundry": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Washing machine and dryer are available for an extra fee."
+        }
+      },
+      "notes": "Camping by the sea with online/phone booking. Check-in from 13:00 and check-out by 11:00 according to Visit Örestrand.",
       "sources": [
         {
           "id": "destination-strandbaden-camping",
@@ -735,12 +786,50 @@
         "status": "confirmed"
       },
       "price": {
-        "text": "Pris enligt First Camps bokning/prislista.",
+        "text": "Betald campingplats; pris visas i First Camps bokning och varierar efter datum och plats.",
         "amount": null,
         "currency": "SEK",
         "period": "night",
-        "status": "unverified"
+        "status": "unverified",
+        "is_free": false
       },
+      "season": {
+        "text": "Öppet året om enligt First Camp.",
+        "status": "confirmed"
+      },
+      "facilities": {
+        "toilet": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Tillgång till servicehus ingår."
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Tillgång till servicehus ingår."
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed",
+          "text": "På platser med el ingår ström i priset."
+        },
+        "black_water_disposal": {
+          "value": true,
+          "status": "confirmed",
+          "text": "First Camp anger latrintömning för både fast och lös tank."
+        },
+        "waste": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Avfallsstationer med sortering enligt First Camp."
+        },
+        "wifi": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Wifi finns på begränsade delar av området."
+        }
+      },
+      "notes": "Camping med stugor, husbil, husvagn och tält. Bistro, butik, pool, barnaktiviteter och servicebutik är säsongsberoende.",
       "sources": [
         {
           "id": "firstcamp-molle-hoganas",
@@ -1686,11 +1775,12 @@
         "status": "confirmed"
       },
       "price": {
-        "text": "Pris saknas i kommunens ställplatsinformation. Kontrollera hos platsen.",
+        "text": "Betald campingplats/bokningsbar plats; pris varierar och ska kontrolleras hos Bläsinge Gård/Campcation.",
         "amount": null,
         "currency": "SEK",
         "period": "night",
-        "status": "unverified"
+        "status": "unverified",
+        "is_free": false
       },
       "facilities": {
         "toilet": {
@@ -1724,6 +1814,13 @@
           "type": "official",
           "title": "Höganäs kommun - Bläsinge gård i Jonstorp",
           "url": "https://www.hoganas.se/boende-trafik--miljo/trafik/parkering/parkering-och-stallplats-for-husbilar/blasinge-gard-i-jonstorp.html",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "blasinge-gard-campcation",
+          "type": "third-party",
+          "title": "Campcation - Bläsinge Gård / Kullabygden",
+          "url": "https://www.campcation.com/sv/campsite/blasinge-gard-kullabygden/",
           "checked_at": "2026-06-30"
         }
       ]
@@ -1830,11 +1927,12 @@
         "status": "confirmed"
       },
       "price": {
-        "text": "Pris saknas i kommunens ställplatsinformation. Kontrollera hos platsens bokning.",
+        "text": "Betald ställplats/bokningsbar plats; exakt pris saknas i öppen primärkälla och ska kontrolleras vid bokning.",
         "amount": null,
         "currency": "SEK",
         "period": "night",
-        "status": "unverified"
+        "status": "unverified",
+        "is_free": false
       },
       "facilities": {
         "toilet": {
@@ -1868,6 +1966,13 @@
           "type": "official",
           "title": "Höganäs kommun - Paradiset på Kulla",
           "url": "https://www.hoganas.se/boende-trafik--miljo/trafik/parkering/parkering-och-stallplats-for-husbilar/paradiset-pa-kulla.html",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "paradiset-pa-kulla-campcation",
+          "type": "third-party",
+          "title": "Campcation - Paradiset på Kulla",
+          "url": "https://www.campcation.com/sv/campsite/paradiset-pa-kulla/",
           "checked_at": "2026-06-30"
         }
       ]
@@ -1974,7 +2079,8 @@
         "amount": null,
         "currency": "SEK",
         "period": "night",
-        "status": "unverified"
+        "status": "unverified",
+        "is_free": false
       },
       "facilities": {
         "toilet": {

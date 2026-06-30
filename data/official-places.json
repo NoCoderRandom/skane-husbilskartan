@@ -1785,7 +1785,7 @@
         "status": "confirmed"
       },
       "season": {
-        "text": "Sommarsäsong enligt Höganäs kommuns information.",
+        "text": "Öppen 1 juni till 31 augusti enligt Höganäs kommun.",
         "status": "confirmed"
       },
       "price": {
@@ -1793,25 +1793,47 @@
         "amount": null,
         "currency": "SEK",
         "period": "night",
-        "status": "unverified"
+        "status": "unverified",
+        "is_free": false
       },
       "facilities": {
         "toilet": {
           "value": true,
-          "status": "unverified"
+          "status": "confirmed"
+        },
+        "electricity": {
+          "value": false,
+          "status": "confirmed"
+        },
+        "fresh_water": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "black_water_disposal": {
+          "value": false,
+          "status": "confirmed"
         },
         "waste": {
           "value": true,
-          "status": "unverified"
+          "status": "confirmed"
+        },
+        "shower": {
+          "value": false,
+          "status": "confirmed"
+        },
+        "wifi": {
+          "value": false,
+          "status": "confirmed"
         }
       },
+      "notes": "Kommunal ställplats vid infarten till Kullaberg. Höganäs kommun anger toalett, dricksvatten och sophantering men ingen el, dusch, wifi eller latrintömning.",
       "sources": [
         {
-          "id": "hoganas-stallplatser",
+          "id": "hoganas-molle-kapell",
           "type": "official",
-          "title": "Höganäs kommun - parkering och ställplats för husbilar",
-          "url": "https://www.hoganas.se/boende-trafik--miljo/trafik/parkering/parkering-och-stallplats-for-husbilar.html",
-          "checked_at": "2026-06-29"
+          "title": "Höganäs kommun - Mölle kapell",
+          "url": "https://www.hoganas.se/boende-trafik--miljo/trafik/parkering/parkering-och-stallplats-for-husbilar/molle-kapell.html",
+          "checked_at": "2026-06-30"
         }
       ]
     },
@@ -1837,34 +1859,63 @@
         "status": "confirmed"
       },
       "capacity": {
-        "value": 34,
+        "value": 35,
+        "status": "confirmed",
+        "text": "35+ husbilar enligt Höganäs Båtsällskap."
+      },
+      "season": {
+        "text": "Öppen 1 juni till 31 augusti enligt Höganäs Båtsällskap.",
         "status": "confirmed"
       },
       "price": {
-        "text": "Betald ställplats. Kontrollera aktuell avgift hos kommunen/hamnen.",
-        "amount": null,
+        "text": "250 kr/dygn utan el och 290 kr/dygn inklusive el enligt Höganäs Båtsällskap.",
+        "amount": 250,
         "currency": "SEK",
-        "period": "night",
-        "status": "unverified"
+        "period": "day",
+        "status": "confirmed"
       },
       "facilities": {
         "toilet": {
-          "value": null,
-          "status": "unclear"
+          "value": true,
+          "status": "confirmed",
+          "text": "Tillgång till båtklubbens och roddklubbens servicebyggnader."
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Tillgång till servicebyggnader enligt Höganäs Båtsällskap."
         },
         "electricity": {
-          "value": null,
-          "status": "unclear"
+          "value": true,
+          "status": "confirmed",
+          "text": "El finns till de flesta platser; pris med el är 290 kr/dygn."
         },
         "fresh_water": {
-          "value": null,
-          "status": "unclear"
+          "value": true,
+          "status": "confirmed"
         },
         "black_water_disposal": {
-          "value": null,
-          "status": "unclear"
+          "value": true,
+          "status": "confirmed",
+          "text": "Grå/svartvatten-tömning anges av Höganäs Båtsällskap."
+        },
+        "grey_water_disposal": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Grå/svartvatten-tömning anges av Höganäs Båtsällskap."
+        },
+        "waste": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Miljöstation med källsortering finns enligt Höganäs Båtsällskap."
+        },
+        "wifi": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Wifi finns men räckvidden till alla bilar kan inte garanteras."
         }
       },
+      "notes": "Husbilar kan inte bokas i förväg och husvagnar är inte tillåtna. Bilar ska stå med högersidan mot hamnbassängen enligt räddningstjänstens regler.",
       "sources": [
         {
           "id": "hoganas-stallplatser",
@@ -1872,6 +1923,13 @@
           "title": "Höganäs kommun - parkering och ställplats för husbilar",
           "url": "https://www.hoganas.se/boende-trafik--miljo/trafik/parkering/parkering-och-stallplats-for-husbilar.html",
           "checked_at": "2026-06-29"
+        },
+        {
+          "id": "hoganas-batsallskap-stallplats",
+          "type": "operator",
+          "title": "Höganäs Båtsällskap - husbil/ställplats",
+          "url": "https://hbs.se/g-stb-t/stallplats",
+          "checked_at": "2026-06-30"
         }
       ]
     },
