@@ -154,6 +154,36 @@
       ]
     },
     {
+      "id": "hoganas-firstcamp-molle",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/M%C3%B6lle_hamn.JPG/960px-M%C3%B6lle_hamn.JPG",
+          "source_url": "https://commons.wikimedia.org/wiki/File:M%C3%B6lle_hamn.JPG",
+          "title": "Mölle hamn",
+          "caption": "Mölle hamn, närområde till campingen",
+          "author": "Peterappelros",
+          "license": "CC BY 3.0",
+          "license_url": "https://creativecommons.org/licenses/by/3.0/",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
+      "id": "hoganas-destination-strandbaden",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Strandbaden_h%C3%B6gsn%C3%A4s_01.jpg/960px-Strandbaden_h%C3%B6gsn%C3%A4s_01.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Strandbaden_h%C3%B6gsn%C3%A4s_01.jpg",
+          "title": "Strandbaden",
+          "caption": "Strandbaden i Höganäs, närområde till campingen",
+          "author": "Michelle Lindeberg",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
       "id": "hassleholm-tykarpsgrottan-camping",
       "images": [
         {
@@ -164,6 +194,36 @@
           "author": "Susanne Nilsson",
           "license": "CC BY-SA 4.0",
           "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
+      "id": "helsingborg-domstens-hamn",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Ready_for_action_%285672587627%29.jpg/960px-Ready_for_action_%285672587627%29.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Ready_for_action_(5672587627).jpg",
+          "title": "Domstens hamn",
+          "caption": "Domstens hamn",
+          "author": "Håkan Dahlström",
+          "license": "CC BY 2.0",
+          "license_url": "https://creativecommons.org/licenses/by/2.0/",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
+      "id": "hoganas-lerbergets-camping",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Lerberget_harbour.jpg/960px-Lerberget_harbour.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Lerberget_harbour.jpg",
+          "title": "Lerbergets hamn",
+          "caption": "Lerbergets hamn, nära campingen",
+          "author": "Peterappelros",
+          "license": "CC BY 3.0",
+          "license_url": "https://creativecommons.org/licenses/by/3.0/",
           "status": "free-license"
         }
       ]

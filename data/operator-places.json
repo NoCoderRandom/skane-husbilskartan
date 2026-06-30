@@ -139,19 +139,537 @@
         "value": true,
         "status": "confirmed"
       },
+      "season": {
+        "text": "1 maj till 30 september 2026 enligt Tykarpsgrottan.",
+        "status": "confirmed"
+      },
       "price": {
-        "text": "Pris enligt operatörens egen webbplats/bokning.",
-        "amount": null,
+        "text": "350 kr/dygn för husbil eller husvagn inklusive el enligt Tykarpsgrottan.",
+        "amount": 350,
         "currency": "SEK",
         "period": "night",
-        "status": "unverified"
+        "status": "confirmed"
       },
+      "facilities": {
+        "toilet": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "fresh_water": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "black_water_disposal": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Latrintömning för kassettoa enligt Tykarpsgrottan."
+        },
+        "grey_water_disposal": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "waste": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Sopsortering enligt Tykarpsgrottan."
+        },
+        "wifi": {
+          "value": true,
+          "status": "confirmed"
+        }
+      },
+      "notes": "Natursköna och generösa ställplatser för husbil och husvagn. Alla platser har el och vatten. Bokning och betalning kan göras online eller på plats.",
       "sources": [
         {
           "id": "tykarpsgrottan-camping",
           "type": "operator",
-          "title": "Tykarpsgrottan - camping och stugor",
-          "url": "https://tykarpsgrottan.net/camping-stugor",
+          "title": "Tykarpsgrottan - ställplatser",
+          "url": "https://tykarpsgrottan.se/stallplatser/",
+          "checked_at": "2026-06-30"
+        }
+      ]
+    },
+    {
+      "id": "hassleholm-hasslegardens-golfklubb",
+      "name": "Hässlegårdens Golfklubb",
+      "municipality": "Hässleholm",
+      "category": "ställplats",
+      "coordinates": {
+        "lat": 56.1513,
+        "lng": 13.7534,
+        "status": "unverified"
+      },
+      "match": [
+        "Hässlegårdens Golfklubb",
+        "Hässlegårdens GK",
+        "Hasslegardens Golfklubb"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "capacity": {
+        "value": 11,
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "250 kr/natt för golfande gäster och 350 kr/natt för övriga gäster enligt Hässlegårdens Golfklubb.",
+        "amount": 250,
+        "currency": "SEK",
+        "period": "night",
+        "status": "confirmed"
+      },
+      "facilities": {
+        "toilet": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed"
+        }
+      },
+      "notes": "Elplatser på gräs nära klubbhuset. Omklädningsrum med dusch och toalett finns i klubbhuset, öppet 06:00-22:00. Incheckning från 15:00 och utcheckning senast 14:00.",
+      "sources": [
+        {
+          "id": "hasslegardens-gk-stallplats",
+          "type": "operator",
+          "title": "Hässlegårdens Golfklubb - ställplats",
+          "url": "https://hggk.se/gast/stallplats/",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "visit-hassleholm-stallplatser",
+          "type": "official-tourism",
+          "title": "Visit Hässleholm - ställplatser",
+          "url": "https://www.visithassleholm.se/vh/boende/stallplatser-",
+          "checked_at": "2026-06-30"
+        }
+      ]
+    },
+    {
+      "id": "hassleholm-asmoarp-natur",
+      "name": "Asmoarp Natur",
+      "municipality": "Hässleholm",
+      "category": "ställplats",
+      "coordinates": {
+        "lat": 56.07976,
+        "lng": 13.761615,
+        "status": "unverified"
+      },
+      "match": [
+        "Asmoarp Natur",
+        "Ställplats Asmoarp"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "capacity": {
+        "value": 10,
+        "status": "confirmed",
+        "text": "Minst tio platser vid dammarna; även platser vid gården enligt Asmoarp."
+      },
+      "price": {
+        "text": "275 kr/dygn utan el och 320 kr/dygn med el enligt Asmoarp Natur. Bokningsavgift kan tillkomma via Campio.",
+        "amount": 275,
+        "currency": "SEK",
+        "period": "night",
+        "status": "confirmed"
+      },
+      "facilities": {
+        "toilet": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed",
+          "text": "El finns endast vid gårdens platser enligt Asmoarp."
+        },
+        "fresh_water": {
+          "value": true,
+          "status": "confirmed"
+        }
+      },
+      "notes": "Ställplatser vid dammarna och vid gården. Dammplatserna har toalett, färskvatten och dusch en promenad bort; gårdsplatserna har el, färskvatten, dusch och toa nära.",
+      "sources": [
+        {
+          "id": "asmoarp-natur-stallplats",
+          "type": "operator",
+          "title": "Asmoarp Natur - ställplatser",
+          "url": "https://www.asmoarp.se/st%C3%A4llplats-asmoarp-natur",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "visit-hassleholm-stallplatser",
+          "type": "official-tourism",
+          "title": "Visit Hässleholm - ställplatser",
+          "url": "https://www.visithassleholm.se/vh/boende/stallplatser-",
+          "checked_at": "2026-06-30"
+        }
+      ]
+    },
+    {
+      "id": "hassleholm-skyrup-golf-hotell",
+      "name": "Skyrup Golf & Hotell",
+      "municipality": "Hässleholm",
+      "category": "ställplats",
+      "coordinates": {
+        "lat": 56.132735,
+        "lng": 13.670987,
+        "status": "unverified"
+      },
+      "match": [
+        "Skyrup Golf & Hotell",
+        "Skyrups Golfklubb",
+        "Skyrup GK"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed",
+        "text": "Gäller golfande gäster enligt Skyrup Golf & Hotell."
+      },
+      "capacity": {
+        "value": 4,
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "250 kr/natt för uppställningsplats med el; greenfee tillkommer enligt Skyrup Golf & Hotell.",
+        "amount": 250,
+        "currency": "SEK",
+        "period": "night",
+        "status": "confirmed"
+      },
+      "facilities": {
+        "toilet": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Toaletter finns cirka 100 meter bort vid Golfhuset."
+        },
+        "shower": {
+          "value": true,
+          "status": "unverified",
+          "text": "Omklädningsrum finns vid Golfhuset; dusch är inte uttryckligen angiven i ställplatsstycket."
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed"
+        }
+      },
+      "notes": "Fyra uppställningsplatser med el vid nedre infarten, intill lodgerna och korthålsbanan. Drop-in endast i mån av plats.",
+      "sources": [
+        {
+          "id": "skyrup-golfpaket-stallplats",
+          "type": "operator",
+          "title": "Skyrup Golf & Hotell - golfpaket och ställplats",
+          "url": "https://www.skyrupsgk.se/golfpaket-i-skane/",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "visit-hassleholm-stallplatser",
+          "type": "official-tourism",
+          "title": "Visit Hässleholm - ställplatser",
+          "url": "https://www.visithassleholm.se/vh/boende/stallplatser-",
+          "checked_at": "2026-06-30"
+        }
+      ]
+    },
+    {
+      "id": "hassleholm-tostarps-camping",
+      "name": "Tostarps Camping",
+      "municipality": "Hässleholm",
+      "category": "camping",
+      "coordinates": {
+        "lat": 56.122474,
+        "lng": 13.681139,
+        "status": "confirmed"
+      },
+      "match": [
+        "Tostarps Camping",
+        "Tostarpsgårdens camping"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "capacity": {
+        "value": 50,
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "Dygnspris 2026: 380 kr 1/3-17/6 och 9/8-30/9, 395 kr 18/6-8/8; el upp till 10 kWh kostar 60 kr enligt Tostarps Camping.",
+        "amount": 380,
+        "currency": "SEK",
+        "period": "night",
+        "status": "confirmed"
+      },
+      "facilities": {
+        "electricity": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "fresh_water": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Vattenposter finns på sex platser på campingen enligt Tostarps Camping."
+        }
+      },
+      "notes": "Terrasserad camping med utsikt över bokskog och Finjasjön. Operatören rekommenderar onlinebokning för tillgänglighet och bästa pris.",
+      "sources": [
+        {
+          "id": "tostarps-camping-stugor",
+          "type": "operator",
+          "title": "Tostarps Camping - camping och stugor",
+          "url": "https://www.tostarpscamping.com/camping-stugor",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "visit-hassleholm-stallplatser",
+          "type": "official-tourism",
+          "title": "Visit Hässleholm - ställplatser",
+          "url": "https://www.visithassleholm.se/vh/boende/stallplatser-",
+          "checked_at": "2026-06-30"
+        }
+      ]
+    },
+    {
+      "id": "hassleholm-vinslovs-camping",
+      "name": "Vinslövs Camping",
+      "municipality": "Hässleholm",
+      "category": "camping",
+      "coordinates": {
+        "lat": 56.110126,
+        "lng": 13.911842,
+        "status": "confirmed"
+      },
+      "match": [
+        "Vinslövs Camping",
+        "Vinslovs Camping"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "season": {
+        "text": "Öppet året runt enligt Vinslövs Camping.",
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "Husbil 365-395 kr/dygn inklusive el beroende på datum enligt Vinslövs Camping.",
+        "amount": 365,
+        "currency": "SEK",
+        "period": "night",
+        "status": "confirmed"
+      },
+      "facilities": {
+        "shower": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Dusch är gratis enligt prislistan."
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Husbilpriset anges inklusive el."
+        }
+      },
+      "notes": "Incheckning 14:00-20:00 och utcheckning före 14:00. Café, bangolf och enklare turistinformation finns under säsong enligt campingen.",
+      "sources": [
+        {
+          "id": "vinslovs-camping-priser",
+          "type": "operator",
+          "title": "Vinslövs Camping - priser",
+          "url": "https://vinslovscamping.se/camp/priser.html",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "vinslovs-camping-hitta-hit",
+          "type": "operator",
+          "title": "Vinslövs Camping - hitta hit",
+          "url": "https://vinslovscamping.se/camp/hitta%20hit.html",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "visit-hassleholm-stallplatser",
+          "type": "official-tourism",
+          "title": "Visit Hässleholm - ställplatser",
+          "url": "https://www.visithassleholm.se/vh/boende/stallplatser-",
+          "checked_at": "2026-06-30"
+        }
+      ]
+    },
+    {
+      "id": "hassleholm-vittsjo-camping",
+      "name": "Vittsjö Camping",
+      "municipality": "Hässleholm",
+      "category": "camping",
+      "coordinates": {
+        "lat": 56.351778,
+        "lng": 13.665635,
+        "status": "unverified"
+      },
+      "match": [
+        "Vittsjö Camping",
+        "Vittsjo Camping"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "capacity": {
+        "value": 3,
+        "status": "confirmed",
+        "text": "Tre ställplatser för husbilar vid receptionen om man bara ska stanna över natten."
+      },
+      "season": {
+        "text": "Öppet året runt enligt Vittsjö Camping.",
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "Ställplats med el 220 kr/dygn 1/4-31/8 och 300 kr/dygn 1/9-31/3, max en natt, enligt Vittsjö Camping.",
+        "amount": 220,
+        "currency": "SEK",
+        "period": "night",
+        "status": "confirmed"
+      },
+      "facilities": {
+        "toilet": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed"
+        }
+      },
+      "notes": "Ställplatsavgiften gäller ej bokningsbara övernattningsplatser vid receptionen och inkluderar servicehus med dusch.",
+      "sources": [
+        {
+          "id": "vittsjo-camping-campingen",
+          "type": "operator",
+          "title": "Vittsjö Camping - campingen",
+          "url": "https://www.vittsjocamping.se/campingen/",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "vittsjo-camping-prislista",
+          "type": "operator",
+          "title": "Vittsjö Camping - prislista",
+          "url": "https://www.vittsjocamping.se/prislista/",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "vittsjo-camping-servicehus",
+          "type": "operator",
+          "title": "Vittsjö Camping - servicehus",
+          "url": "https://www.vittsjocamping.se/servicehus/",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "visit-hassleholm-stallplatser",
+          "type": "official-tourism",
+          "title": "Visit Hässleholm - ställplatser",
+          "url": "https://www.visithassleholm.se/vh/boende/stallplatser-",
+          "checked_at": "2026-06-30"
+        }
+      ]
+    },
+    {
+      "id": "hassleholm-fladergarden",
+      "name": "Flädergården",
+      "municipality": "Hässleholm",
+      "category": "ställplats",
+      "coordinates": {
+        "lat": 56.137105,
+        "lng": 13.896675,
+        "status": "unverified"
+      },
+      "match": [
+        "Flädergården",
+        "Fladergarden",
+        "Flädergården & Pelargonhuset"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "170 kr/natt och 50 kr extra för el enligt Flädergården.",
+        "amount": 170,
+        "currency": "SEK",
+        "period": "night",
+        "status": "confirmed"
+      },
+      "facilities": {
+        "electricity": {
+          "value": true,
+          "status": "confirmed",
+          "text": "El kostar 50 kr extra enligt Flädergården."
+        },
+        "fresh_water": {
+          "value": true,
+          "status": "confirmed"
+        }
+      },
+      "notes": "Ställplats för husbil och husvagn vid gården. Betalning via Swish, kontant eller kort under Kaffestugans öppettider. Hundar är välkomna men ska vara kopplade.",
+      "sources": [
+        {
+          "id": "fladergarden-stallplats",
+          "type": "operator",
+          "title": "Flädergården - ställplats",
+          "url": "https://www.fladergarden.se/stallplats/",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "visit-hassleholm-stallplatser",
+          "type": "official-tourism",
+          "title": "Visit Hässleholm - ställplatser",
+          "url": "https://www.visithassleholm.se/vh/boende/stallplatser-",
           "checked_at": "2026-06-30"
         }
       ]
@@ -987,9 +1505,9 @@
       ]
     },
     {
-      "id": "ostra-goinge-lursjobadets-camping",
-      "name": "Lursjöbadets Camping",
-      "municipality": "Östra Göinge",
+      "id": "hassleholm-luhrsjobadens-camping",
+      "name": "Luhrsjöbadens Camping",
+      "municipality": "Hässleholm",
       "category": "camping",
       "coordinates": {
         "lat": 56.2719435,
@@ -997,7 +1515,9 @@
         "status": "unverified"
       },
       "match": [
-        "Lursjöbadets Camping"
+        "Luhrsjöbadens Camping",
+        "Lursjöbadets Camping",
+        "Luhrsjöbadens Camping och Servering"
       ],
       "place_status": {
         "value": "active",
@@ -1007,6 +1527,10 @@
         "value": true,
         "status": "confirmed"
       },
+      "season": {
+        "text": "1 maj till 15 september enligt Luhrsjöbadens Camping.",
+        "status": "confirmed"
+      },
       "price": {
         "text": "Pris enligt campingens egen webbplats/bokning.",
         "amount": null,
@@ -1014,12 +1538,32 @@
         "period": "night",
         "status": "unverified"
       },
+      "facilities": {
+        "black_water_disposal": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Visit Hässleholm anger tömning av latrintank mot betalning."
+        },
+        "grey_water_disposal": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Visit Hässleholm anger tömning av gråvatten mot betalning."
+        }
+      },
+      "notes": "Camping och servering vid Lursjön utanför Hästveda. Bad, fiske, servering och minigolf finns på området enligt operatören.",
       "sources": [
         {
-          "id": "lursjobadets-camping",
+          "id": "luhrsjobadens-camping",
           "type": "operator",
-          "title": "Lursjöbadets Camping",
+          "title": "Luhrsjöbadens Camping",
           "url": "https://www.lursjonscamping.com/",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "visit-hassleholm-stallplatser",
+          "type": "official-tourism",
+          "title": "Visit Hässleholm - ställplatser och tömningsplatser",
+          "url": "https://www.visithassleholm.se/vh/boende/stallplatser-",
           "checked_at": "2026-06-30"
         }
       ]
@@ -1054,7 +1598,7 @@
         "amount": null,
         "currency": "SEK",
         "period": "night",
-        "status": "missing"
+        "status": "unverified"
       },
       "facilities": {
         "toilet": {
@@ -1122,7 +1666,7 @@
         "amount": null,
         "currency": "SEK",
         "period": "night",
-        "status": "missing"
+        "status": "unverified"
       },
       "facilities": {
         "toilet": {
@@ -1266,7 +1810,7 @@
         "amount": null,
         "currency": "SEK",
         "period": "night",
-        "status": "missing"
+        "status": "unverified"
       },
       "facilities": {
         "toilet": {
@@ -1336,7 +1880,7 @@
         "amount": null,
         "currency": "SEK",
         "period": "night",
-        "status": "missing"
+        "status": "unverified"
       },
       "facilities": {
         "toilet": {
@@ -1406,7 +1950,7 @@
         "amount": null,
         "currency": "SEK",
         "period": "night",
-        "status": "missing"
+        "status": "unverified"
       },
       "facilities": {
         "toilet": {
@@ -2040,7 +2584,7 @@
         "amount": null,
         "currency": "SEK",
         "period": "night",
-        "status": "missing"
+        "status": "unverified"
       },
       "sources": [
         {
@@ -3098,7 +3642,7 @@
         "amount": null,
         "currency": "SEK",
         "period": "night",
-        "status": "missing"
+        "status": "unverified"
       },
       "facilities": {
         "electricity": {
