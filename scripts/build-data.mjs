@@ -75,6 +75,19 @@ const MUNICIPALITY_CENTROIDS = [
 
 const SKANE_MUNICIPALITIES = new Set(MUNICIPALITY_CENTROIDS.map(([name]) => name));
 const OUTSIDE_SKANE_HINTS = /\b(laholm|skummeslov[a-z]*|skummesloev[a-z]*|vallasen|våxtorp|vaxtorp|sölvesborg|solvesborg|olofström|olofstrom|markaryd|älmhult|almhult|alvesta|blekinge|halland|småland|smaland)\b/;
+const MANUAL_SERVICE_POINTS = [
+  {
+    id: "kristianstad-ahus-servicebyggnad",
+    name: "Servicebyggnad i Åhus",
+    type: "sanitary_dump_station",
+    coordinates: { lat: 55.931379, lng: 14.302794, status: "confirmed" },
+    fee: "",
+    access: "",
+    status: { value: "confirmed", text: "Kommunal servicepunkt med toalett, färskvatten samt manuell tömning av latrin och gråvatten." },
+    source: "https://www.kristianstad.se/trafikochresor/trafikochgator/parkering/husbil.4469.html"
+  }
+];
+
 const OSM_REVIEW_OVERRIDES = new Map([
   ["node/12943570675", {
     name: "Råå/Västindiegatan - ej verifierad nattplats",
@@ -95,6 +108,34 @@ const OSM_REVIEW_OVERRIDES = new Map([
       text: "Kommunens parkeringskarta visar parkering, men inte bekräftad camping/ställplats."
     },
     notes: "Manuellt nedklassad OSM-kandidat eftersom kommunal källa verifierar parkering snarare än nattplats."
+  }],
+  ["node/11978439905", {
+    municipality: "Klippan",
+    place_status: { value: "candidate", status: "unverified" },
+    overnight_allowed: {
+      value: true,
+      status: "unverified",
+      text: "OSM och tredjepartskataloger anger ställplats, men ingen primär operator-/kommunkälla är verifierad."
+    },
+    notes: "Rödhakens Ställplats behålls som kandidat och visas inte i standardvyn. Kommun rättad från närmaste centroid till Klippan/Färingtofta."
+  }],
+  ["way/1199726148", {
+    name: "Benestad/Tomelilla - ej verifierad nattplats",
+    place_status: { value: "day_parking", status: "unverified" },
+    overnight_allowed: {
+      value: null,
+      status: "unclear",
+      text: "OSM anger övernattning, men kommunens öppna data pekar på annan husbilsparkering och säger att den inte är en ställplats."
+    },
+    price: {
+      text: "OSM anger fee=no, men uppgiften är inte verifierad mot kommun eller operatör.",
+      amount: null,
+      currency: "SEK",
+      period: "day",
+      status: "unverified",
+      is_free: null
+    },
+    notes: "Manuellt nedklassad OSM-kandidat efter jämförelse med Tomelilla kommuns öppna data."
   }]
 ]);
 
@@ -390,7 +431,7 @@ function placeFromOsm(element) {
       : "Kandidat från OpenStreetMap. Pris, regler och övernattning måste verifieras mot officiell källa eller skyltning.",
     sources: [
       source(`osm-${element.type}-${element.id}`, "open-data", `OpenStreetMap ${element.type}/${element.id}`, `https://www.openstreetmap.org/${element.type}/${element.id}`, CHECKED_AT),
-      ...(website ? [source(`osm-website-${element.type}-${element.id}`, "operator", "Webbplats från OSM", website, CHECKED_AT)] : [])
+      ...(website ? [source(`osm-website-${element.type}-${element.id}`, "osm-website", "Webbplats från OSM", website, CHECKED_AT)] : [])
     ],
     osm: { type: element.type, id: element.id, tags },
     images: []
@@ -403,15 +444,34 @@ function servicePointFromOsm(element) {
   const tags = element.tags || {};
   const point = elementPoint(element);
   if (!point || !roughlyInSkane(point)) return null;
+  const access = tags.access || "";
+  const fee = tags.fee || tags.charge || "";
+  const restricted = ["customers", "permit", "private", "no"].includes(norm(access));
   return {
     id: `osm-service-${element.type}-${element.id}`,
     name: tags.name || "Tömningsstation",
     type: "sanitary_dump_station",
     coordinates: point,
-    fee: tags.fee || "",
-    access: tags.access || "",
+    fee,
+    access,
+    status: {
+      value: restricted ? "restricted" : "unverified",
+      text: restricted
+        ? "OSM anger begränsad åtkomst. Kontrollera med platsen innan du planerar tömning här."
+        : "Servicepunkt från OSM. Ej manuellt verifierad."
+    },
     source: `https://www.openstreetmap.org/${element.type}/${element.id}`
   };
+}
+
+function dedupeServicePoints(points) {
+  const out = [];
+  for (const point of points) {
+    if (!point?.coordinates) continue;
+    const duplicate = out.some((existing) => distanceKm(existing.coordinates, point.coordinates) < 0.05);
+    if (!duplicate) out.push(point);
+  }
+  return out;
 }
 
 function scoreMatch(seed, place) {
@@ -559,6 +619,8 @@ async function main() {
         || String(a.name).localeCompare(String(b.name), "sv-SE");
     });
 
+  const allServicePoints = dedupeServicePoints([...MANUAL_SERVICE_POINTS, ...servicePoints]);
+
   const payload = {
     schemaVersion: 1,
     generatedAt: new Date().toISOString(),
@@ -574,14 +636,14 @@ async function main() {
       finalCandidates: places.filter((place) => place.place_status?.value === "candidate").length,
       confirmedActive: places.filter((place) => place.place_status?.value === "active").length,
       withImages: places.filter((place) => toArray(place.images).length).length,
-      servicePoints: servicePoints.length
+      servicePoints: allServicePoints.length
     },
     places,
-    servicePoints
+    servicePoints: allServicePoints
   };
 
   await writeFile(outputPath, `${JSON.stringify(payload)}\n`, "utf8");
-  console.log(`Wrote ${places.length} places and ${servicePoints.length} service points to ${outputPath}`);
+  console.log(`Wrote ${places.length} places and ${allServicePoints.length} service points to ${outputPath}`);
 }
 
 main().catch((error) => {

@@ -7,25 +7,80 @@
       "name": "Skanörs hamn",
       "municipality": "Vellinge",
       "category": "gästhamn",
-      "coordinates": { "lat": 55.41602, "lng": 12.83269, "status": "confirmed" },
-      "match": ["Skanör", "Skanörs hamn"],
-      "place_status": { "value": "active", "status": "confirmed" },
-      "overnight_allowed": { "value": true, "status": "confirmed" },
-      "capacity": { "value": 10, "status": "confirmed" },
-      "price": { "text": "Betald ställplats. Pris finns på hamnens prissida.", "amount": null, "currency": "SEK", "period": "night", "status": "confirmed" },
+      "coordinates": {
+        "lat": 55.41602,
+        "lng": 12.83269,
+        "status": "confirmed"
+      },
+      "match": [
+        "Skanör",
+        "Skanörs hamn"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "capacity": {
+        "value": 10,
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "Betald ställplats. Pris finns på hamnens prissida.",
+        "amount": null,
+        "currency": "SEK",
+        "period": "night",
+        "status": "confirmed"
+      },
       "facilities": {
-        "toilet": { "value": true, "status": "confirmed" },
-        "shower": { "value": null, "status": "missing" },
-        "electricity": { "value": true, "status": "confirmed" },
-        "fresh_water": { "value": true, "status": "confirmed" },
-        "black_water_disposal": { "value": true, "status": "confirmed" },
-        "grey_water_disposal": { "value": true, "status": "confirmed" },
-        "waste": { "value": null, "status": "missing" }
+        "toilet": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "shower": {
+          "value": null,
+          "status": "missing"
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "fresh_water": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "black_water_disposal": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "grey_water_disposal": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "waste": {
+          "value": null,
+          "status": "missing"
+        }
       },
       "notes": "Hamnplats med el, vatten och tömning enligt hamnens egen information. Kontrollera aktuellt pris vid betalning.",
       "sources": [
-        { "id": "skanor-hamn-info", "type": "official", "title": "Skanörs hamn - husbilsplatser", "url": "https://skanorshamn.se/husbilsplatser/", "checked_at": "2026-06-29" },
-        { "id": "skanor-hamn-pris", "type": "official", "title": "Skanörs hamn - prisuppgifter", "url": "https://skanorshamn.se/prisuppgifter-husbilsplatser/", "checked_at": "2026-06-29" }
+        {
+          "id": "skanor-hamn-info",
+          "type": "official",
+          "title": "Skanörs hamn - husbilsplatser",
+          "url": "https://skanorshamn.se/husbilsplatser/",
+          "checked_at": "2026-06-29"
+        },
+        {
+          "id": "skanor-hamn-pris",
+          "type": "official",
+          "title": "Skanörs hamn - prisuppgifter",
+          "url": "https://skanorshamn.se/prisuppgifter-husbilsplatser/",
+          "checked_at": "2026-06-29"
+        }
       ]
     },
     {
@@ -33,25 +88,80 @@
       "name": "Falsterbokanalen",
       "municipality": "Vellinge",
       "category": "gästhamn",
-      "coordinates": { "lat": 55.4062, "lng": 12.9421, "status": "unverified" },
-      "match": ["Falsterbokanalen"],
-      "place_status": { "value": "active", "status": "confirmed" },
-      "overnight_allowed": { "value": true, "status": "confirmed" },
-      "capacity": { "value": 12, "status": "confirmed", "text": "12-15 platser" },
-      "price": { "text": "Betald ställplats, kontrollera aktuell avgift hos hamnen.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "coordinates": {
+        "lat": 55.4062,
+        "lng": 12.9421,
+        "status": "unverified"
+      },
+      "match": [
+        "Falsterbokanalen"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "capacity": {
+        "value": 12,
+        "status": "confirmed",
+        "text": "12-15 platser"
+      },
+      "price": {
+        "text": "Betald ställplats, kontrollera aktuell avgift hos hamnen.",
+        "amount": null,
+        "currency": "SEK",
+        "period": "night",
+        "status": "unverified"
+      },
       "facilities": {
-        "toilet": { "value": true, "status": "confirmed" },
-        "shower": { "value": true, "status": "confirmed" },
-        "electricity": { "value": true, "status": "confirmed" },
-        "fresh_water": { "value": null, "status": "unclear" },
-        "black_water_disposal": { "value": true, "status": "confirmed" },
-        "grey_water_disposal": { "value": null, "status": "missing" },
-        "waste": { "value": true, "status": "confirmed" }
+        "toilet": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "fresh_water": {
+          "value": null,
+          "status": "unclear"
+        },
+        "black_water_disposal": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "grey_water_disposal": {
+          "value": null,
+          "status": "missing"
+        },
+        "waste": {
+          "value": true,
+          "status": "confirmed"
+        }
       },
       "notes": "Hamnens sida beskriver flyttad/provisorisk plats. Antal kan skilja mot kommunens index.",
       "sources": [
-        { "id": "falsterbokanalen-husbilar", "type": "official", "title": "Falsterbokanalen - husbilar", "url": "https://falsterbokanalen.se/husbilar/", "checked_at": "2026-06-29" },
-        { "id": "vellinge-stallplatser", "type": "official", "title": "Vellinge kommun - ställplatser för husbilar", "url": "https://vellinge.se/samhalle-och-miljo/trafik-gator-och-stadsplanering/parkering/stallplatser-for-husbilar", "checked_at": "2026-06-29" }
+        {
+          "id": "falsterbokanalen-husbilar",
+          "type": "official",
+          "title": "Falsterbokanalen - husbilar",
+          "url": "https://falsterbokanalen.se/husbilar/",
+          "checked_at": "2026-06-29"
+        },
+        {
+          "id": "vellinge-stallplatser",
+          "type": "official",
+          "title": "Vellinge kommun - ställplatser för husbilar",
+          "url": "https://vellinge.se/samhalle-och-miljo/trafik-gator-och-stadsplanering/parkering/stallplatser-for-husbilar",
+          "checked_at": "2026-06-29"
+        }
       ]
     },
     {
@@ -59,24 +169,74 @@
       "name": "Ystads småbåtshamn",
       "municipality": "Ystad",
       "category": "gästhamn",
-      "coordinates": { "lat": 55.4239, "lng": 13.8052, "status": "unverified" },
-      "match": ["Ystad", "Ystads småbåtshamn", "Ystads Marina"],
-      "place_status": { "value": "active", "status": "confirmed" },
-      "overnight_allowed": { "value": true, "status": "confirmed" },
-      "season": { "text": "1 juni-13 september 2026", "status": "confirmed" },
-      "price": { "text": "200 kr/natt utan el, 250 kr/natt med el enligt kommunens hamninformation.", "amount": 200, "currency": "SEK", "period": "night", "status": "confirmed" },
+      "coordinates": {
+        "lat": 55.4239,
+        "lng": 13.8052,
+        "status": "unverified"
+      },
+      "match": [
+        "Ystad",
+        "Ystads småbåtshamn",
+        "Ystads Marina"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "season": {
+        "text": "1 juni-13 september 2026",
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "200 kr/natt utan el, 250 kr/natt med el enligt kommunens hamninformation.",
+        "amount": 200,
+        "currency": "SEK",
+        "period": "night",
+        "status": "confirmed"
+      },
       "facilities": {
-        "toilet": { "value": true, "status": "confirmed" },
-        "shower": { "value": true, "status": "confirmed" },
-        "electricity": { "value": true, "status": "confirmed" },
-        "fresh_water": { "value": true, "status": "confirmed" },
-        "black_water_disposal": { "value": true, "status": "confirmed" },
-        "grey_water_disposal": { "value": null, "status": "missing" },
-        "waste": { "value": null, "status": "missing" }
+        "toilet": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "fresh_water": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "black_water_disposal": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "grey_water_disposal": {
+          "value": null,
+          "status": "missing"
+        },
+        "waste": {
+          "value": null,
+          "status": "missing"
+        }
       },
       "notes": "Husbilsbiljett köps på hamnkontoret under öppettid enligt kommunens sida.",
       "sources": [
-        { "id": "ystad-smabatshamn", "type": "official", "title": "Ystads kommun - Ystads småbåtshamn", "url": "https://www.ystad.se/bygga-och-bo/arrenden/batplatser/ystads-smabatshamn", "checked_at": "2026-06-29" }
+        {
+          "id": "ystad-smabatshamn",
+          "type": "official",
+          "title": "Ystads kommun - Ystads småbåtshamn",
+          "url": "https://www.ystad.se/bygga-och-bo/arrenden/batplatser/ystads-smabatshamn",
+          "checked_at": "2026-06-29"
+        }
       ]
     },
     {
@@ -84,24 +244,74 @@
       "name": "Husbilsparkering i centrum",
       "municipality": "Trelleborg",
       "category": "parkering",
-      "coordinates": { "lat": 55.37365, "lng": 13.13445, "status": "confirmed" },
-      "match": ["Trelleborg Ställplats", "Husbilsparkering i centrum"],
-      "place_status": { "value": "active", "status": "confirmed" },
-      "overnight_allowed": { "value": true, "status": "confirmed" },
-      "capacity": { "value": 9, "status": "confirmed", "text": "9 husbilsplatser och 17 större rutor" },
-      "price": { "text": "10 kr/timme, 100 kr/dygn enligt Visit Trelleborg.", "amount": 100, "currency": "SEK", "period": "day", "status": "confirmed" },
+      "coordinates": {
+        "lat": 55.37365,
+        "lng": 13.13445,
+        "status": "confirmed"
+      },
+      "match": [
+        "Trelleborg Ställplats",
+        "Husbilsparkering i centrum"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "capacity": {
+        "value": 9,
+        "status": "confirmed",
+        "text": "9 husbilsplatser och 17 större rutor"
+      },
+      "price": {
+        "text": "10 kr/timme, 100 kr/dygn enligt Visit Trelleborg.",
+        "amount": 100,
+        "currency": "SEK",
+        "period": "day",
+        "status": "confirmed"
+      },
       "facilities": {
-        "toilet": { "value": null, "status": "missing" },
-        "shower": { "value": null, "status": "missing" },
-        "electricity": { "value": null, "status": "missing" },
-        "fresh_water": { "value": null, "status": "missing" },
-        "black_water_disposal": { "value": null, "status": "missing" },
-        "grey_water_disposal": { "value": null, "status": "missing" },
-        "waste": { "value": null, "status": "missing" }
+        "toilet": {
+          "value": null,
+          "status": "missing"
+        },
+        "shower": {
+          "value": null,
+          "status": "missing"
+        },
+        "electricity": {
+          "value": null,
+          "status": "missing"
+        },
+        "fresh_water": {
+          "value": null,
+          "status": "missing"
+        },
+        "black_water_disposal": {
+          "value": null,
+          "status": "missing"
+        },
+        "grey_water_disposal": {
+          "value": null,
+          "status": "missing"
+        },
+        "waste": {
+          "value": null,
+          "status": "missing"
+        }
       },
       "notes": "Mer parkering än full service-ställplats. Kontrollera skyltning på plats.",
       "sources": [
-        { "id": "visit-trelleborg-centrum", "type": "official-tourism", "title": "Visit Trelleborg - Husbilsparkering i centrum", "url": "https://www2.visittrelleborg.se/sv/boende/1245769/husbilsparkering-i-centrum/detaljer", "checked_at": "2026-06-29" }
+        {
+          "id": "visit-trelleborg-centrum",
+          "type": "official-tourism",
+          "title": "Visit Trelleborg - Husbilsparkering i centrum",
+          "url": "https://www2.visittrelleborg.se/sv/boende/1245769/husbilsparkering-i-centrum/detaljer",
+          "checked_at": "2026-06-29"
+        }
       ]
     },
     {
@@ -109,23 +319,73 @@
       "name": "Ställplats Västra Trelleborg",
       "municipality": "Trelleborg",
       "category": "ställplats",
-      "coordinates": { "lat": 55.3716, "lng": 13.1234, "status": "unverified" },
-      "match": ["Ställplats Västra Trelleborg", "Västra Trelleborg"],
-      "place_status": { "value": "active", "status": "confirmed" },
-      "overnight_allowed": { "value": true, "status": "confirmed" },
-      "capacity": { "value": 18, "status": "confirmed", "text": "18 elplatser" },
-      "price": { "text": "Betald onlinebokning, pris kontrolleras hos operatör.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "coordinates": {
+        "lat": 55.3716,
+        "lng": 13.1234,
+        "status": "unverified"
+      },
+      "match": [
+        "Ställplats Västra Trelleborg",
+        "Västra Trelleborg"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "capacity": {
+        "value": 18,
+        "status": "confirmed",
+        "text": "18 elplatser"
+      },
+      "price": {
+        "text": "Betald onlinebokning, pris kontrolleras hos operatör.",
+        "amount": null,
+        "currency": "SEK",
+        "period": "night",
+        "status": "unverified"
+      },
       "facilities": {
-        "toilet": { "value": true, "status": "confirmed" },
-        "shower": { "value": null, "status": "missing" },
-        "electricity": { "value": true, "status": "confirmed" },
-        "fresh_water": { "value": true, "status": "confirmed" },
-        "black_water_disposal": { "value": true, "status": "confirmed" },
-        "grey_water_disposal": { "value": true, "status": "confirmed" },
-        "waste": { "value": null, "status": "missing" }
+        "toilet": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "shower": {
+          "value": null,
+          "status": "missing"
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "fresh_water": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "black_water_disposal": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "grey_water_disposal": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "waste": {
+          "value": null,
+          "status": "missing"
+        }
       },
       "sources": [
-        { "id": "visit-trelleborg-vastra", "type": "official-tourism", "title": "Visit Trelleborg - Ställplats Västra Trelleborg", "url": "https://www2.visittrelleborg.se/sv/boende/2000176/st%C3%A4llplats-v%C3%A4stra-trelleborg/detaljer", "checked_at": "2026-06-29" }
+        {
+          "id": "visit-trelleborg-vastra",
+          "type": "official-tourism",
+          "title": "Visit Trelleborg - Ställplats Västra Trelleborg",
+          "url": "https://www2.visittrelleborg.se/sv/boende/2000176/st%C3%A4llplats-v%C3%A4stra-trelleborg/detaljer",
+          "checked_at": "2026-06-29"
+        }
       ]
     },
     {
@@ -133,14 +393,36 @@
       "name": "Skåre skansar",
       "municipality": "Trelleborg",
       "category": "parkering",
-      "coordinates": { "lat": 55.369, "lng": 13.082, "status": "unverified" },
-      "place_status": { "value": "prohibited", "status": "confirmed" },
-      "overnight_allowed": { "value": false, "status": "confirmed" },
-      "price": { "text": "Inte ställplats. Nattparkering inte tillåten.", "amount": null, "currency": "SEK", "period": "night", "status": "confirmed" },
+      "coordinates": {
+        "lat": 55.369,
+        "lng": 13.082,
+        "status": "unverified"
+      },
+      "place_status": {
+        "value": "prohibited",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": false,
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "Inte ställplats. Nattparkering inte tillåten.",
+        "amount": null,
+        "currency": "SEK",
+        "period": "night",
+        "status": "confirmed"
+      },
       "facilities": {},
       "notes": "Trelleborgs kommun anger att nattparkering inte är tillåten här. Visas som varning så äldre katalogträffar inte misstolkas.",
       "sources": [
-        { "id": "trelleborg-uppstallning", "type": "official", "title": "Trelleborgs kommun - uppställning av husvagn/husbil", "url": "https://www.trelleborg.se/trafik-infrastruktur/trafik-och-gator-2/parkering-i-trelleborg/uppstallning-av-husvagn/", "checked_at": "2026-06-29" }
+        {
+          "id": "trelleborg-uppstallning",
+          "type": "official",
+          "title": "Trelleborgs kommun - uppställning av husvagn/husbil",
+          "url": "https://www.trelleborg.se/trafik-infrastruktur/trafik-och-gator-2/parkering-i-trelleborg/uppstallning-av-husvagn/",
+          "checked_at": "2026-06-29"
+        }
       ]
     },
     {
@@ -148,22 +430,65 @@
       "name": "Kåseberga ställplats",
       "municipality": "Ystad",
       "category": "ställplats",
-      "coordinates": { "lat": 55.38933, "lng": 14.06159, "status": "confirmed" },
-      "match": ["Kåseberga Ställplats"],
-      "place_status": { "value": "active", "status": "unverified" },
-      "overnight_allowed": { "value": true, "status": "confirmed" },
-      "capacity": { "value": 97, "status": "confirmed", "text": "97 platser varav 27 med el." },
-      "price": { "text": "230 kr/dygn plus 50 kr/dygn för el enligt IF Ale.", "amount": 230, "currency": "SEK", "period": "day", "status": "confirmed" },
+      "coordinates": {
+        "lat": 55.38933,
+        "lng": 14.06159,
+        "status": "confirmed"
+      },
+      "match": [
+        "Kåseberga Ställplats"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "unverified"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "capacity": {
+        "value": 97,
+        "status": "confirmed",
+        "text": "97 platser varav 27 med el."
+      },
+      "price": {
+        "text": "230 kr/dygn plus 50 kr/dygn för el enligt IF Ale.",
+        "amount": 230,
+        "currency": "SEK",
+        "period": "day",
+        "status": "confirmed"
+      },
       "facilities": {
-        "toilet": { "value": null, "status": "unverified" },
-        "electricity": { "value": true, "status": "confirmed" },
-        "fresh_water": { "value": null, "status": "unverified" },
-        "black_water_disposal": { "value": null, "status": "unverified" },
-        "grey_water_disposal": { "value": null, "status": "unverified" }
+        "toilet": {
+          "value": null,
+          "status": "unverified"
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "fresh_water": {
+          "value": null,
+          "status": "unverified"
+        },
+        "black_water_disposal": {
+          "value": null,
+          "status": "unverified"
+        },
+        "grey_water_disposal": {
+          "value": null,
+          "status": "unverified"
+        }
       },
       "notes": "IF Ale anger pris, antal platser och elplatser. Övrig service behöver kontrolleras på plats.",
       "sources": [
-        { "id": "if-ale-kaseberga", "type": "operator", "title": "IF Ale - Ställplats Kåseberga", "url": "https://www.svenskalag.se/ifale/sida/57430/stallplats-kaseberga", "checked_at": "2026-06-30" }
+        {
+          "id": "if-ale-kaseberga",
+          "type": "operator",
+          "title": "IF Ale - Ställplats Kåseberga",
+          "url": "https://www.svenskalag.se/ifale/sida/57430/stallplats-kaseberga",
+          "checked_at": "2026-06-30"
+        }
       ]
     },
     {
@@ -171,21 +496,61 @@
       "name": "Tobisvik",
       "municipality": "Simrishamn",
       "category": "camping",
-      "coordinates": { "lat": 55.56959, "lng": 14.33747, "status": "confirmed" },
-      "match": ["Tobisviks Camping", "Tobisvik"],
-      "place_status": { "value": "active", "status": "confirmed" },
-      "overnight_allowed": { "value": true, "status": "confirmed" },
-      "price": { "text": "Pris hos extern camping/operatör.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "coordinates": {
+        "lat": 55.56959,
+        "lng": 14.33747,
+        "status": "confirmed"
+      },
+      "match": [
+        "Tobisviks Camping",
+        "Tobisvik"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "Pris hos extern camping/operatör.",
+        "amount": null,
+        "currency": "SEK",
+        "period": "night",
+        "status": "unverified"
+      },
       "facilities": {
-        "toilet": { "value": true, "status": "unverified" },
-        "shower": { "value": true, "status": "unverified" },
-        "electricity": { "value": true, "status": "unverified" },
-        "fresh_water": { "value": true, "status": "unverified" },
-        "black_water_disposal": { "value": null, "status": "unverified" }
+        "toilet": {
+          "value": true,
+          "status": "unverified"
+        },
+        "shower": {
+          "value": true,
+          "status": "unverified"
+        },
+        "electricity": {
+          "value": true,
+          "status": "unverified"
+        },
+        "fresh_water": {
+          "value": true,
+          "status": "unverified"
+        },
+        "black_water_disposal": {
+          "value": null,
+          "status": "unverified"
+        }
       },
       "notes": "Ingår i Simrishamns kommuns husbilssida som plats/karta; pris och detaljer ligger hos extern aktör.",
       "sources": [
-        { "id": "simrishamn-husbilar", "type": "official", "title": "Simrishamns kommun - husbilar", "url": "https://www.simrishamn.se/gata-park-och-natur/trafik/husbilar", "checked_at": "2026-06-29" }
+        {
+          "id": "simrishamn-husbilar",
+          "type": "official",
+          "title": "Simrishamns kommun - husbilar",
+          "url": "https://www.simrishamn.se/gata-park-och-natur/trafik/husbilar",
+          "checked_at": "2026-06-29"
+        }
       ]
     },
     {
@@ -193,14 +558,39 @@
       "name": "Borrbystrand",
       "municipality": "Simrishamn",
       "category": "camping",
-      "coordinates": { "lat": 55.4344, "lng": 14.23135, "status": "confirmed" },
-      "match": ["Borrby strands camping", "Borrbystrand"],
-      "place_status": { "value": "active", "status": "confirmed" },
-      "overnight_allowed": { "value": true, "status": "confirmed" },
-      "price": { "text": "Pris hos extern camping/operatör.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "coordinates": {
+        "lat": 55.4344,
+        "lng": 14.23135,
+        "status": "confirmed"
+      },
+      "match": [
+        "Borrby strands camping",
+        "Borrbystrand"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "Pris hos extern camping/operatör.",
+        "amount": null,
+        "currency": "SEK",
+        "period": "night",
+        "status": "unverified"
+      },
       "facilities": {},
       "sources": [
-        { "id": "simrishamn-husbilar", "type": "official", "title": "Simrishamns kommun - husbilar", "url": "https://www.simrishamn.se/gata-park-och-natur/trafik/husbilar", "checked_at": "2026-06-29" }
+        {
+          "id": "simrishamn-husbilar",
+          "type": "official",
+          "title": "Simrishamns kommun - husbilar",
+          "url": "https://www.simrishamn.se/gata-park-och-natur/trafik/husbilar",
+          "checked_at": "2026-06-29"
+        }
       ]
     },
     {
@@ -208,14 +598,39 @@
       "name": "Kivik",
       "municipality": "Simrishamn",
       "category": "camping",
-      "coordinates": { "lat": 55.69088, "lng": 14.21522, "status": "confirmed" },
-      "match": ["Kiviks Familjecamping", "Kivik"],
-      "place_status": { "value": "active", "status": "confirmed" },
-      "overnight_allowed": { "value": true, "status": "confirmed" },
-      "price": { "text": "Pris hos extern camping/operatör.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "coordinates": {
+        "lat": 55.69088,
+        "lng": 14.21522,
+        "status": "confirmed"
+      },
+      "match": [
+        "Kiviks Familjecamping",
+        "Kivik"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "Pris hos extern camping/operatör.",
+        "amount": null,
+        "currency": "SEK",
+        "period": "night",
+        "status": "unverified"
+      },
       "facilities": {},
       "sources": [
-        { "id": "simrishamn-husbilar", "type": "official", "title": "Simrishamns kommun - husbilar", "url": "https://www.simrishamn.se/gata-park-och-natur/trafik/husbilar", "checked_at": "2026-06-29" }
+        {
+          "id": "simrishamn-husbilar",
+          "type": "official",
+          "title": "Simrishamns kommun - husbilar",
+          "url": "https://www.simrishamn.se/gata-park-och-natur/trafik/husbilar",
+          "checked_at": "2026-06-29"
+        }
       ]
     },
     {
@@ -223,14 +638,39 @@
       "name": "Gyllebo/Torna ställplats",
       "municipality": "Simrishamn",
       "category": "ställplats",
-      "coordinates": { "lat": 55.59263, "lng": 14.22329, "status": "confirmed" },
-      "match": ["Torna ställplats", "Gyllebo"],
-      "place_status": { "value": "active", "status": "confirmed" },
-      "overnight_allowed": { "value": true, "status": "confirmed" },
-      "price": { "text": "Pris hos extern aktör/förening.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "coordinates": {
+        "lat": 55.59263,
+        "lng": 14.22329,
+        "status": "confirmed"
+      },
+      "match": [
+        "Torna ställplats",
+        "Gyllebo"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "Pris hos extern aktör/förening.",
+        "amount": null,
+        "currency": "SEK",
+        "period": "night",
+        "status": "unverified"
+      },
       "facilities": {},
       "sources": [
-        { "id": "simrishamn-husbilar", "type": "official", "title": "Simrishamns kommun - husbilar", "url": "https://www.simrishamn.se/gata-park-och-natur/trafik/husbilar", "checked_at": "2026-06-29" }
+        {
+          "id": "simrishamn-husbilar",
+          "type": "official",
+          "title": "Simrishamns kommun - husbilar",
+          "url": "https://www.simrishamn.se/gata-park-och-natur/trafik/husbilar",
+          "checked_at": "2026-06-29"
+        }
       ]
     },
     {
@@ -238,14 +678,39 @@
       "name": "Ängdala Camping på Österlen",
       "municipality": "Simrishamn",
       "category": "camping",
-      "coordinates": { "lat": 55.70979, "lng": 14.16796, "status": "confirmed" },
-      "match": ["Ängdala Camping på Österlen", "Ängdala"],
-      "place_status": { "value": "active", "status": "confirmed" },
-      "overnight_allowed": { "value": true, "status": "confirmed" },
-      "price": { "text": "Pris hos extern camping/operatör.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "coordinates": {
+        "lat": 55.70979,
+        "lng": 14.16796,
+        "status": "confirmed"
+      },
+      "match": [
+        "Ängdala Camping på Österlen",
+        "Ängdala"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "Pris hos extern camping/operatör.",
+        "amount": null,
+        "currency": "SEK",
+        "period": "night",
+        "status": "unverified"
+      },
       "facilities": {},
       "sources": [
-        { "id": "simrishamn-husbilar", "type": "official", "title": "Simrishamns kommun - husbilar", "url": "https://www.simrishamn.se/gata-park-och-natur/trafik/husbilar", "checked_at": "2026-06-29" }
+        {
+          "id": "simrishamn-husbilar",
+          "type": "official",
+          "title": "Simrishamns kommun - husbilar",
+          "url": "https://www.simrishamn.se/gata-park-och-natur/trafik/husbilar",
+          "checked_at": "2026-06-29"
+        }
       ]
     },
     {
@@ -253,15 +718,39 @@
       "name": "Naturum Vattenriket",
       "municipality": "Kristianstad",
       "category": "parkering",
-      "coordinates": { "lat": 56.0258, "lng": 14.1545, "status": "unverified" },
-      "match": ["Naturum Vattenriket"],
-      "place_status": { "value": "active", "status": "confirmed" },
-      "overnight_allowed": { "value": true, "status": "confirmed" },
-      "price": { "text": "Kontrollera lokal skyltning och kommunens sida.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "coordinates": {
+        "lat": 56.0258,
+        "lng": 14.1545,
+        "status": "unverified"
+      },
+      "match": [
+        "Naturum Vattenriket"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "Kontrollera lokal skyltning och kommunens sida.",
+        "amount": null,
+        "currency": "SEK",
+        "period": "night",
+        "status": "unverified"
+      },
       "facilities": {},
       "notes": "Kommunal sida anger övernattning vid markerad del.",
       "sources": [
-        { "id": "kristianstad-husbil", "type": "official", "title": "Kristianstads kommun - husbil", "url": "https://www.kristianstad.se/trafikochresor/trafikochgator/parkering/husbil.4469.html", "checked_at": "2026-06-29" }
+        {
+          "id": "kristianstad-husbil",
+          "type": "official",
+          "title": "Kristianstads kommun - husbil",
+          "url": "https://www.kristianstad.se/trafikochresor/trafikochgator/parkering/husbil.4469.html",
+          "checked_at": "2026-06-29"
+        }
       ]
     },
     {
@@ -269,14 +758,39 @@
       "name": "Rigeleje Strand Camping",
       "municipality": "Kristianstad",
       "category": "camping",
-      "coordinates": { "lat": 55.78062, "lng": 14.19786, "status": "confirmed" },
-      "match": ["Rigeleje Strand Camping", "Rigeleje"],
-      "place_status": { "value": "active", "status": "confirmed" },
-      "overnight_allowed": { "value": true, "status": "confirmed" },
-      "price": { "text": "Pris hos extern camping/operatör.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "coordinates": {
+        "lat": 55.78062,
+        "lng": 14.19786,
+        "status": "confirmed"
+      },
+      "match": [
+        "Rigeleje Strand Camping",
+        "Rigeleje"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "Pris hos extern camping/operatör.",
+        "amount": null,
+        "currency": "SEK",
+        "period": "night",
+        "status": "unverified"
+      },
       "facilities": {},
       "sources": [
-        { "id": "kristianstad-husbil", "type": "official", "title": "Kristianstads kommun - husbil", "url": "https://www.kristianstad.se/trafikochresor/trafikochgator/parkering/husbil.4469.html", "checked_at": "2026-06-29" }
+        {
+          "id": "kristianstad-husbil",
+          "type": "official",
+          "title": "Kristianstads kommun - husbil",
+          "url": "https://www.kristianstad.se/trafikochresor/trafikochgator/parkering/husbil.4469.html",
+          "checked_at": "2026-06-29"
+        }
       ]
     },
     {
@@ -284,23 +798,68 @@
       "name": "Skäldervikens hamn",
       "municipality": "Ängelholm",
       "category": "gästhamn",
-      "coordinates": { "lat": 56.2678, "lng": 12.8425, "status": "confirmed" },
-      "match": ["Skäldervikens hamn"],
-      "place_status": { "value": "active", "status": "confirmed" },
-      "overnight_allowed": { "value": true, "status": "confirmed" },
-      "price": { "text": "Pris via destinationens bokningssida.", "amount": null, "currency": "SEK", "period": "night", "status": "confirmed" },
+      "coordinates": {
+        "lat": 56.2678,
+        "lng": 12.8425,
+        "status": "confirmed"
+      },
+      "match": [
+        "Skäldervikens hamn"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "Pris via destinationens bokningssida.",
+        "amount": null,
+        "currency": "SEK",
+        "period": "night",
+        "status": "confirmed"
+      },
       "facilities": {
-        "toilet": { "value": true, "status": "confirmed" },
-        "shower": { "value": true, "status": "confirmed" },
-        "electricity": { "value": true, "status": "confirmed" },
-        "fresh_water": { "value": true, "status": "confirmed" },
-        "black_water_disposal": { "value": true, "status": "confirmed" },
-        "grey_water_disposal": { "value": true, "status": "confirmed" },
-        "waste": { "value": true, "status": "confirmed" }
+        "toilet": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "fresh_water": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "black_water_disposal": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "grey_water_disposal": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "waste": {
+          "value": true,
+          "status": "confirmed"
+        }
       },
       "notes": "Tömning kan vara stängd vintertid enligt destinationsinformationen.",
       "sources": [
-        { "id": "angelholm-skalderviken", "type": "official-tourism", "title": "Ängelholm - Ställplats i Skäldervikens hamn", "url": "https://boka.engelholm.com/sv/boende/483962/st%C3%A4llplats-i-sk%C3%A4ldervikens-hamn/detaljer", "checked_at": "2026-06-29" }
+        {
+          "id": "angelholm-skalderviken",
+          "type": "official-tourism",
+          "title": "Ängelholm - Ställplats i Skäldervikens hamn",
+          "url": "https://boka.engelholm.com/sv/boende/483962/st%C3%A4llplats-i-sk%C3%A4ldervikens-hamn/detaljer",
+          "checked_at": "2026-06-29"
+        }
       ]
     },
     {
@@ -308,22 +867,67 @@
       "name": "Ställplats Vejbystrand",
       "municipality": "Ängelholm",
       "category": "ställplats",
-      "coordinates": { "lat": 56.317, "lng": 12.767, "status": "unverified" },
-      "match": ["Vejbystrand"],
-      "place_status": { "value": "active", "status": "confirmed" },
-      "overnight_allowed": { "value": true, "status": "confirmed" },
-      "price": { "text": "Pris via destinationens bokningssida.", "amount": null, "currency": "SEK", "period": "night", "status": "confirmed" },
+      "coordinates": {
+        "lat": 56.317,
+        "lng": 12.767,
+        "status": "unverified"
+      },
+      "match": [
+        "Vejbystrand"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "Pris via destinationens bokningssida.",
+        "amount": null,
+        "currency": "SEK",
+        "period": "night",
+        "status": "confirmed"
+      },
       "facilities": {
-        "toilet": { "value": true, "status": "confirmed" },
-        "shower": { "value": true, "status": "confirmed" },
-        "electricity": { "value": true, "status": "confirmed" },
-        "fresh_water": { "value": true, "status": "confirmed" },
-        "black_water_disposal": { "value": true, "status": "confirmed" },
-        "grey_water_disposal": { "value": true, "status": "confirmed" },
-        "waste": { "value": true, "status": "confirmed" }
+        "toilet": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "fresh_water": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "black_water_disposal": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "grey_water_disposal": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "waste": {
+          "value": true,
+          "status": "confirmed"
+        }
       },
       "sources": [
-        { "id": "angelholm-vejbystrand", "type": "official-tourism", "title": "Ängelholm - Ställplats Vejbystrand", "url": "https://boka.engelholm.com/sv/boende/1954248/st%C3%A4llplats-vejbystrand/detaljer", "checked_at": "2026-06-29" }
+        {
+          "id": "angelholm-vejbystrand",
+          "type": "official-tourism",
+          "title": "Ängelholm - Ställplats Vejbystrand",
+          "url": "https://boka.engelholm.com/sv/boende/1954248/st%C3%A4llplats-vejbystrand/detaljer",
+          "checked_at": "2026-06-29"
+        }
       ]
     },
     {
@@ -331,16 +935,43 @@
       "name": "Lundåkrahamnen",
       "municipality": "Landskrona",
       "category": "gästhamn",
-      "coordinates": { "lat": 55.85891, "lng": 12.85252, "status": "confirmed" },
-      "match": ["Lundåkrahamnen"],
-      "place_status": { "value": "active", "status": "confirmed" },
-      "overnight_allowed": { "value": true, "status": "confirmed" },
-      "price": { "text": "Betalning i automat enligt hamnens information.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "coordinates": {
+        "lat": 55.85891,
+        "lng": 12.85252,
+        "status": "confirmed"
+      },
+      "match": [
+        "Lundåkrahamnen"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "Betalning i automat enligt hamnens information.",
+        "amount": null,
+        "currency": "SEK",
+        "period": "night",
+        "status": "unverified"
+      },
       "facilities": {
-        "electricity": { "value": true, "status": "confirmed" }
+        "electricity": {
+          "value": true,
+          "status": "confirmed"
+        }
       },
       "sources": [
-        { "id": "lundakrahamnen-husbilar", "type": "official", "title": "Lundåkrahamnen - husbilar", "url": "https://www.lundakrahamnen.se/husbilar", "checked_at": "2026-06-29" }
+        {
+          "id": "lundakrahamnen-husbilar",
+          "type": "official",
+          "title": "Lundåkrahamnen - husbilar",
+          "url": "https://www.lundakrahamnen.se/husbilar",
+          "checked_at": "2026-06-29"
+        }
       ]
     },
     {
@@ -348,20 +979,63 @@
       "name": "Norra Hamnen Marina AB",
       "municipality": "Helsingborg",
       "category": "gästhamn",
-      "coordinates": { "lat": 56.04825, "lng": 12.68491, "status": "confirmed" },
-      "match": ["Norra Hamnen Marina AB", "Norra Hamnen"],
-      "place_status": { "value": "active", "status": "confirmed" },
-      "overnight_allowed": { "value": true, "status": "confirmed" },
-      "price": { "text": "Betald ställplats. Verifiera aktuell avgift hos hamnen.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "coordinates": {
+        "lat": 56.04825,
+        "lng": 12.68491,
+        "status": "confirmed"
+      },
+      "match": [
+        "Norra Hamnen Marina AB",
+        "Norra Hamnen"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "Betald ställplats. Verifiera aktuell avgift hos hamnen.",
+        "amount": null,
+        "currency": "SEK",
+        "period": "night",
+        "status": "unverified"
+      },
       "facilities": {
-        "toilet": { "value": true, "status": "unverified" },
-        "electricity": { "value": true, "status": "unverified" },
-        "fresh_water": { "value": true, "status": "unverified" },
-        "black_water_disposal": { "value": true, "status": "unverified" }
+        "toilet": {
+          "value": true,
+          "status": "unverified"
+        },
+        "electricity": {
+          "value": true,
+          "status": "unverified"
+        },
+        "fresh_water": {
+          "value": true,
+          "status": "unverified"
+        },
+        "black_water_disposal": {
+          "value": true,
+          "status": "unverified"
+        }
       },
       "sources": [
-        { "id": "helsingborg-norra-hamnen", "type": "operator", "title": "Norra Hamnen Marina - ställplatser husbil", "url": "http://www.marinahelsingborg.se/stallplatser-husbil/", "checked_at": "2026-06-29" },
-        { "id": "visit-helsingborg-husbil", "type": "official-tourism", "title": "Visit Helsingborg - ställplats för husbil", "url": "https://visithelsingborg.com/boende/stallplats-for-husbil/", "checked_at": "2026-06-29" }
+        {
+          "id": "helsingborg-norra-hamnen",
+          "type": "operator",
+          "title": "Norra Hamnen Marina - ställplatser husbil",
+          "url": "http://www.marinahelsingborg.se/stallplatser-husbil/",
+          "checked_at": "2026-06-29"
+        },
+        {
+          "id": "visit-helsingborg-husbil",
+          "type": "official-tourism",
+          "title": "Visit Helsingborg - ställplats för husbil",
+          "url": "https://visithelsingborg.com/boende/stallplats-for-husbil/",
+          "checked_at": "2026-06-29"
+        }
       ]
     },
     {
@@ -369,20 +1043,62 @@
       "name": "Båstad Camping",
       "municipality": "Båstad",
       "category": "camping",
-      "coordinates": { "lat": 56.43838, "lng": 12.91521, "status": "confirmed" },
-      "match": ["Båstad Camping"],
-      "place_status": { "value": "active", "status": "confirmed" },
-      "overnight_allowed": { "value": true, "status": "confirmed" },
-      "price": { "text": "Pris enligt campingens egen bokning/prislista.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "coordinates": {
+        "lat": 56.43838,
+        "lng": 12.91521,
+        "status": "confirmed"
+      },
+      "match": [
+        "Båstad Camping"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "Pris enligt campingens egen bokning/prislista.",
+        "amount": null,
+        "currency": "SEK",
+        "period": "night",
+        "status": "unverified"
+      },
       "facilities": {
-        "toilet": { "value": true, "status": "unverified" },
-        "shower": { "value": true, "status": "unverified" },
-        "electricity": { "value": true, "status": "unverified" },
-        "fresh_water": { "value": true, "status": "unverified" }
+        "toilet": {
+          "value": true,
+          "status": "unverified"
+        },
+        "shower": {
+          "value": true,
+          "status": "unverified"
+        },
+        "electricity": {
+          "value": true,
+          "status": "unverified"
+        },
+        "fresh_water": {
+          "value": true,
+          "status": "unverified"
+        }
       },
       "sources": [
-        { "id": "bastad-camping", "type": "operator", "title": "Båstad Camping", "url": "https://www.bastadcamping.se/", "checked_at": "2026-06-29" },
-        { "id": "visit-bastad-stallplatser", "type": "official-tourism", "title": "Visit Båstad - ställplatser", "url": "https://bastad.com/", "checked_at": "2026-06-29" }
+        {
+          "id": "bastad-camping",
+          "type": "operator",
+          "title": "Båstad Camping",
+          "url": "https://www.bastadcamping.se/",
+          "checked_at": "2026-06-29"
+        },
+        {
+          "id": "visit-bastad-stallplatser",
+          "type": "official-tourism",
+          "title": "Visit Båstad - ställplatser",
+          "url": "https://bastad.com/",
+          "checked_at": "2026-06-29"
+        }
       ]
     },
     {
@@ -390,17 +1106,374 @@
       "name": "Caravan Club Norrviken",
       "municipality": "Båstad",
       "category": "ställplats",
-      "coordinates": { "lat": 56.45362, "lng": 12.78352, "status": "confirmed" },
-      "match": ["Caravan Club Norrviken", "Norrviken"],
-      "place_status": { "value": "active", "status": "confirmed" },
-      "overnight_allowed": { "value": true, "status": "confirmed" },
-      "capacity": { "value": 159, "status": "unverified" },
-      "price": { "text": "Pris och medlemsvillkor kontrolleras hos Caravan Club.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "coordinates": {
+        "lat": 56.45362,
+        "lng": 12.78352,
+        "status": "confirmed"
+      },
+      "match": [
+        "Caravan Club Norrviken",
+        "Norrviken"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "capacity": {
+        "value": 159,
+        "status": "unverified"
+      },
+      "price": {
+        "text": "Pris och medlemsvillkor kontrolleras hos Caravan Club.",
+        "amount": null,
+        "currency": "SEK",
+        "period": "night",
+        "status": "unverified"
+      },
       "facilities": {
-        "electricity": { "value": true, "status": "unverified" }
+        "electricity": {
+          "value": true,
+          "status": "unverified"
+        }
       },
       "sources": [
-        { "id": "caravan-club-norrviken", "type": "operator", "title": "Caravan Club Norrviken", "url": "https://caravanclub.se/", "checked_at": "2026-06-29" }
+        {
+          "id": "caravan-club-norrviken",
+          "type": "operator",
+          "title": "Caravan Club Norrviken",
+          "url": "https://caravanclub.se/",
+          "checked_at": "2026-06-29"
+        }
+      ]
+    },
+    {
+      "id": "bastad-hamn",
+      "name": "Båstad Hamn",
+      "municipality": "Båstad",
+      "category": "gästhamn",
+      "coordinates": {
+        "lat": 56.4334295,
+        "lng": 12.8311287,
+        "status": "unverified"
+      },
+      "match": [
+        "Båstad Hamn",
+        "Ställplats i Båstad"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "season": {
+        "text": "Öppen 1 september till 31 maj enligt Visit Båstad.",
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "Betalning via QR-kod på elstolpar enligt Visit Båstad. Belopp saknas i öppen text.",
+        "amount": null,
+        "currency": "SEK",
+        "period": "night",
+        "status": "unverified"
+      },
+      "facilities": {
+        "electricity": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "black_water_disposal": {
+          "value": true,
+          "status": "confirmed"
+        }
+      },
+      "notes": "Säsongsplats i hamnen, inte högsommarlösning. Latrintömning anges vid stora pirhuset.",
+      "sources": [
+        {
+          "id": "visit-bastad-stallplatser",
+          "type": "official-tourism",
+          "title": "Visit Båstad - ställplatser för husbil och husvagn",
+          "url": "https://bastad.com/stories/stallplatser/",
+          "checked_at": "2026-06-30"
+        }
+      ]
+    },
+    {
+      "id": "bastad-halevagen-foten-hallandsasen",
+      "name": "Foten av Hallandsåsen, Hålevägen 52",
+      "municipality": "Båstad",
+      "category": "ställplats",
+      "coordinates": {
+        "lat": 56.3575674,
+        "lng": 12.8400205,
+        "status": "unverified"
+      },
+      "match": [
+        "Ställplats Hålevägen 52",
+        "Foten av Hallandsåsen",
+        "Hålevägen 52"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "capacity": {
+        "value": 25,
+        "status": "confirmed",
+        "text": "Cirka 25 platser enligt Visit Båstad."
+      },
+      "price": {
+        "text": "50 kr/dygn, 100 kr/dygn på högsäsong enligt Visit Båstad.",
+        "amount": 50,
+        "currency": "SEK",
+        "period": "day",
+        "status": "confirmed"
+      },
+      "facilities": {
+        "black_water_disposal": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "electricity": {
+          "value": false,
+          "status": "confirmed"
+        },
+        "toilet": {
+          "value": false,
+          "status": "confirmed"
+        }
+      },
+      "notes": "Enkel ställplats utan service enligt Visit Båstad, men latrintömning anges.",
+      "sources": [
+        {
+          "id": "visit-bastad-stallplatser",
+          "type": "official-tourism",
+          "title": "Visit Båstad - ställplatser för husbil och husvagn",
+          "url": "https://bastad.com/stories/stallplatser/",
+          "checked_at": "2026-06-30"
+        }
+      ]
+    },
+    {
+      "id": "bastad-bjare-golfklubb",
+      "name": "Bjäre Golfklubb Hotell & Lodge",
+      "municipality": "Båstad",
+      "category": "ställplats",
+      "coordinates": {
+        "lat": 56.4056496,
+        "lng": 12.7731781,
+        "status": "unverified"
+      },
+      "match": [
+        "Bjäre Golfklubb Hotell & Lodge",
+        "Bjäre Golfklubb"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "capacity": {
+        "value": 4,
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "Bokning via hemsida eller reception enligt Visit Båstad. Belopp saknas i öppen text.",
+        "amount": null,
+        "currency": "SEK",
+        "period": "night",
+        "status": "missing"
+      },
+      "facilities": {
+        "toilet": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed"
+        }
+      },
+      "sources": [
+        {
+          "id": "visit-bastad-stallplatser",
+          "type": "official-tourism",
+          "title": "Visit Båstad - ställplatser för husbil och husvagn",
+          "url": "https://bastad.com/stories/stallplatser/",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "norcamp-bjare-golfklubb-koordinat",
+          "type": "third-party",
+          "title": "NorCamp - Bjäre Golfklubb koordinat",
+          "url": "https://www.norcamp.de/en/sweden/bjaere-golfklubb-hotell-lodge.7275.1.html",
+          "checked_at": "2026-06-30"
+        }
+      ]
+    },
+    {
+      "id": "bastad-vistorps-hamn",
+      "name": "Vistorps Hamn",
+      "municipality": "Båstad",
+      "category": "gästhamn",
+      "coordinates": {
+        "lat": 56.3525,
+        "lng": 12.740833,
+        "status": "unverified"
+      },
+      "match": [
+        "Vistorps Hamn",
+        "Vistorps hamn",
+        "Ranarpstrand",
+        "Ranarp strand"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "150 kr/dygn enligt Visit Båstad.",
+        "amount": 150,
+        "currency": "SEK",
+        "period": "day",
+        "status": "confirmed"
+      },
+      "facilities": {},
+      "sources": [
+        {
+          "id": "visit-bastad-stallplatser",
+          "type": "official-tourism",
+          "title": "Visit Båstad - ställplatser för husbil och husvagn",
+          "url": "https://bastad.com/stories/stallplatser/",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "navily-vistorps-hamn",
+          "type": "third-party",
+          "title": "Navily - Vistorps Hamn koordinat",
+          "url": "https://www.navily.com/port/vistorps-hamn/14344",
+          "checked_at": "2026-06-30"
+        }
+      ],
+      "notes": "Koordinat korrigerad mot hamnens position vid Ranarpstrand. Service är inte bekräftad i Visit Båstad-texten."
+    },
+    {
+      "id": "bastad-golfklubb",
+      "name": "Båstad Golfklubb",
+      "municipality": "Båstad",
+      "category": "ställplats",
+      "coordinates": {
+        "lat": 56.4289151,
+        "lng": 12.7916478,
+        "status": "confirmed"
+      },
+      "match": [
+        "Båstad Golfklubb"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "capacity": {
+        "value": 6,
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "150 kr/dygn enligt Visit Båstad.",
+        "amount": 150,
+        "currency": "SEK",
+        "period": "day",
+        "status": "confirmed"
+      },
+      "facilities": {
+        "black_water_disposal": {
+          "value": false,
+          "status": "confirmed"
+        }
+      },
+      "sources": [
+        {
+          "id": "visit-bastad-stallplatser",
+          "type": "official-tourism",
+          "title": "Visit Båstad - ställplatser för husbil och husvagn",
+          "url": "https://bastad.com/stories/stallplatser/",
+          "checked_at": "2026-06-30"
+        }
+      ]
+    },
+    {
+      "id": "bastad-akagardens-golfklubb",
+      "name": "Åkagårdens Golfklubb",
+      "municipality": "Båstad",
+      "category": "ställplats",
+      "coordinates": {
+        "lat": 56.3646887,
+        "lng": 12.7916462,
+        "status": "confirmed"
+      },
+      "match": [
+        "Åkagårdens Golfklubb"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "100 kr/natt för greenfeegäster enligt Visit Båstad.",
+        "amount": 100,
+        "currency": "SEK",
+        "period": "night",
+        "status": "confirmed"
+      },
+      "facilities": {
+        "electricity": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "toilet": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Omklädningsrum/restaurang enligt Visit Båstad."
+        }
+      },
+      "notes": "Gäller greenfeegäster enligt Visit Båstad.",
+      "sources": [
+        {
+          "id": "visit-bastad-stallplatser",
+          "type": "official-tourism",
+          "title": "Visit Båstad - ställplatser för husbil och husvagn",
+          "url": "https://bastad.com/stories/stallplatser/",
+          "checked_at": "2026-06-30"
+        }
       ]
     },
     {
@@ -408,21 +1481,67 @@
       "name": "Barsebäckstrands Camping",
       "municipality": "Kävlinge",
       "category": "camping",
-      "coordinates": { "lat": 55.77083, "lng": 12.92785, "status": "confirmed" },
-      "match": ["Barsebäckstrands Camping", "Barsebäck Camping & Stugby"],
-      "place_status": { "value": "active", "status": "confirmed" },
-      "overnight_allowed": { "value": true, "status": "confirmed" },
-      "price": { "text": "Pris enligt campingens egen sida/bokning.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "coordinates": {
+        "lat": 55.77083,
+        "lng": 12.92785,
+        "status": "confirmed"
+      },
+      "match": [
+        "Barsebäckstrands Camping",
+        "Barsebäck Camping & Stugby"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "Pris enligt campingens egen sida/bokning.",
+        "amount": null,
+        "currency": "SEK",
+        "period": "night",
+        "status": "unverified"
+      },
       "facilities": {
-        "toilet": { "value": true, "status": "unverified" },
-        "shower": { "value": true, "status": "unverified" },
-        "electricity": { "value": true, "status": "unverified" },
-        "fresh_water": { "value": true, "status": "unverified" },
-        "black_water_disposal": { "value": true, "status": "unverified" }
+        "toilet": {
+          "value": true,
+          "status": "unverified"
+        },
+        "shower": {
+          "value": true,
+          "status": "unverified"
+        },
+        "electricity": {
+          "value": true,
+          "status": "unverified"
+        },
+        "fresh_water": {
+          "value": true,
+          "status": "unverified"
+        },
+        "black_water_disposal": {
+          "value": true,
+          "status": "unverified"
+        }
       },
       "sources": [
-        { "id": "barsebackstrand-camping", "type": "operator", "title": "Barsebäckstrands Camping", "url": "https://www.barsebackstrandscamping.se", "checked_at": "2026-06-29" },
-        { "id": "kavlinge-barsebackstrand", "type": "official", "title": "Kävlinge kommun - Barsebäckstrand", "url": "https://www.kavlinge.se/uppleva-och-gora/fritidsaktiviteter/badplatser-hamnar-batar-fiske/barsebackstrand", "checked_at": "2026-06-29" }
+        {
+          "id": "barsebackstrand-camping",
+          "type": "operator",
+          "title": "Barsebäckstrands Camping",
+          "url": "https://www.barsebackstrandscamping.se",
+          "checked_at": "2026-06-29"
+        },
+        {
+          "id": "kavlinge-barsebackstrand",
+          "type": "official",
+          "title": "Kävlinge kommun - Barsebäckstrand",
+          "url": "https://www.kavlinge.se/uppleva-och-gora/fritidsaktiviteter/badplatser-hamnar-batar-fiske/barsebackstrand",
+          "checked_at": "2026-06-29"
+        }
       ]
     },
     {
@@ -430,19 +1549,55 @@
       "name": "Mölle kapell",
       "municipality": "Höganäs",
       "category": "ställplats",
-      "coordinates": { "lat": 56.27092, "lng": 12.52929, "status": "confirmed" },
-      "match": ["Mölle kapell"],
-      "place_status": { "value": "active", "status": "confirmed" },
-      "overnight_allowed": { "value": true, "status": "confirmed" },
-      "capacity": { "value": 9, "status": "confirmed" },
-      "season": { "text": "Sommarsäsong enligt Höganäs kommuns information.", "status": "confirmed" },
-      "price": { "text": "Betald ställplats. Kontrollera aktuell avgift hos kommunen/skyltning.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "coordinates": {
+        "lat": 56.27092,
+        "lng": 12.52929,
+        "status": "confirmed"
+      },
+      "match": [
+        "Mölle kapell"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "capacity": {
+        "value": 9,
+        "status": "confirmed"
+      },
+      "season": {
+        "text": "Sommarsäsong enligt Höganäs kommuns information.",
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "Betald ställplats. Kontrollera aktuell avgift hos kommunen/skyltning.",
+        "amount": null,
+        "currency": "SEK",
+        "period": "night",
+        "status": "unverified"
+      },
       "facilities": {
-        "toilet": { "value": true, "status": "unverified" },
-        "waste": { "value": true, "status": "unverified" }
+        "toilet": {
+          "value": true,
+          "status": "unverified"
+        },
+        "waste": {
+          "value": true,
+          "status": "unverified"
+        }
       },
       "sources": [
-        { "id": "hoganas-stallplatser", "type": "official", "title": "Höganäs kommun - parkering och ställplats för husbilar", "url": "https://www.hoganas.se/boende-trafik--miljo/trafik/parkering/parkering-och-stallplats-for-husbilar.html", "checked_at": "2026-06-29" }
+        {
+          "id": "hoganas-stallplatser",
+          "type": "official",
+          "title": "Höganäs kommun - parkering och ställplats för husbilar",
+          "url": "https://www.hoganas.se/boende-trafik--miljo/trafik/parkering/parkering-och-stallplats-for-husbilar.html",
+          "checked_at": "2026-06-29"
+        }
       ]
     },
     {
@@ -450,20 +1605,59 @@
       "name": "Höganäs hamn",
       "municipality": "Höganäs",
       "category": "gästhamn",
-      "coordinates": { "lat": 56.1986, "lng": 12.5528, "status": "unverified" },
-      "match": ["Höganäs hamn"],
-      "place_status": { "value": "active", "status": "confirmed" },
-      "overnight_allowed": { "value": true, "status": "confirmed" },
-      "capacity": { "value": 34, "status": "confirmed" },
-      "price": { "text": "Betald ställplats. Kontrollera aktuell avgift hos kommunen/hamnen.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "coordinates": {
+        "lat": 56.1986,
+        "lng": 12.5528,
+        "status": "unverified"
+      },
+      "match": [
+        "Höganäs hamn"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "capacity": {
+        "value": 34,
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "Betald ställplats. Kontrollera aktuell avgift hos kommunen/hamnen.",
+        "amount": null,
+        "currency": "SEK",
+        "period": "night",
+        "status": "unverified"
+      },
       "facilities": {
-        "toilet": { "value": null, "status": "unclear" },
-        "electricity": { "value": null, "status": "unclear" },
-        "fresh_water": { "value": null, "status": "unclear" },
-        "black_water_disposal": { "value": null, "status": "unclear" }
+        "toilet": {
+          "value": null,
+          "status": "unclear"
+        },
+        "electricity": {
+          "value": null,
+          "status": "unclear"
+        },
+        "fresh_water": {
+          "value": null,
+          "status": "unclear"
+        },
+        "black_water_disposal": {
+          "value": null,
+          "status": "unclear"
+        }
       },
       "sources": [
-        { "id": "hoganas-stallplatser", "type": "official", "title": "Höganäs kommun - parkering och ställplats för husbilar", "url": "https://www.hoganas.se/boende-trafik--miljo/trafik/parkering/parkering-och-stallplats-for-husbilar.html", "checked_at": "2026-06-29" }
+        {
+          "id": "hoganas-stallplatser",
+          "type": "official",
+          "title": "Höganäs kommun - parkering och ställplats för husbilar",
+          "url": "https://www.hoganas.se/boende-trafik--miljo/trafik/parkering/parkering-och-stallplats-for-husbilar.html",
+          "checked_at": "2026-06-29"
+        }
       ]
     },
     {
@@ -471,14 +1665,36 @@
       "name": "Klagshamns hamn",
       "municipality": "Malmö",
       "category": "gästhamn",
-      "coordinates": { "lat": 55.521, "lng": 12.899, "status": "unverified" },
-      "place_status": { "value": "closed", "status": "confirmed" },
-      "overnight_allowed": { "value": false, "status": "confirmed" },
-      "price": { "text": "Permanent stängd som husbilsställplats.", "amount": null, "currency": "SEK", "period": "night", "status": "confirmed" },
+      "coordinates": {
+        "lat": 55.521,
+        "lng": 12.899,
+        "status": "unverified"
+      },
+      "place_status": {
+        "value": "closed",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": false,
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "Permanent stängd som husbilsställplats.",
+        "amount": null,
+        "currency": "SEK",
+        "period": "night",
+        "status": "confirmed"
+      },
       "facilities": {},
       "notes": "Tas med som varning eftersom äldre kataloger kan visa platsen som aktiv.",
       "sources": [
-        { "id": "klagshamn-husbilar", "type": "official", "title": "Klagshamns hamnförening - husbilar", "url": "https://klagshamn.nu/husbilar/", "checked_at": "2026-06-29" }
+        {
+          "id": "klagshamn-husbilar",
+          "type": "official",
+          "title": "Klagshamns hamnförening - husbilar",
+          "url": "https://klagshamn.nu/husbilar/",
+          "checked_at": "2026-06-29"
+        }
       ]
     },
     {
@@ -486,36 +1702,204 @@
       "name": "Tosteberga Hamn",
       "municipality": "Kristianstad",
       "category": "gästhamn",
-      "coordinates": { "lat": 55.99709, "lng": 14.44495, "status": "confirmed" },
-      "match": ["Tosteberga Hamn"],
-      "place_status": { "value": "active", "status": "confirmed" },
-      "overnight_allowed": { "value": true, "status": "confirmed" },
-      "capacity": { "value": 25, "status": "unverified" },
-      "price": { "text": "Betald plats, verifiera aktuell avgift hos hamnföreningen.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "coordinates": {
+        "lat": 55.99709,
+        "lng": 14.44495,
+        "status": "confirmed"
+      },
+      "match": [
+        "Tosteberga Hamn"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "capacity": {
+        "value": 25,
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "250 kr/dygn för husbil/husvagn enligt hamnens avgifter 2026.",
+        "amount": 250,
+        "currency": "SEK",
+        "period": "day",
+        "status": "confirmed"
+      },
       "facilities": {
-        "toilet": { "value": true, "status": "unverified" },
-        "shower": { "value": true, "status": "unverified" },
-        "electricity": { "value": true, "status": "unverified" },
-        "fresh_water": { "value": true, "status": "unverified" },
-        "black_water_disposal": { "value": null, "status": "unverified" }
+        "toilet": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "fresh_water": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "black_water_disposal": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "grey_water_disposal": {
+          "value": false,
+          "status": "confirmed"
+        }
       },
       "sources": [
-        { "id": "tosteberga-hamn", "type": "official", "title": "Tosteberga fiskehamnsförening", "url": "https://tosteberga.se/tosteberga-fiskehamnsforening/", "checked_at": "2026-06-29" }
-      ]
+        {
+          "id": "tosteberga-hamn",
+          "type": "official",
+          "title": "Tosteberga fiskehamnsförening",
+          "url": "https://tosteberga.se/tosteberga-fiskehamnsforening/",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "tosteberga-avgifter-2026",
+          "type": "official",
+          "title": "Tosteberga hamn - avgifter 2026",
+          "url": "https://tosteberga.se/wp-content/uploads/2026/05/Avgifter-2026-svenska-Tosteberga-hamn.docx",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "tosteberga-ordningsregler-2026",
+          "type": "official",
+          "title": "Tosteberga hamn - ordningsregler",
+          "url": "https://tosteberga.se/wp-content/uploads/2026/06/Ordningsregler-svenska-v5-Tosteberga-hamn.docx",
+          "checked_at": "2026-06-30"
+        }
+      ],
+      "notes": "Endast numrerade platser 1-25 är för övernattning. Förtält är inte tillåtet, max 1000 W och plats lämnas senast 13:00 enligt hamnens regler. OSM uppgift om ingen tömning är svagare än hamnens egna regler."
     },
     {
       "id": "perskops-stallplats",
       "name": "Persköps ställplats",
       "municipality": "Örkelljunga",
       "category": "ställplats",
-      "coordinates": { "lat": 56.2618, "lng": 13.1529, "status": "confirmed" },
-      "match": ["Persköps ställplats"],
-      "place_status": { "value": "active", "status": "confirmed" },
-      "overnight_allowed": { "value": true, "status": "confirmed" },
-      "price": { "text": "Pris/bokning via platsens egen sida.", "amount": null, "currency": "SEK", "period": "night", "status": "unverified" },
+      "coordinates": {
+        "lat": 56.2618,
+        "lng": 13.1529,
+        "status": "confirmed"
+      },
+      "match": [
+        "Persköps ställplats"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "Pris/bokning via platsens egen sida.",
+        "amount": null,
+        "currency": "SEK",
+        "period": "night",
+        "status": "unverified"
+      },
       "facilities": {},
       "sources": [
-        { "id": "perskops-stallplats", "type": "official", "title": "Persköps ställplats", "url": "https://www.perskopsstallplats.com/", "checked_at": "2026-06-29" }
+        {
+          "id": "perskops-stallplats",
+          "type": "official",
+          "title": "Persköps ställplats",
+          "url": "https://www.perskopsstallplats.com/",
+          "checked_at": "2026-06-29"
+        }
+      ]
+    },
+    {
+      "id": "tomelilla-lagerhustomten-dayparking",
+      "name": "Lagerhustomten husbilsparkering",
+      "municipality": "Tomelilla",
+      "category": "parkering",
+      "coordinates": {
+        "lat": 55.541455,
+        "lng": 13.952492,
+        "status": "unverified"
+      },
+      "place_status": {
+        "value": "day_parking",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": null,
+        "status": "unclear",
+        "text": "Kommunens data anger max 24 h men säger uttryckligen att husbilsparkeringen inte är en ställplats."
+      },
+      "price": {
+        "text": "Pris ej angivet i kommunens öppna data.",
+        "amount": null,
+        "currency": "SEK",
+        "period": "day",
+        "status": "missing"
+      },
+      "facilities": {},
+      "notes": "Visas som dagparkering/varning, inte som rekommenderad nattplats.",
+      "sources": [
+        {
+          "id": "tomelilla-husbilsparkering-metadata",
+          "type": "official",
+          "title": "Tomelilla kommun - Husbilsparkering metadata",
+          "url": "https://data.tomelilla.se/store/1/metadata/352",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "tomelilla-husbilsparkering-rowstore",
+          "type": "official",
+          "title": "Tomelilla kommun - Husbilsparkering data",
+          "url": "https://data.tomelilla.se/rowstore/dataset/8d606a11-20a4-441f-8ff0-f71a44e68a4e",
+          "checked_at": "2026-06-30"
+        }
+      ]
+    },
+    {
+      "id": "simrishamn-millan-pa-mollan-kandidat",
+      "name": "Millan på möllan, Backamöllan/Borrby",
+      "municipality": "Simrishamn",
+      "category": "ställplats",
+      "coordinates": {
+        "lat": 55.450611,
+        "lng": 14.146133,
+        "status": "unverified"
+      },
+      "place_status": {
+        "value": "candidate",
+        "status": "unverified"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "unverified",
+        "text": "Kommunal karta listar platsen, men pris och service är inte verifierade."
+      },
+      "price": {
+        "text": "Pris ej verifierat.",
+        "amount": null,
+        "currency": "SEK",
+        "period": "night",
+        "status": "missing"
+      },
+      "facilities": {},
+      "notes": "Officiell kartträff men för lite detaljdata för att visas som bekräftad plats.",
+      "sources": [
+        {
+          "id": "simrishamn-husbilsplatser-karta",
+          "type": "official",
+          "title": "Simrishamns kommun - karta över husbilsplatser",
+          "url": "https://simrishamn.maps.arcgis.com/apps/instant/basic/index.html?appid=3648c09aa62a4f24a20c7a4a91857c7b",
+          "checked_at": "2026-06-30"
+        }
       ]
     }
   ]

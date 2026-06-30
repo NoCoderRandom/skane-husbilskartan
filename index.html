@@ -765,8 +765,8 @@
           <div class="field">
             <label for="statusSelect">Status</label>
             <select id="statusSelect">
-              <option value="usable">Tillåtna + kandidater</option>
               <option value="active">Endast bekräftade</option>
+              <option value="usable">Bekräftade + kandidater</option>
               <option value="candidate">Endast kandidater</option>
               <option value="problem">Stängda/förbjudna/dagparkering</option>
               <option value="">Alla statusar</option>
@@ -799,7 +799,7 @@
             <label class="toggle"><input type="checkbox" id="latrineFilter"> <span>Latrintömning</span></label>
             <label class="toggle"><input type="checkbox" id="electricityFilter"> <span>El</span></label>
             <label class="toggle"><input type="checkbox" id="waterFilter"> <span>Färskvatten</span></label>
-            <label class="toggle"><input type="checkbox" id="servicePointsFilter" checked> <span>Visa servicepunkter på kartan</span></label>
+            <label class="toggle"><input type="checkbox" id="servicePointsFilter"> <span>Visa OSM-servicepunkter</span></label>
           </div>
         </section>
 
@@ -1139,13 +1139,16 @@
         state.serviceLayer = L.layerGroup();
         if (els.servicePointsFilter.checked) {
           (state.data?.servicePoints || []).forEach((point) => {
+            const accessText = point.access ? `Åtkomst: ${point.access}` : "Åtkomst: ej angiven";
+            const feeText = point.fee ? `Avgift: ${point.fee}` : "Avgift: ej angiven";
+            const statusText = point.status?.text || "Servicepunkt från OSM. Ej manuellt verifierad.";
             const circle = L.circleMarker([point.coordinates.lat, point.coordinates.lng], {
               radius: 6,
               color: "#0d5960",
               fillColor: "#d7f0f4",
               fillOpacity: 0.95,
               weight: 2
-            }).bindPopup(`<strong>${escapeHtml(point.name)}</strong><br>Tömnings-/servicepunkt<br><a href="${escapeHtml(point.source)}" target="_blank" rel="noreferrer">OSM-källa</a>`);
+            }).bindPopup(`<strong>${escapeHtml(point.name)}</strong><br>OSM-servicepunkt, ej verifierad<br>${escapeHtml(accessText)}<br>${escapeHtml(feeText)}<br>${escapeHtml(statusText)}<br><a href="${escapeHtml(point.source)}" target="_blank" rel="noreferrer">OSM-källa</a>`);
             state.serviceLayer.addLayer(circle);
           });
           state.serviceLayer.addTo(state.map);
@@ -1312,14 +1315,14 @@
           els.searchInput.value = "";
           els.municipalitySelect.value = "";
           els.categorySelect.value = "";
-          els.statusSelect.value = "usable";
+          els.statusSelect.value = "active";
           els.priceSelect.value = "";
           els.sortSelect.value = "quality";
           els.toiletFilter.checked = false;
           els.latrineFilter.checked = false;
           els.electricityFilter.checked = false;
           els.waterFilter.checked = false;
-          els.servicePointsFilter.checked = true;
+          els.servicePointsFilter.checked = false;
           filterPlaces();
         });
       }

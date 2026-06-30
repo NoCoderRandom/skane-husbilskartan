@@ -5,7 +5,7 @@ on:
     branches: [main]
   workflow_dispatch:
   schedule:
-    - cron: "20 */2 * * *"
+    - cron: "20 * * * *"
 
 permissions:
   contents: read
@@ -27,7 +27,7 @@ jobs:
       - name: Rebuild place data
         run: npm run build:data
         env:
-          FORCE_REFRESH_OSM: ${{ github.event_name == 'schedule' && '1' || '' }}
+          FORCE_REFRESH_OSM: ${{ (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && '1' || '' }}
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

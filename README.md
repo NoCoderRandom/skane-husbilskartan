@@ -28,4 +28,4 @@ För att hämta ny OSM-data från Overpass:
 FORCE_REFRESH_OSM=1 npm run build:data
 ```
 
-På GitHub körs databyggaren vid deploy och automatiskt varannan timme.
+På GitHub körs databyggaren vid deploy och automatiskt varje timme.
