@@ -542,6 +542,66 @@
           "status": "free-license"
         }
       ]
+    },
+    {
+      "id": "kavlinge-barsebackshamn-stallplats",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Barseb%C3%A4ckshamn_1.jpg/960px-Barseb%C3%A4ckshamn_1.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Barseb%C3%A4ckshamn_1.jpg",
+          "title": "Barsebäckshamn",
+          "caption": "Barsebäckshamn",
+          "author": "Jorchr",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
+      "id": "bromolla-ivo-camping",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Iv%C3%B6_H%C3%A4userzeile_am_F%C3%A4hranleger.JPG/960px-Iv%C3%B6_H%C3%A4userzeile_am_F%C3%A4hranleger.JPG",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Iv%C3%B6_H%C3%A4userzeile_am_F%C3%A4hranleger.JPG",
+          "title": "Ivö färjeläge",
+          "caption": "Färjeläget på Ivö nära Ivö Camping",
+          "author": "Olaf Meister",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
+      "id": "bromolla-strandangens-camping",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Iv%C3%B6sj%C3%B6n_fr%C3%A5n_Kjugekull.jpg/960px-Iv%C3%B6sj%C3%B6n_fr%C3%A5n_Kjugekull.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Iv%C3%B6sj%C3%B6n_fr%C3%A5n_Kjugekull.jpg",
+          "title": "Ivösjön från Kjugekull",
+          "caption": "Ivösjön, närområde till Bromölla Camping & Vandrarhem",
+          "author": "Jorchr",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
+      "id": "klippan-elfdalens-camping",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/J%C3%A4rnv%C3%A4gsbro_%C3%B6ver_B%C3%A4ljane_%C3%A5_%2812100327715%29.jpg/960px-J%C3%A4rnv%C3%A4gsbro_%C3%B6ver_B%C3%A4ljane_%C3%A5_%2812100327715%29.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:J%C3%A4rnv%C3%A4gsbro_%C3%B6ver_B%C3%A4ljane_%C3%A5_(12100327715).jpg",
+          "title": "Järnvägsbro över Bäljane å",
+          "caption": "Bäljane å norr om Klippan, närområde till Elfdalens Camping",
+          "author": "Tekniska museet / Blomgrens Atelier",
+          "license": "CC BY 2.0",
+          "license_url": "https://creativecommons.org/licenses/by/2.0/",
+          "status": "free-license"
+        }
+      ]
     }
   ]
 }

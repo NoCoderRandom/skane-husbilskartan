@@ -1888,24 +1888,34 @@
         "status": "confirmed"
       },
       "price": {
-        "text": "Pris enligt campingens egen sida/bokning.",
-        "amount": null,
+        "text": "Quick Stop-plats med el: 350 kr lågsäsong, 500 kr midsommar och 430 kr högsäsong enligt Barsebäckstrands Campings prislista.",
+        "amount": 350,
         "currency": "SEK",
         "period": "night",
-        "status": "unverified"
+        "status": "confirmed",
+        "is_free": false
+      },
+      "capacity": {
+        "value": 121,
+        "status": "confirmed",
+        "text": "Camping.se anger 121 platser totalt, varav 35 säsongsplatser."
+      },
+      "season": {
+        "text": "Öppen 27 mars till 11 oktober 2026 enligt Camping.se.",
+        "status": "confirmed"
       },
       "facilities": {
         "toilet": {
           "value": true,
-          "status": "unverified"
+          "status": "confirmed"
         },
         "shower": {
           "value": true,
-          "status": "unverified"
+          "status": "confirmed"
         },
         "electricity": {
           "value": true,
-          "status": "unverified"
+          "status": "confirmed"
         },
         "fresh_water": {
           "value": true,
@@ -1913,23 +1923,54 @@
         },
         "black_water_disposal": {
           "value": true,
-          "status": "unverified"
+          "status": "confirmed"
+        },
+        "grey_water_disposal": {
+          "value": null,
+          "status": "unverified",
+          "text": "Inte separat bekräftat av operatör eller Camping.se."
+        },
+        "laundry": {
+          "value": true,
+          "status": "confirmed"
         }
       },
+      "notes": "Camping med quick stop-platser och vanliga campingplatser nära Barsebäckstrand. Serviceuppgifter bygger på operatörens service- och prisinformation samt Camping.se.",
       "sources": [
         {
           "id": "barsebackstrand-camping",
           "type": "operator",
           "title": "Barsebäckstrands Camping",
           "url": "https://www.barsebackstrandscamping.se",
-          "checked_at": "2026-06-29"
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "barsebackstrand-camping-pricing",
+          "type": "operator",
+          "title": "Barsebäckstrands Camping - pricing",
+          "url": "https://barsebackstrandscamping.se/en/pricing/",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "barsebackstrand-camping-services",
+          "type": "operator",
+          "title": "Barsebäckstrands Camping - services",
+          "url": "https://barsebackstrandscamping.se/en/services/",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "camping-se-barsebackstrand",
+          "type": "third-party",
+          "title": "Camping.se - Barsebäckstrands Camping",
+          "url": "https://camping.se/en/camping/4005/Barsebackstrands-Camping",
+          "checked_at": "2026-06-30"
         },
         {
           "id": "kavlinge-barsebackstrand",
           "type": "official",
           "title": "Kävlinge kommun - Barsebäckstrand",
           "url": "https://www.kavlinge.se/uppleva-och-gora/fritidsaktiviteter/badplatser-hamnar-batar-fiske/barsebackstrand",
-          "checked_at": "2026-06-29"
+          "checked_at": "2026-06-30"
         }
       ]
     },

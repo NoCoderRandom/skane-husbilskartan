@@ -25,25 +25,93 @@
         "status": "confirmed"
       },
       "price": {
-        "text": "Pris enligt campingens egen webbplats/bokning.",
-        "amount": null,
+        "text": "2026: 395 kr/natt utan el och 425 kr/natt inklusive el, 01.01.2026-31.12.2026 enligt Ivö Campings prisfolder.",
+        "amount": 395,
         "currency": "SEK",
         "period": "night",
-        "status": "unverified"
+        "status": "confirmed",
+        "is_free": false
       },
+      "capacity": {
+        "value": 130,
+        "status": "confirmed",
+        "text": "Cirka 130 elplatser enligt Ivö Camping."
+      },
+      "season": {
+        "text": "Prisfoldern gäller 01.01.2026-31.12.2026; operatören anger att campingen alltid är öppen.",
+        "status": "confirmed"
+      },
+      "facilities": {
+        "toilet": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "fresh_water": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "black_water_disposal": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Tömning för kassett-toaletter enligt operatören."
+        },
+        "grey_water_disposal": {
+          "value": null,
+          "status": "missing",
+          "text": "Ej verifierat hos operatör; OSM anger bara generell tömningsstation."
+        },
+        "waste": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "laundry": {
+          "value": true,
+          "status": "confirmed"
+        }
+      },
+      "notes": "Camping vid Ivö färjeläge med cirka 130 elplatser, servicebyggnader, tvättstuga, återvinning och tömning för kassett-toaletter. Gråvattentömning är inte verifierad hos operatören.",
       "sources": [
         {
           "id": "ivo-camping",
           "type": "operator",
           "title": "Ivö Camping",
-          "url": "http://ivo-camping.nu/",
+          "url": "https://ivo-camping.nu/",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "ivo-camping-boende",
+          "type": "operator",
+          "title": "Ivö Camping - boende",
+          "url": "https://ivo-camping.nu/boende",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "ivo-camping-priser",
+          "type": "operator",
+          "title": "Ivö Camping - priser",
+          "url": "https://ivo-camping.nu/priser",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "ivo-camping-campingkarta",
+          "type": "operator",
+          "title": "Ivö Camping - campingkarta",
+          "url": "https://ivo-camping.nu/campingkarta",
           "checked_at": "2026-06-30"
         }
       ]
     },
     {
       "id": "bromolla-strandangens-camping",
-      "name": "Strandängens Camping & Vandrarhem",
+      "name": "Bromölla Camping & Vandrarhem",
       "municipality": "Bromölla",
       "category": "camping",
       "coordinates": {
@@ -52,6 +120,7 @@
         "status": "unverified"
       },
       "match": [
+        "Bromölla Camping & Vandrarhem",
         "Strandängens Camping & Vandrarhem"
       ],
       "place_status": {
@@ -63,18 +132,71 @@
         "status": "confirmed"
       },
       "price": {
-        "text": "Pris enligt campingens egen webbplats/bokning.",
-        "amount": null,
+        "text": "Husvagn/husbil med el: 320 kr lågsäsong och 395 kr högsäsong enligt operatören; priserna anges som frånpriser och kan variera.",
+        "amount": 320,
         "currency": "SEK",
         "period": "night",
-        "status": "unverified"
+        "status": "confirmed",
+        "is_free": false
       },
+      "capacity": {
+        "value": 118,
+        "status": "confirmed",
+        "text": "118 elplatser enligt operatören."
+      },
+      "season": {
+        "text": "Året runt öppen enligt operatören. Låg-/högsäsong finns i prislistan men datum anges inte.",
+        "status": "confirmed"
+      },
+      "facilities": {
+        "toilet": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "fresh_water": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Kommunen anger påfyllning av tankar."
+        },
+        "black_water_disposal": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Kommunen anger kem toa."
+        },
+        "grey_water_disposal": {
+          "value": true,
+          "status": "confirmed"
+        }
+      },
+      "notes": "Familjecamping vid Ivösjön, Scoutvägen 6. Kommunen verifierar toa, dusch, gråvattentömning, kemtoa och påfyllning av tankar för husbil/husvagn; operatören anger 118 elplatser och årsruntöppet.",
       "sources": [
         {
           "id": "bromolla-camping",
           "type": "operator",
           "title": "Bromölla Camping",
           "url": "https://www.bromollacamping.se/",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "bromolla-camping-boenden-priser",
+          "type": "operator",
+          "title": "Bromölla Camping - boenden och priser",
+          "url": "https://bromollacamping.se/val-hur-du-vill-bo/",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "bromolla-kommun-stallplatser",
+          "type": "official",
+          "title": "Bromölla kommun - ställplatser för husbilar",
+          "url": "https://www.bromolla.se/uppleva-och-gora/turism/stallplatser-for-husbilar/",
           "checked_at": "2026-06-30"
         }
       ]
@@ -976,18 +1098,91 @@
         "status": "confirmed"
       },
       "price": {
-        "text": "Pris enligt campingens egen webbplats/bokning.",
-        "amount": null,
+        "text": "Dygnspris 400 kr inklusive el och dusch, eller 360 kr inklusive dusch utan el, enligt Skäralids Camping.",
+        "amount": 360,
         "currency": "SEK",
         "period": "night",
-        "status": "unverified"
+        "status": "confirmed",
+        "is_free": false
       },
+      "capacity": {
+        "value": 56,
+        "status": "confirmed",
+        "text": "56 platser med el enligt operatören."
+      },
+      "season": {
+        "text": "Öppet 29/4 till 27/9 enligt operatörens startsida, kontrollerat 2026-06-30.",
+        "status": "confirmed"
+      },
+      "facilities": {
+        "toilet": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "fresh_water": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "black_water_disposal": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "grey_water_disposal": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "waste": {
+          "value": true,
+          "status": "unverified",
+          "text": "Sophantering anges av Campio, inte av operatören."
+        },
+        "wifi": {
+          "value": null,
+          "status": "unverified",
+          "text": "Ej operatörsbekräftat; tredjepartskällor motsäger varandra."
+        },
+        "laundry": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Tvättmaskin finns i servicehuset enligt operatören."
+        }
+      },
+      "notes": "Camping intill Söderåsens nationalpark med servicehus, reception, samlingsrum, duschar, toaletter, kök, latrinrum, gråvattentömning i marken och vattenpåfyllning enligt operatören.",
       "sources": [
         {
           "id": "skaralids-camping",
           "type": "operator",
           "title": "Skäralids Camping",
           "url": "https://www.skaralidscamping.se/",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "skaralids-camping-camping",
+          "type": "operator",
+          "title": "Skäralids Camping - camping",
+          "url": "https://www.skaralidscamping.se/camping",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "skaralids-camping-priser",
+          "type": "operator",
+          "title": "Skäralids Camping - priser",
+          "url": "https://www.skaralidscamping.se/priser",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "campio-skaralids-camping",
+          "type": "third-party",
+          "title": "Campio - Skäralids Camping",
+          "url": "https://campio.no/sv/campsite/skaralids-camping/",
           "checked_at": "2026-06-30"
         }
       ]
@@ -1072,7 +1267,7 @@
     },
     {
       "id": "kavlinge-aboda-golf-stallplats",
-      "name": "Åboda",
+      "name": "Kävlinge GK ställplats",
       "municipality": "Kävlinge",
       "category": "ställplats",
       "coordinates": {
@@ -1081,7 +1276,10 @@
         "status": "unverified"
       },
       "match": [
-        "Åboda"
+        "Åboda",
+        "Kävlinge GK",
+        "Kävlinge Golfklubb",
+        "Åboda ställplats"
       ],
       "place_status": {
         "value": "active",
@@ -1092,18 +1290,74 @@
         "status": "confirmed"
       },
       "price": {
-        "text": "Pris enligt golfklubbens webbplats/bokning.",
-        "amount": null,
+        "text": "200 kr/dygn inklusive el för golfande gäster; 350 kr/dygn utan golf i mån av plats enligt Kävlinge GK.",
+        "amount": 200,
         "currency": "SEK",
-        "period": "night",
-        "status": "unverified"
+        "period": "day",
+        "status": "confirmed",
+        "is_free": false
       },
+      "capacity": {
+        "value": 9,
+        "status": "unverified",
+        "text": "Husbilskompisar anger nio platser; operatören anger inte antal."
+      },
+      "season": {
+        "text": "Säsong anges inte på Kävlinge GK:s ställplatssida; plats kan inte garanteras utan förbokning.",
+        "status": "missing"
+      },
+      "facilities": {
+        "toilet": {
+          "value": true,
+          "status": "unverified"
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Dusch och omklädningsrum 06:00-22:00 enligt Kävlinge GK."
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "fresh_water": {
+          "value": true,
+          "status": "unverified"
+        },
+        "black_water_disposal": {
+          "value": false,
+          "status": "confirmed"
+        },
+        "grey_water_disposal": {
+          "value": false,
+          "status": "confirmed"
+        },
+        "waste": {
+          "value": true,
+          "status": "unverified"
+        }
+      },
+      "notes": "Förbokning krävs/rekommenderas. Incheckning från 15:00 och utcheckning senast 14:00 enligt Kävlinge GK. Handdukar finns att låna.",
       "sources": [
         {
           "id": "kavlinge-gk",
           "type": "operator",
           "title": "Kävlinge GK",
           "url": "https://kavlingegk.se/",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "kavlinge-gk-stallplatser",
+          "type": "operator",
+          "title": "Kävlinge GK - ställplatser",
+          "url": "https://kavlingegk.se/stallplatser/",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "husbilskompisar-kavlinge-gk",
+          "type": "third-party",
+          "title": "Husbilskompisar - Kävlinge GK",
+          "url": "https://husbilskompisar.se/husbilsplats/kavlinge-gk/",
           "checked_at": "2026-06-30"
         }
       ]
@@ -2842,18 +3096,99 @@
         "status": "confirmed"
       },
       "price": {
-        "text": "Pris enligt campingens egen webbplats/bokning.",
-        "amount": null,
+        "text": "Campingtomt för husbil/husvagn: 350 kr/natt utan el och 390 kr/natt med el enligt Elfdalens Camping. Prissidan anger manuell bokning 370 kr och elavgift 40/45 kr/dag.",
+        "amount": 350,
         "currency": "SEK",
         "period": "night",
-        "status": "unverified"
+        "status": "confirmed",
+        "is_free": false
       },
+      "capacity": {
+        "value": 66,
+        "status": "confirmed",
+        "text": "66 campingplatser enligt Campcation."
+      },
+      "season": {
+        "text": "Öppet 01/01-31/12; fullservice 31/03-30/08 enligt Campcation.",
+        "status": "confirmed"
+      },
+      "facilities": {
+        "toilet": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Dusch finns; Campcation anger 5 kr/4 minuter."
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "fresh_water": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "black_water_disposal": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Latrintömning enligt operatören."
+        },
+        "grey_water_disposal": {
+          "value": true,
+          "status": "unverified",
+          "text": "Anges av NorCamp, inte bekräftat på operatörssidan."
+        },
+        "waste": {
+          "value": null,
+          "status": "missing"
+        },
+        "wifi": {
+          "value": true,
+          "status": "confirmed",
+          "text": "WiFi enligt Campcation."
+        },
+        "laundry": {
+          "value": true,
+          "status": "confirmed"
+        }
+      },
+      "notes": "Naturnära camping vid Bäljane å med servicehus, gemensamt kök, grillplatser, vattenpåfyllning, latrintömning och tvättstuga.",
       "sources": [
         {
           "id": "elfdalens-camping",
           "type": "operator",
           "title": "Elfdalens Camping",
-          "url": "https://www.elfdalenscamping.se/",
+          "url": "https://www.elfdalenscamping.nu/",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "elfdalens-camping-boende",
+          "type": "operator",
+          "title": "Elfdalens Camping - boende",
+          "url": "https://www.elfdalenscamping.nu/boende/",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "elfdalens-camping-priser",
+          "type": "operator",
+          "title": "Elfdalens Camping - priser",
+          "url": "https://www.elfdalenscamping.nu/priser/",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "campcation-elfdalens-camping",
+          "type": "third-party",
+          "title": "Campcation - Elfdalens Camping",
+          "url": "https://www.campcation.com/sv/campsite/elfdalens-camping/",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "norcamp-elfdalens-camping",
+          "type": "third-party",
+          "title": "NorCamp - Elfdalens Camping",
+          "url": "https://www.norcamp.de/en/sweden/elfdalens-camping.2131.1.html",
           "checked_at": "2026-06-30"
         }
       ]
@@ -4981,7 +5316,7 @@
         "status": "confirmed"
       },
       "season": {
-        "text": "Öppen från början av maj till slutet av september enligt Barsebäckshamn.",
+        "text": "Öppen från början av maj till slutet av september; prisperioder 1/5-14/6 och 15/6-21/9 enligt Barsebäckshamn.",
         "status": "confirmed"
       },
       "price": {
@@ -4989,7 +5324,8 @@
         "amount": 355,
         "currency": "SEK",
         "period": "day",
-        "status": "confirmed"
+        "status": "confirmed",
+        "is_free": false
       },
       "facilities": {
         "toilet": {
