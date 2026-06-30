@@ -317,6 +317,156 @@
           "status": "free-license"
         }
       ]
+    },
+    {
+      "id": "bastad-hamn",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/B%C3%A5stad_Hamn_-_panoramio.jpg/960px-B%C3%A5stad_Hamn_-_panoramio.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:B%C3%A5stad_Hamn_-_panoramio.jpg",
+          "title": "Båstad hamn",
+          "caption": "Båstad hamn",
+          "author": "Helle Krog",
+          "license": "CC BY 3.0",
+          "license_url": "https://creativecommons.org/licenses/by/3.0/",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
+      "id": "bastad-golfklubb",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/B%C3%A5stads_golfklubb.jpg/960px-B%C3%A5stads_golfklubb.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:B%C3%A5stads_golfklubb.jpg",
+          "title": "Båstads Golfklubb",
+          "caption": "Båstads Golfklubb",
+          "author": "Jorchr",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
+      "id": "helsingborg-raa-hamn",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/R%C3%A5%C3%A5_hamn.jpg/960px-R%C3%A5%C3%A5_hamn.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:R%C3%A5%C3%A5_hamn.jpg",
+          "title": "Råå hamn",
+          "caption": "Råå hamn",
+          "author": "Jesper Olsson",
+          "license": "Public domain",
+          "license_url": "https://commons.wikimedia.org/wiki/Public_domain",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
+      "id": "hoganas-vikens-hamn",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Vikens_hamn.jpg/960px-Vikens_hamn.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Vikens_hamn.jpg",
+          "title": "Vikens hamn",
+          "caption": "Vikens hamn",
+          "author": "Jorchr",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
+      "id": "hoganas-svanshalls-hamn",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Svanshall_6_januari_2012.JPG/960px-Svanshall_6_januari_2012.JPG",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Svanshall_6_januari_2012.JPG",
+          "title": "Svanshall",
+          "caption": "Svanshalls hamnområde",
+          "author": "Janders",
+          "license": "CC0",
+          "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
+      "id": "lomma-camping",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Habo_Ljung%2C_S%C3%B6dra_V%C3%A4stkustv%C3%A4gen%2C_23434_Lomma_-_panoramio.jpg/960px-Habo_Ljung%2C_S%C3%B6dra_V%C3%A4stkustv%C3%A4gen%2C_23434_Lomma_-_panoramio.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Habo_Ljung%2C_S%C3%B6dra_V%C3%A4stkustv%C3%A4gen%2C_23434_Lomma_-_panoramio.jpg",
+          "title": "Habo Ljung",
+          "caption": "Habo Ljung vid Lomma Camping",
+          "author": "Francois Polito",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
+      "id": "simrishamn-smabatshamn-husbil",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Simrishamns_hamn_2014.jpg/960px-Simrishamns_hamn_2014.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Simrishamns_hamn_2014.jpg",
+          "title": "Simrishamns hamn",
+          "caption": "Simrishamns hamn",
+          "author": "Jorchr",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
+      "id": "simrishamn-baskemolla-camping",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Baskem%C3%B6lla_hamn_3.jpg/960px-Baskem%C3%B6lla_hamn_3.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Baskem%C3%B6lla_hamn_3.jpg",
+          "title": "Baskemölla hamn",
+          "caption": "Baskemölla hamn, nära campingen",
+          "author": "Jorchr",
+          "license": "CC BY 3.0",
+          "license_url": "https://creativecommons.org/licenses/by/3.0/",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
+      "id": "ystad-loderups-strandbads-camping",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/L%C3%B6derups_strandbad_2021-08.jpg/960px-L%C3%B6derups_strandbad_2021-08.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:L%C3%B6derups_strandbad_2021-08.jpg",
+          "title": "Löderups strandbad",
+          "caption": "Löderups strandbad",
+          "author": "Johannes Scherman",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
+      "id": "trelleborg-nybostrand-camping",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Nybostrand_-_panoramio.jpg/960px-Nybostrand_-_panoramio.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Nybostrand_-_panoramio.jpg",
+          "title": "Nybostrand",
+          "caption": "Nybostrand",
+          "author": "Petr Havliček",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "status": "free-license"
+        }
+      ]
     }
   ]
 }

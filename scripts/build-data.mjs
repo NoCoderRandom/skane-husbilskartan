@@ -236,6 +236,35 @@ function mergeField(base, override) {
   return merged;
 }
 
+function priceKindFromField(price) {
+  if (!price) return null;
+  if (price.is_free === true || price.is_free === false) return price.is_free;
+  const text = norm(price.text);
+  const amount = parseNumber(price.amount);
+  if (amount !== null && amount > 0) return false;
+  if (/\b(gratis|avgiftsfri|kostnadsfri|fee no|utan avgift)\b/.test(text)) return true;
+  if (/\b(betald|betalning|avgift|sek|kr|dygn|natt|sasong|säsong)\b/.test(text)) return false;
+  return null;
+}
+
+function mergePriceField(base, override) {
+  if (!override) return base;
+  const merged = mergeField(base, override);
+  const overrideKind = priceKindFromField(override);
+  if (overrideKind !== null) {
+    return { ...merged, is_free: overrideKind };
+  }
+  if (Object.prototype.hasOwnProperty.call(override, "is_free")) {
+    return { ...merged, is_free: override.is_free };
+  }
+  if (Object.prototype.hasOwnProperty.call(override, "text")
+    || Object.prototype.hasOwnProperty.call(override, "amount")
+    || override.status === "confirmed") {
+    return { ...merged, is_free: null };
+  }
+  return merged;
+}
+
 function fieldValue(field) {
   return field && typeof field === "object" && "value" in field ? field.value : null;
 }
@@ -508,7 +537,7 @@ function mergePlaces(osmPlace, seed) {
     coordinates: seed.coordinates?.lat && seed.coordinates?.lng ? seed.coordinates : base.coordinates || seed.coordinates,
     place_status: mergeField(base.place_status, seed.place_status),
     overnight_allowed: mergeField(base.overnight_allowed, seed.overnight_allowed),
-    price: mergeField(base.price, seed.price),
+    price: mergePriceField(base.price, seed.price),
     facilities,
     sources: [...sourcesById.values()],
     notes: seed.notes ?? (seedHasVerifiedSource ? null : base.notes),

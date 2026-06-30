@@ -521,18 +521,57 @@
         "status": "confirmed"
       },
       "price": {
-        "text": "Pris enligt campingens egen webbplats/bokning.",
+        "text": "Pris enligt Lomma Campings egen bokning.",
         "amount": null,
         "currency": "SEK",
         "period": "night",
         "status": "unverified"
       },
+      "capacity": {
+        "value": 31,
+        "status": "confirmed",
+        "text": "31 ställplatser utan el."
+      },
+      "facilities": {
+        "toilet": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "electricity": {
+          "value": false,
+          "status": "confirmed"
+        },
+        "fresh_water": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "black_water_disposal": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "grey_water_disposal": {
+          "value": true,
+          "status": "confirmed"
+        }
+      },
+      "notes": "Ställplatserna är utan el och avsedda för husbil utan förtält/vindskydd. Servicehus samt tömning/påfyllning finns på campingen.",
       "sources": [
         {
           "id": "lomma-camping",
           "type": "operator",
           "title": "Lomma Camping",
           "url": "https://lommacamping.se/",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "lomma-camping-stallplatser",
+          "type": "operator",
+          "title": "Lomma Camping - ställplatser",
+          "url": "https://lommacamping.se/stallplatser/",
           "checked_at": "2026-06-30"
         }
       ]
@@ -1147,11 +1186,11 @@
         "status": "confirmed"
       },
       "price": {
-        "text": "Pris saknas i kommunens ställplatsinformation. Kontrollera hos campingens bokning.",
-        "amount": null,
+        "text": "Ställplatspriser 2026: 310-410 kr/natt beroende på datum enligt Lerbergets Camping.",
+        "amount": 310,
         "currency": "SEK",
         "period": "night",
-        "status": "missing"
+        "status": "confirmed"
       },
       "facilities": {
         "toilet": {
@@ -1186,6 +1225,13 @@
           "type": "official",
           "title": "Höganäs kommun - Lerbergets camping",
           "url": "https://www.hoganas.se/boende-trafik--miljo/trafik/parkering/parkering-och-stallplats-for-husbilar/lerbergets-camping.html",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "lerbergets-camping-stallplats",
+          "type": "operator",
+          "title": "Lerbergets Camping - ställplats",
+          "url": "https://lerbergetscamping.se/sv/boende/stallplats",
           "checked_at": "2026-06-30"
         }
       ]
@@ -1493,11 +1539,11 @@
         "status": "confirmed"
       },
       "price": {
-        "text": "Pris saknas i operatörens öppna text. Kontrollera hos Solans Mack.",
-        "amount": null,
+        "text": "Operatören bekräftar ställplatser. Husbil.se anger pris från 150 kr; kontrollera aktuellt pris hos Solans Mack.",
+        "amount": 150,
         "currency": "SEK",
         "period": "night",
-        "status": "missing"
+        "status": "unverified"
       },
       "facilities": {
         "toilet": {
@@ -1529,6 +1575,13 @@
           "type": "operator",
           "title": "Solans Mack - ställplatser",
           "url": "https://www.solans.se/stallplatser/",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "husbil-solans-mack-pris",
+          "type": "third-party",
+          "title": "Husbil.se - Solans Mack prisuppgift",
+          "url": "https://www.husbil.se/stallplatser/p/739/",
           "checked_at": "2026-06-30"
         }
       ]
@@ -1752,8 +1805,8 @@
         "status": "confirmed"
       },
       "price": {
-        "text": "200 kr/natt för golfande gäster och 300 kr/natt för övriga enligt Abbekås GK.",
-        "amount": 200,
+        "text": "230 kr med el vid golfspel, 375 kr med el utan golfspel och 150 kr utan el enligt Abbekås GK.",
+        "amount": 150,
         "currency": "SEK",
         "period": "night",
         "status": "confirmed"
@@ -1761,11 +1814,19 @@
       "facilities": {
         "electricity": {
           "value": true,
-          "status": "confirmed"
+          "status": "confirmed",
+          "text": "Finns mot olika pris enligt Abbekås GK."
         }
       },
       "notes": "Klubbhusfaciliteter/omklädning är tillgängliga 07-22 under högsäsong enligt golfklubben.",
       "sources": [
+        {
+          "id": "abbekas-golfklubb-greenfee-priser",
+          "type": "operator",
+          "title": "Abbekås Golfklubb - greenfee och priser",
+          "url": "https://abbekasgk.se/gast/greenfee/",
+          "checked_at": "2026-06-30"
+        },
         {
           "id": "abbekas-golfklubb-stallplats",
           "type": "operator",
@@ -2140,11 +2201,11 @@
         "status": "confirmed"
       },
       "price": {
-        "text": "Pris saknas i den öppna texten. Kontrollera hos Lagunen.",
-        "amount": null,
+        "text": "Gästhamnsguiden anger avgift 300 kr, inklusive el, dusch/toalett, färskvatten och septitömning. Kontrollera aktuellt pris hos Lagunen.",
+        "amount": 300,
         "currency": "SEK",
         "period": "night",
-        "status": "missing"
+        "status": "unverified"
       },
       "facilities": {
         "toilet": {
@@ -2181,6 +2242,13 @@
           "type": "operator",
           "title": "Lagunen - praktisk info",
           "url": "https://lagunen.nu/praktisk-info/",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "gasthamnsguiden-lagunen-husbil",
+          "type": "third-party",
+          "title": "Gästhamnsguiden - Andelshamnen Lagunen husbilsplats",
+          "url": "https://www.gasthamnsguiden.se/sv/stallplats/andelshamnen-lagunen-husbilsplats/",
           "checked_at": "2026-06-30"
         }
       ]
@@ -3274,6 +3342,851 @@
           "type": "operator",
           "title": "Spjutstorps IF - Bäckavallens Camping",
           "url": "https://www.spjutstorpsif.se/sida/78194/backavallens-camping",
+          "checked_at": "2026-06-30"
+        }
+      ]
+    },
+    {
+      "id": "bjuv-soderasens-golfklubb",
+      "name": "Söderåsens Golfklubb",
+      "municipality": "Bjuv",
+      "category": "ställplats",
+      "coordinates": {
+        "lat": 56.0491,
+        "lng": 12.9533,
+        "status": "unverified"
+      },
+      "match": [
+        "Söderåsens Golfklubb",
+        "Söderåsens GK"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "capacity": {
+        "value": 8,
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "150 kr/natt för golfande gäster och 250 kr/natt för icke-golfande gäster, inklusive el enligt Söderåsens GK.",
+        "amount": 150,
+        "currency": "SEK",
+        "period": "night",
+        "status": "confirmed"
+      },
+      "facilities": {
+        "toilet": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed"
+        }
+      },
+      "notes": "Åtta ställplatser vid klubbhuset. Incheckning från 14:00 och utcheckning senast 13:00 enligt golfklubben.",
+      "sources": [
+        {
+          "id": "soderasens-gk-stallplats",
+          "type": "operator",
+          "title": "Söderåsens Golfklubb - ställplats",
+          "url": "https://www.soderasensgk.se/kopia-p%C3%A5-st%C3%A4llplats",
+          "checked_at": "2026-06-30"
+        }
+      ]
+    },
+    {
+      "id": "eslov-eslovs-golfklubb",
+      "name": "Eslövs Golfklubb",
+      "municipality": "Eslöv",
+      "category": "ställplats",
+      "coordinates": {
+        "lat": 55.8146,
+        "lng": 13.3084,
+        "status": "unverified"
+      },
+      "match": [
+        "Eslövs Golfklubb",
+        "Eslövs GK"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "capacity": {
+        "value": 6,
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "250 kr/dygn enligt Eslövs Golfklubb.",
+        "amount": 250,
+        "currency": "SEK",
+        "period": "day",
+        "status": "confirmed"
+      },
+      "facilities": {
+        "toilet": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "fresh_water": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "black_water_disposal": {
+          "value": false,
+          "status": "confirmed"
+        },
+        "grey_water_disposal": {
+          "value": false,
+          "status": "confirmed"
+        }
+      },
+      "notes": "Sex uppmärkta platser, främst för golfande gäster men även icke-golfare är välkomna. Klubbhuset är öppet 06:00-22:00.",
+      "sources": [
+        {
+          "id": "eslovs-gk-husbil-husvagn",
+          "type": "operator",
+          "title": "Eslövs Golfklubb - husbil och husvagn",
+          "url": "https://eslovsgk.se/husbil-husvagn/",
+          "checked_at": "2026-06-30"
+        }
+      ]
+    },
+    {
+      "id": "osby-spegeldammen",
+      "name": "Spegeldammen",
+      "municipality": "Osby",
+      "category": "ställplats",
+      "coordinates": {
+        "lat": 56.3686,
+        "lng": 13.9842,
+        "status": "unverified"
+      },
+      "match": [
+        "Spegeldammen",
+        "Spegeldammen Osby"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed",
+        "text": "Max två dygn enligt Osby kommun."
+      },
+      "capacity": {
+        "value": 7,
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "Kostnadsfritt upp till två dygn enligt Osby kommun.",
+        "amount": 0,
+        "currency": "SEK",
+        "period": "stay",
+        "status": "confirmed",
+        "is_free": true
+      },
+      "facilities": {
+        "toilet": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Offentlig toalett, öppen 1 april till 31 oktober enligt kommunen."
+        },
+        "electricity": {
+          "value": false,
+          "status": "confirmed"
+        },
+        "black_water_disposal": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "grey_water_disposal": {
+          "value": true,
+          "status": "confirmed"
+        }
+      },
+      "notes": "Toalett och tömning är öppna 1 april till 31 oktober. Gråvatten från fast tank kan behöva tömmas med hink enligt kommunen.",
+      "sources": [
+        {
+          "id": "osby-kommun-spegeldammen",
+          "type": "official",
+          "title": "Osby kommun - boende och Spegeldammen",
+          "url": "https://www.osby.se/se--gora/upplev-osby-kommun/boende.html",
+          "checked_at": "2026-06-30"
+        }
+      ]
+    },
+    {
+      "id": "osby-camping",
+      "name": "Osby Camping",
+      "municipality": "Osby",
+      "category": "camping",
+      "coordinates": {
+        "lat": 56.3651,
+        "lng": 14.0006,
+        "status": "unverified"
+      },
+      "match": [
+        "Osby Camping"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "capacity": {
+        "value": 86,
+        "status": "confirmed",
+        "text": "Campingen anger cirka 100 platser, varav 86 elplatser för husvagn/husbil."
+      },
+      "price": {
+        "text": "Pris via campingens egen bokning. Belopp saknas i öppen text.",
+        "amount": null,
+        "currency": "SEK",
+        "period": "night",
+        "status": "unverified"
+      },
+      "facilities": {
+        "toilet": {
+          "value": true,
+          "status": "unverified"
+        },
+        "shower": {
+          "value": true,
+          "status": "unverified"
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed"
+        }
+      },
+      "sources": [
+        {
+          "id": "osby-camping",
+          "type": "operator",
+          "title": "Osby Camping",
+          "url": "https://www.osbycamping.nu/",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "osby-kommun-boende",
+          "type": "official",
+          "title": "Osby kommun - boende",
+          "url": "https://www.osby.se/se--gora/upplev-osby-kommun/boende.html",
+          "checked_at": "2026-06-30"
+        }
+      ]
+    },
+    {
+      "id": "staffanstorp-faraback-stallplats",
+      "name": "Gården Fårabäck",
+      "municipality": "Staffanstorp",
+      "category": "ställplats",
+      "coordinates": {
+        "lat": 55.677,
+        "lng": 13.2479,
+        "status": "unverified"
+      },
+      "match": [
+        "Gården Fårabäck",
+        "Fårabäck",
+        "Gårdens Ställplats"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed",
+        "text": "Max 72 timmar enligt operatören."
+      },
+      "capacity": {
+        "value": 5,
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "290 kr/natt inklusive el, wifi och färskvatten enligt operatören.",
+        "amount": 290,
+        "currency": "SEK",
+        "period": "night",
+        "status": "confirmed"
+      },
+      "facilities": {
+        "electricity": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "fresh_water": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "waste": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Sorterat avfall i gårdens kärl enligt operatören."
+        }
+      },
+      "notes": "Fem betongplatser på gård utanför Lilla Bjällerup. Betalning på plats eller via bokning, inga kontanter.",
+      "sources": [
+        {
+          "id": "faraback-stallplats",
+          "type": "operator",
+          "title": "Gården Fårabäcks ställplats",
+          "url": "https://sites.google.com/view/faraback",
+          "checked_at": "2026-06-30"
+        }
+      ]
+    },
+    {
+      "id": "svalov-tygebo-gard",
+      "name": "Tygebo Gård",
+      "municipality": "Svalöv",
+      "category": "camping",
+      "coordinates": {
+        "lat": 55.9058,
+        "lng": 13.1283,
+        "status": "unverified"
+      },
+      "match": [
+        "Tygebo Gård",
+        "Hanksville Farm"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "capacity": {
+        "value": 6,
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "Ställplats 100 kr/dygn, camping 125 kr/person/dygn och el 50 kr/dygn enligt Tygebo Gård.",
+        "amount": 100,
+        "currency": "SEK",
+        "period": "day",
+        "status": "confirmed"
+      },
+      "facilities": {
+        "toilet": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "fresh_water": {
+          "value": false,
+          "status": "confirmed",
+          "text": "Operatören anger att stora vattentankar inte kan fyllas."
+        },
+        "black_water_disposal": {
+          "value": false,
+          "status": "confirmed"
+        }
+      },
+      "notes": "Liten camping med sex ställplatser, servicehus med toalett, dusch och pentry. Det går inte att tömma latrin eller fylla stora vattentankar.",
+      "sources": [
+        {
+          "id": "tygebo-gard-camping",
+          "type": "operator",
+          "title": "Tygebo Gård - camping",
+          "url": "https://tygebo.se/camping/",
+          "checked_at": "2026-06-30"
+        }
+      ]
+    },
+    {
+      "id": "perstorp-perstorps-golfklubb",
+      "name": "Perstorps Golfklubb",
+      "municipality": "Perstorp",
+      "category": "ställplats",
+      "coordinates": {
+        "lat": 56.1233,
+        "lng": 13.4129,
+        "status": "unverified"
+      },
+      "match": [
+        "Perstorps Golfklubb",
+        "Perstorps GK"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "capacity": {
+        "value": 9,
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "200 kr/natt för golfande gäster och 300 kr/natt för icke-golfare enligt Perstorps GK.",
+        "amount": 200,
+        "currency": "SEK",
+        "period": "night",
+        "status": "confirmed"
+      },
+      "facilities": {
+        "toilet": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "fresh_water": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "black_water_disposal": {
+          "value": false,
+          "status": "confirmed"
+        },
+        "waste": {
+          "value": true,
+          "status": "confirmed"
+        }
+      },
+      "notes": "Nio ställplatser med el. Omklädningsrum med dusch och toalett är öppna 06:00-22:00.",
+      "sources": [
+        {
+          "id": "perstorps-gk-stallplatser",
+          "type": "operator",
+          "title": "Perstorps Golfklubb - ställplatser",
+          "url": "https://perstorpsgk.se/g%C3%A4st/stallplatser.html",
+          "checked_at": "2026-06-30"
+        }
+      ]
+    },
+    {
+      "id": "malmo-first-camp-sibbarp",
+      "name": "First Camp Sibbarp - Malmö",
+      "municipality": "Malmö",
+      "category": "camping",
+      "coordinates": {
+        "lat": 55.571817,
+        "lng": 12.908718,
+        "status": "unverified"
+      },
+      "match": [
+        "First Camp Sibbarp",
+        "Sibbarp - Malmö",
+        "Sibbarp Malmö"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "Dynamiskt bokningspris enligt First Camp.",
+        "amount": null,
+        "currency": "SEK",
+        "period": "night",
+        "status": "unverified"
+      },
+      "facilities": {
+        "toilet": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "black_water_disposal": {
+          "value": true,
+          "status": "confirmed",
+          "text": "First Camp anger fast latrintömning på campingen."
+        },
+        "waste": {
+          "value": true,
+          "status": "confirmed"
+        }
+      },
+      "notes": "Camping vid Strandgatan 101 i Limhamn med campingplatser för husbil/husvagn/tält enligt First Camp.",
+      "sources": [
+        {
+          "id": "first-camp-sibbarp-malmo",
+          "type": "operator",
+          "title": "First Camp Sibbarp - Malmö",
+          "url": "https://firstcamp.se/destinationer/sibbarp-malmo",
+          "checked_at": "2026-06-30"
+        }
+      ]
+    },
+    {
+      "id": "helsingborg-first-camp-raa-vallar",
+      "name": "First Camp Råå Vallar - Helsingborg",
+      "municipality": "Helsingborg",
+      "category": "camping",
+      "coordinates": {
+        "lat": 56.004409,
+        "lng": 12.7257,
+        "status": "unverified"
+      },
+      "match": [
+        "First Camp Råå Vallar",
+        "Råå Vallar - Helsingborg",
+        "Råå Vallar"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "Dynamiskt bokningspris enligt First Camp.",
+        "amount": null,
+        "currency": "SEK",
+        "period": "night",
+        "status": "unverified"
+      },
+      "facilities": {
+        "toilet": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "black_water_disposal": {
+          "value": true,
+          "status": "confirmed",
+          "text": "First Camp anger fast latrintömning på campingen."
+        },
+        "waste": {
+          "value": true,
+          "status": "confirmed"
+        }
+      },
+      "notes": "Camping på Kustgatan 95 vid Råå med camping och ställplats enligt First Camp.",
+      "sources": [
+        {
+          "id": "first-camp-raa-vallar-helsingborg",
+          "type": "operator",
+          "title": "First Camp Råå Vallar - Helsingborg",
+          "url": "https://firstcamp.se/destinationer/raa-vallar-helsingborg",
+          "checked_at": "2026-06-30"
+        }
+      ]
+    },
+    {
+      "id": "kavlinge-barsebackshamn-stallplats",
+      "name": "Barsebäckshamns ställplats",
+      "municipality": "Kävlinge",
+      "category": "gästhamn",
+      "coordinates": {
+        "lat": 55.756986,
+        "lng": 12.902764,
+        "status": "unverified"
+      },
+      "match": [
+        "Barsebäckshamns ställplats",
+        "Barsebäckshamn",
+        "Barsebäckshamn husbilar"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "capacity": {
+        "value": 10,
+        "status": "confirmed"
+      },
+      "season": {
+        "text": "Öppen från början av maj till slutet av september enligt Barsebäckshamn.",
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "355 kr/dygn lågsäsong och 455 kr/dygn högsäsong, inklusive el, enligt Barsebäckshamn.",
+        "amount": 355,
+        "currency": "SEK",
+        "period": "day",
+        "status": "confirmed"
+      },
+      "facilities": {
+        "toilet": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "black_water_disposal": {
+          "value": false,
+          "status": "confirmed"
+        },
+        "grey_water_disposal": {
+          "value": false,
+          "status": "confirmed"
+        }
+      },
+      "notes": "Tio platser intill bryggorna. Kod till bom och service fås via bokningskvitto.",
+      "sources": [
+        {
+          "id": "barsebackshamn-husbilar",
+          "type": "operator",
+          "title": "Barsebäckshamn - ställplatser/husbilar",
+          "url": "https://barsebackshamn.eu/husbilar/",
+          "checked_at": "2026-06-30"
+        }
+      ]
+    },
+    {
+      "id": "trelleborg-bedinge-golfklubb",
+      "name": "Bedinge Golfklubb",
+      "municipality": "Trelleborg",
+      "category": "ställplats",
+      "coordinates": {
+        "lat": 55.365602,
+        "lng": 13.429522,
+        "status": "unverified"
+      },
+      "match": [
+        "Bedinge Golfklubb",
+        "Bedinge GK"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "capacity": {
+        "value": 12,
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "200 kr/natt för golfande gäster och 350 kr/natt för icke-golfande gäster enligt Bedinge GK.",
+        "amount": 200,
+        "currency": "SEK",
+        "period": "night",
+        "status": "confirmed"
+      },
+      "facilities": {
+        "toilet": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed"
+        }
+      },
+      "notes": "Tolv platser med el nära klubbhuset.",
+      "sources": [
+        {
+          "id": "bedinge-gk-stallplatser",
+          "type": "operator",
+          "title": "Bedinge GK - ställplatser",
+          "url": "https://bedingegk.se/stallplatser/",
+          "checked_at": "2026-06-30"
+        }
+      ]
+    },
+    {
+      "id": "trelleborg-tegelberga-golfklubb",
+      "name": "Tegelberga Golfklubb",
+      "municipality": "Trelleborg",
+      "category": "ställplats",
+      "coordinates": {
+        "lat": 55.462799,
+        "lng": 13.24035,
+        "status": "unverified"
+      },
+      "match": [
+        "Tegelberga Golfklubb",
+        "Tegelberga GK"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "capacity": {
+        "value": 13,
+        "status": "confirmed",
+        "text": "13 uppställningsplatser för husbil och husvagn."
+      },
+      "price": {
+        "text": "Ställplats 1-7: 250 kr/natt, ställplats 8-13: 200 kr/natt. Icke-golfande gäster 500 kr/natt enligt Tegelberga GK.",
+        "amount": 200,
+        "currency": "SEK",
+        "period": "night",
+        "status": "confirmed"
+      },
+      "facilities": {
+        "toilet": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed"
+        }
+      },
+      "notes": "Toalett och dusch finns i klubbhusets omklädningsrum. Incheckning från 14:00 och utcheckning senast 13:00.",
+      "sources": [
+        {
+          "id": "tegelberga-gk-boka-stallplats",
+          "type": "operator",
+          "title": "Tegelberga Golfklubb - boka ställplats",
+          "url": "https://tegelbergagk.se/spela/boka-stallplats/",
+          "checked_at": "2026-06-30"
+        }
+      ]
+    },
+    {
+      "id": "trelleborg-trelleborgs-golfklubb",
+      "name": "Trelleborgs Golfklubb",
+      "municipality": "Trelleborg",
+      "category": "ställplats",
+      "coordinates": {
+        "lat": 55.369819,
+        "lng": 13.08145,
+        "status": "unverified"
+      },
+      "match": [
+        "Trelleborgs Golfklubb",
+        "Trelleborgs GK"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed"
+      },
+      "capacity": {
+        "value": 10,
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "350 kr/natt för icke-golfande gäster och 200 kr/natt för golfande gäster enligt Trelleborgs GK.",
+        "amount": 200,
+        "currency": "SEK",
+        "period": "night",
+        "status": "confirmed"
+      },
+      "facilities": {
+        "toilet": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "fresh_water": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "black_water_disposal": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "grey_water_disposal": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "waste": {
+          "value": true,
+          "status": "confirmed"
+        }
+      },
+      "notes": "Tio platser med el vid Kämpingevägen 18. Klubbhuset är öppet 06:00-19:00 enligt golfklubben.",
+      "sources": [
+        {
+          "id": "trelleborgs-gk-stallplats",
+          "type": "operator",
+          "title": "Trelleborgs Golfklubb - ställplats",
+          "url": "https://trelleborgsgk.se/stallplats/",
           "checked_at": "2026-06-30"
         }
       ]

@@ -28,6 +28,8 @@ jobs:
         run: npm run build:data
         env:
           FORCE_REFRESH_OSM: ${{ (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && '1' || '' }}
+      - name: Audit place data
+        run: npm run audit:data
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

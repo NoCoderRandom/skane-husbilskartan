@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build:data": "node scripts/build-data.mjs"
+    "build:data": "node scripts/build-data.mjs",
+    "audit:data": "node scripts/audit-data.mjs"
   }
 }

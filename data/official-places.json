@@ -29,10 +29,10 @@
         "status": "confirmed"
       },
       "price": {
-        "text": "Betald ställplats. Pris finns på hamnens prissida.",
-        "amount": null,
+        "text": "250 kr/dygn utan el och 300 kr/dygn med el enligt Skanörs hamn.",
+        "amount": 250,
         "currency": "SEK",
-        "period": "night",
+        "period": "day",
         "status": "confirmed"
       },
       "facilities": {
@@ -65,7 +65,7 @@
           "status": "missing"
         }
       },
-      "notes": "Hamnplats med el, vatten och tömning enligt hamnens egen information. Kontrollera aktuellt pris vid betalning.",
+      "notes": "Hamnplats med el, vatten och tömning enligt hamnens egen information.",
       "sources": [
         {
           "id": "skanor-hamn-info",
@@ -262,21 +262,21 @@
         "status": "confirmed"
       },
       "capacity": {
-        "value": 9,
+        "value": 43,
         "status": "confirmed",
-        "text": "9 husbilsplatser och 17 större rutor"
+        "text": "43 ställplatser i hamnen, varav 18 med el."
       },
       "price": {
-        "text": "10 kr/timme, 100 kr/dygn enligt Visit Trelleborg.",
-        "amount": 100,
+        "text": "Betald onlinebokning via Tallyweb enligt Trelleborg Strand. Belopp beror på bokning.",
+        "amount": null,
         "currency": "SEK",
-        "period": "day",
-        "status": "confirmed"
+        "period": "night",
+        "status": "unverified"
       },
       "facilities": {
         "toilet": {
-          "value": null,
-          "status": "missing"
+          "value": true,
+          "status": "confirmed"
         },
         "shower": {
           "value": null,
@@ -287,24 +287,32 @@
           "status": "missing"
         },
         "fresh_water": {
-          "value": null,
-          "status": "missing"
+          "value": true,
+          "status": "confirmed"
         },
         "black_water_disposal": {
-          "value": null,
-          "status": "missing"
+          "value": true,
+          "status": "confirmed",
+          "text": "Latrintömning enligt Trelleborg Strand."
         },
         "grey_water_disposal": {
-          "value": null,
-          "status": "missing"
+          "value": true,
+          "status": "confirmed"
         },
         "waste": {
           "value": null,
           "status": "missing"
         }
       },
-      "notes": "Mer parkering än full service-ställplats. Kontrollera skyltning på plats.",
+      "notes": "Ställplats i hamnen i anslutning till färjeterminalen. Öppen 4 mars till 30 november 2026 enligt Trelleborg Strand.",
       "sources": [
+        {
+          "id": "trelleborg-strand-stallplats-hamnen",
+          "type": "operator",
+          "title": "Trelleborg Strand - ställplats i hamnen",
+          "url": "https://trelleborgstrand.se/stallplats-i-hamnen/",
+          "checked_at": "2026-06-30"
+        },
         {
           "id": "visit-trelleborg-centrum",
           "type": "official-tourism",
@@ -952,7 +960,7 @@
         "status": "confirmed"
       },
       "price": {
-        "text": "Betalning i automat enligt hamnens information.",
+        "text": "Betalning i automat enligt hamnens information. Kontrollera aktuell dygnsavgift på plats.",
         "amount": null,
         "currency": "SEK",
         "period": "night",
@@ -964,6 +972,12 @@
           "status": "confirmed"
         }
       },
+      "capacity": {
+        "value": 100,
+        "status": "confirmed",
+        "text": "100 platser med el på sommaren och 50 platser från 15 september till 31 maj."
+      },
+      "notes": "Endast husbil, inte husvagn, enligt Lundåkrahamnen. Ställplatsen är öppen året runt.",
       "sources": [
         {
           "id": "lundakrahamnen-husbilar",
@@ -997,31 +1011,49 @@
         "status": "confirmed"
       },
       "price": {
-        "text": "Betald ställplats. Verifiera aktuell avgift hos hamnen.",
-        "amount": null,
+        "text": "375 kr/dygn enligt HYC/Norra Hamnen. El köps separat.",
+        "amount": 375,
         "currency": "SEK",
-        "period": "night",
-        "status": "unverified"
+        "period": "day",
+        "status": "confirmed"
       },
       "facilities": {
         "toilet": {
           "value": true,
-          "status": "unverified"
+          "status": "confirmed"
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed"
         },
         "electricity": {
           "value": true,
-          "status": "unverified"
+          "status": "confirmed",
+          "text": "El köps separat enligt HYC."
         },
         "fresh_water": {
           "value": true,
-          "status": "unverified"
+          "status": "confirmed"
         },
         "black_water_disposal": {
           "value": true,
           "status": "unverified"
         }
       },
+      "capacity": {
+        "value": 15,
+        "status": "confirmed",
+        "text": "Circa 15-20 platser enligt HYC."
+      },
+      "notes": "Endast husbil, inte husvagn. Bokning och betalning via Tallyweb enligt HYC.",
       "sources": [
+        {
+          "id": "hyc-norra-hamnen-stallplatser",
+          "type": "operator",
+          "title": "HYC - Norra Hamnen ställplatser",
+          "url": "https://hyc.se/stallplatser/",
+          "checked_at": "2026-06-30"
+        },
         {
           "id": "helsingborg-norra-hamnen",
           "type": "operator",
@@ -1291,11 +1323,11 @@
         "status": "confirmed"
       },
       "price": {
-        "text": "Bokning via hemsida eller reception enligt Visit Båstad. Belopp saknas i öppen text.",
-        "amount": null,
+        "text": "Visit Båstad bekräftar bokning via hemsida/reception. Husbil.se anger pris från 250 kr, 150 kr med golf; kontrollera aktuellt pris hos Bjäre Golfklubb.",
+        "amount": 250,
         "currency": "SEK",
         "period": "night",
-        "status": "missing"
+        "status": "unverified"
       },
       "facilities": {
         "toilet": {
@@ -1324,6 +1356,13 @@
           "type": "third-party",
           "title": "NorCamp - Bjäre Golfklubb koordinat",
           "url": "https://www.norcamp.de/en/sweden/bjaere-golfklubb-hotell-lodge.7275.1.html",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "husbil-bjare-golfklubb-pris",
+          "type": "third-party",
+          "title": "Husbil.se - Bjäre Golfklubb prisuppgift",
+          "url": "https://www.husbil.se/stallplatser/p/622/",
           "checked_at": "2026-06-30"
         }
       ]
