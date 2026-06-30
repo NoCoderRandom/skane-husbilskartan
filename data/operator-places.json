@@ -1401,9 +1401,9 @@
       ]
     },
     {
-      "id": "skurup-skateholms-camping",
+      "id": "trelleborg-skateholms-camping",
       "name": "Skateholms Camping",
-      "municipality": "Skurup",
+      "municipality": "Trelleborg",
       "category": "camping",
       "coordinates": {
         "lat": 55.377054,
@@ -1422,18 +1422,78 @@
         "status": "confirmed"
       },
       "price": {
-        "text": "Pris enligt campingens egen webbplats/bokning.",
-        "amount": null,
+        "text": "Camping 290 kr/dygn och camping med el 350 kr/dygn enligt Skateholms Campings prislista.",
+        "amount": 290,
         "currency": "SEK",
         "period": "night",
-        "status": "unverified"
+        "status": "confirmed",
+        "is_free": false
       },
+      "season": {
+        "text": "Öppen 11 april till 26 september; högsäsong 1 maj till 12 augusti enligt Skateholms Camping.",
+        "status": "confirmed"
+      },
+      "facilities": {
+        "toilet": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Servicehus med WC enligt Skateholms Camping."
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Camping med el finns enligt prislistan."
+        },
+        "fresh_water": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Påfyllning av vatten i husvagnens/husbilens behållare och vattenposter för dricksvatten enligt Skateholms Camping."
+        },
+        "black_water_disposal": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Latrintömning enligt Skateholms Camping."
+        },
+        "grey_water_disposal": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Avlopp för tömning av gråvatten enligt Skateholms Camping."
+        },
+        "waste": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Containers och behållare för sopor/återvinning enligt Skateholms Camping."
+        },
+        "laundry": {
+          "value": true,
+          "status": "confirmed"
+        }
+      },
+      "notes": "Familjecamping nära Skateholms strand med kiosk/reception, grillplats, minigolf, lekplats och gasolförsäljning enligt operatören.",
       "sources": [
         {
           "id": "skateholms-camping",
           "type": "operator",
           "title": "Skateholms Camping",
           "url": "https://skateholmscamping.com/",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "skateholms-camping-prislista",
+          "type": "operator",
+          "title": "Skateholms Camping - prislista",
+          "url": "https://www.skateholmscamping.com/prislista.html",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "skateholms-camping-ovrigt",
+          "type": "operator",
+          "title": "Skateholms Camping - övrig information",
+          "url": "https://www.skateholmscamping.com/ovrigt.html",
           "checked_at": "2026-06-30"
         }
       ]
@@ -1526,19 +1586,80 @@
         "value": true,
         "status": "confirmed"
       },
+      "capacity": {
+        "value": 4,
+        "status": "confirmed",
+        "text": "Fyra mindre ställplatser för husbil enligt Nybostrands Camping."
+      },
       "price": {
-        "text": "Pris enligt campingens egen webbplats/bokning.",
-        "amount": null,
+        "text": "Ställplats för husbil 200 kr lågsäsong och 250 kr högsäsong vecka 27-33. Ordinarie husvagn/husbil inkl. el kostar 300 kr, 360 kr högsäsong, enligt Nybostrand.",
+        "amount": 200,
         "currency": "SEK",
         "period": "night",
-        "status": "unverified"
+        "status": "confirmed",
+        "is_free": false
       },
+      "season": {
+        "text": "Campingen med husvagns- och husbilsplatser är öppen 1 maj till 30 september enligt Nybostrand.",
+        "status": "confirmed"
+      },
+      "facilities": {
+        "toilet": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Ordinarie husvagn/husbilplats anges inklusive el."
+        },
+        "fresh_water": {
+          "value": true,
+          "status": "unverified"
+        },
+        "black_water_disposal": {
+          "value": true,
+          "status": "unverified"
+        },
+        "waste": {
+          "value": null,
+          "status": "missing"
+        },
+        "wifi": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "laundry": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Fri tillgång till tvättstuga enligt Nybostrands Camping."
+        }
+      },
+      "notes": "Rökning förbjuden på campingområdet. Sommartid har kiosken öppet varje dag enligt Nybostrand.",
       "sources": [
         {
           "id": "nybostrand-camping",
           "type": "operator",
           "title": "Nybostrand Camping",
           "url": "https://nybostrand.se/",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "nybostrand-stallplats",
+          "type": "operator",
+          "title": "Nybostrand - ställplats",
+          "url": "https://nybostrand.se/stallplats/",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "nybostrand-husvagnsplatser",
+          "type": "operator",
+          "title": "Nybostrand - husvagnsplatser",
+          "url": "https://nybostrand.se/husvagnsplatser/",
           "checked_at": "2026-06-30"
         }
       ]
@@ -1569,7 +1690,8 @@
         "amount": null,
         "currency": "SEK",
         "period": "night",
-        "status": "unverified"
+        "status": "unverified",
+        "is_free": false
       },
       "sources": [
         {

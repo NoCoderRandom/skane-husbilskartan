@@ -271,7 +271,8 @@
         "amount": null,
         "currency": "SEK",
         "period": "night",
-        "status": "unverified"
+        "status": "unverified",
+        "is_free": false
       },
       "facilities": {
         "toilet": {
@@ -354,7 +355,8 @@
         "amount": null,
         "currency": "SEK",
         "period": "night",
-        "status": "unverified"
+        "status": "unverified",
+        "is_free": false
       },
       "facilities": {
         "toilet": {
@@ -393,6 +395,84 @@
           "title": "Visit Trelleborg - Ställplats Västra Trelleborg",
           "url": "https://www2.visittrelleborg.se/sv/boende/2000176/st%C3%A4llplats-v%C3%A4stra-trelleborg/detaljer",
           "checked_at": "2026-06-29"
+        }
+      ]
+    },
+    {
+      "id": "trelleborg-sorby-parkering",
+      "name": "Sörby parkering",
+      "municipality": "Trelleborg",
+      "category": "ställplats",
+      "coordinates": {
+        "lat": 55.37325,
+        "lng": 13.15888,
+        "status": "unverified"
+      },
+      "match": [
+        "Sörby parkering",
+        "Sörby parkering och ställplats för husbil/husvagn"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed",
+        "text": "Visit Trelleborg anger ställplats för husbil/husvagn med högsta parkeringstid 24 timmar."
+      },
+      "capacity": {
+        "value": 8,
+        "status": "confirmed",
+        "text": "8 ställplatser enligt Visit Trelleborg."
+      },
+      "price": {
+        "text": "100 kr/dygn enligt Visit Trelleborg.",
+        "amount": 100,
+        "currency": "SEK",
+        "period": "day",
+        "status": "confirmed",
+        "is_free": false
+      },
+      "facilities": {
+        "toilet": {
+          "value": false,
+          "status": "confirmed"
+        },
+        "shower": {
+          "value": false,
+          "status": "confirmed"
+        },
+        "electricity": {
+          "value": false,
+          "status": "confirmed"
+        },
+        "fresh_water": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Visit Trelleborg anger dricksvatten."
+        },
+        "black_water_disposal": {
+          "value": false,
+          "status": "confirmed"
+        },
+        "grey_water_disposal": {
+          "value": false,
+          "status": "confirmed"
+        },
+        "waste": {
+          "value": null,
+          "status": "missing"
+        }
+      },
+      "notes": "Enkel kommunal ställplats vid Sörby parkering. Nära gång- och cykelväg till centrum enligt Visit Trelleborg.",
+      "sources": [
+        {
+          "id": "visit-trelleborg-sorby",
+          "type": "official-tourism",
+          "title": "Visit Trelleborg - Sörby parkering och ställplats för husbil/husvagn",
+          "url": "https://www2.visittrelleborg.se/sv/boende/877412/s%C3%B6rby-parkering-och-st%C3%A4llplats-f%C3%B6r-husbilhusvagn/detaljer",
+          "checked_at": "2026-06-30"
         }
       ]
     },
