@@ -34,4 +34,17 @@ Kontrollera att färdig data inte innehåller motsägande pris/status/koordinat:
 npm run audit:data
 ```
 
+Kontrollera att publicerad GitHub Pages-sida och live-cache svarar rimligt:
+
+```bash
+npm run smoke:live
+```
+
+En annan publicerad eller lokal URL kan testas med:
+
+```bash
+npm run smoke:live -- --url http://localhost:4188/
+```
+
 På GitHub körs databyggaren och data-auditen vid deploy och automatiskt varje timme.
+Efter varje deploy körs även ett live-smoke-test mot den publicerade Pages-sidan.

@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build:data": "node scripts/build-data.mjs",
-    "audit:data": "node scripts/audit-data.mjs"
+    "audit:data": "node scripts/audit-data.mjs",
+    "smoke:live": "node scripts/smoke-live.mjs"
   }
 }
