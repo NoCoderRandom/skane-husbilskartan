@@ -1372,37 +1372,63 @@
         "status": "confirmed"
       },
       "price": {
-        "text": "Pris enligt campingens egen bokning/prislista.",
-        "amount": null,
+        "text": "Prislista 2026: ställplats utan el från 255 kr/dygn, husbilsställplats utanför bommen från 320 kr/dygn inkl. el och innanför bommen från 305 kr/dygn inkl. el enligt Båstad Camping.",
+        "amount": 255,
         "currency": "SEK",
         "period": "night",
-        "status": "unverified"
+        "status": "confirmed",
+        "is_free": false
+      },
+      "season": {
+        "text": "Prislistan anger lågsäsong från 27 mars och eftersäsong till 27 september 2026.",
+        "status": "confirmed"
       },
       "facilities": {
         "toilet": {
           "value": true,
-          "status": "unverified"
+          "status": "confirmed"
         },
         "shower": {
           "value": true,
-          "status": "unverified"
+          "status": "confirmed"
         },
         "electricity": {
           "value": true,
-          "status": "unverified"
+          "status": "confirmed",
+          "text": "Husbilsställplatser med el finns enligt prislistan."
         },
         "fresh_water": {
           "value": true,
           "status": "unverified"
+        },
+        "wifi": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Wifi finns på området enligt Båstad Campings FAQ."
         }
       },
+      "notes": "Familjecamping med servicebutik och restaurang. Motorhome-platser utanför bommen kan checkas in via betalautomat dygnet runt enligt FAQ.",
       "sources": [
         {
           "id": "bastad-camping",
           "type": "operator",
           "title": "Båstad Camping",
           "url": "https://www.bastadcamping.se/",
-          "checked_at": "2026-06-29"
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "bastad-camping-prices-2026",
+          "type": "operator",
+          "title": "Båstad Camping - prices 2026",
+          "url": "https://www.bastadcamping.se/en/prices/",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "bastad-camping-faq",
+          "type": "operator",
+          "title": "Båstad Camping - FAQ",
+          "url": "https://www.bastadcamping.se/en/faq/",
+          "checked_at": "2026-06-30"
         },
         {
           "id": "visit-bastad-stallplatser",
@@ -1436,29 +1462,73 @@
         "status": "confirmed"
       },
       "capacity": {
-        "value": 159,
-        "status": "unverified"
+        "value": 13,
+        "status": "confirmed",
+        "text": "13 ställplatser och totalt 159 husvagns-/husbilsplatser enligt Caravan Club."
       },
       "price": {
-        "text": "Pris och medlemsvillkor kontrolleras hos Caravan Club.",
-        "amount": null,
+        "text": "Ställplats dygn inkl. el: medlem 330 kr, vår/höst 280 kr; ej medlem 410 kr, vår/höst 360 kr enligt Caravan Club 2026.",
+        "amount": 280,
         "currency": "SEK",
         "period": "night",
-        "status": "unverified"
+        "status": "confirmed",
+        "is_free": false
+      },
+      "season": {
+        "text": "Campingsäsong 21 mars till 4 oktober 2026 enligt Caravan Club.",
+        "status": "confirmed"
       },
       "facilities": {
+        "toilet": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed"
+        },
         "electricity": {
           "value": true,
-          "status": "unverified"
+          "status": "confirmed",
+          "text": "Ställplats dygn anges inklusive el."
+        },
+        "fresh_water": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Fyllning av färskvatten finns vid ställplatsområdet enligt Caravan Club."
+        },
+        "black_water_disposal": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Latrintömning finns i mindre servicehus enligt Caravan Club."
+        },
+        "grey_water_disposal": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Särskild plats för tömning av husbilars avlopp enligt Caravan Club."
+        },
+        "waste": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "wifi": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Trådlöst internet anges bland bekvämligheter."
+        },
+        "laundry": {
+          "value": true,
+          "status": "confirmed"
         }
       },
+      "notes": "Caravan Club-camping vid Norrvikens trädgårdar med servicehus, butik, grillplats, minigolf och publik elbilsladdare.",
       "sources": [
         {
           "id": "caravan-club-norrviken",
           "type": "operator",
           "title": "Caravan Club Norrviken",
-          "url": "https://caravanclub.se/",
-          "checked_at": "2026-06-29"
+          "url": "https://caravanclub.se/camping/norrviken/",
+          "checked_at": "2026-06-30"
         }
       ]
     },
