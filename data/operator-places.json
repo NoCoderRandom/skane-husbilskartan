@@ -1199,6 +1199,30 @@
         "period": "night",
         "status": "unverified"
       },
+      "facilities": {
+        "toilet": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "wifi": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "laundry": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Ekogården anger washing machine."
+        }
+      },
+      "notes": "Ekogården anger att husbil, husvagn eller tält kan stå på platsen och att toaletter, duschar, wifi, el och tvättmaskin finns.",
       "sources": [
         {
           "id": "ekogarden",

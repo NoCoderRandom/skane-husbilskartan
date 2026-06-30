@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-06-29",
+  "checkedAt": "2026-06-30",
   "places": [
     {
       "id": "skanor-hamn",
@@ -521,36 +521,48 @@
         "value": true,
         "status": "confirmed"
       },
+      "capacity": {
+        "value": 24,
+        "status": "confirmed"
+      },
+      "season": {
+        "text": "Campingen är öppen året runt enligt Tobisviks FAQ.",
+        "status": "confirmed"
+      },
       "price": {
-        "text": "Pris hos extern camping/operatör.",
+        "text": "Betald ställplats; dygnspris visas i Tobisviks onlinebokning och varierar efter datum och plats.",
         "amount": null,
         "currency": "SEK",
         "period": "night",
-        "status": "unverified"
+        "status": "unverified",
+        "is_free": false
       },
       "facilities": {
         "toilet": {
           "value": true,
-          "status": "unverified"
+          "status": "confirmed"
         },
         "shower": {
           "value": true,
-          "status": "unverified"
+          "status": "confirmed"
         },
         "electricity": {
           "value": true,
-          "status": "unverified"
+          "status": "confirmed",
+          "text": "El ingår på ställplatserna enligt Tobisviks Camping."
         },
         "fresh_water": {
           "value": true,
-          "status": "unverified"
+          "status": "confirmed",
+          "text": "Tömning/påfyllning ingår enligt Tobisviks Camping."
         },
         "black_water_disposal": {
-          "value": null,
-          "status": "unverified"
+          "value": true,
+          "status": "confirmed",
+          "text": "FAQ anger möjlighet att tömma latrin i servicehusen."
         }
       },
-      "notes": "Ingår i Simrishamns kommuns husbilssida som plats/karta; pris och detaljer ligger hos extern aktör.",
+      "notes": "Ställplatserna är smalare än vanliga campingtomter; markis och utemöbler går bra men vindskydd/förtält tillåts inte.",
       "sources": [
         {
           "id": "simrishamn-husbilar",
@@ -558,6 +570,20 @@
           "title": "Simrishamns kommun - husbilar",
           "url": "https://www.simrishamn.se/gata-park-och-natur/trafik/husbilar",
           "checked_at": "2026-06-29"
+        },
+        {
+          "id": "tobisvik-stallplatser",
+          "type": "operator",
+          "title": "Tobisviks Camping - ställplatser",
+          "url": "https://tobisvikscamping.se/stallplatser/",
+          "checked_at": "2026-06-30"
+        },
+        {
+          "id": "tobisvik-faq",
+          "type": "operator",
+          "title": "Tobisviks Camping - frågor och svar",
+          "url": "https://tobisvikscamping.se/fragor-och-svar/",
+          "checked_at": "2026-06-30"
         }
       ]
     },
@@ -583,14 +609,51 @@
         "value": true,
         "status": "confirmed"
       },
-      "price": {
-        "text": "Pris hos extern camping/operatör.",
-        "amount": null,
-        "currency": "SEK",
-        "period": "night",
-        "status": "unverified"
+      "capacity": {
+        "value": 150,
+        "status": "confirmed"
       },
-      "facilities": {},
+      "season": {
+        "text": "Öppet 2 april till 20 september 2026 enligt Borrbystrands Camping.",
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "Campingplats 365-515 kr/dygn under 2026 beroende på period; el 55 kr/dygn enligt Borrbystrands Camping.",
+        "amount": 365,
+        "currency": "SEK",
+        "period": "day",
+        "status": "confirmed"
+      },
+      "facilities": {
+        "toilet": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Dusch kostar 5 kr/5 minuter enligt campingen."
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "fresh_water": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "black_water_disposal": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Servicebyggnaden har möjlighet att tömma kassetten."
+        },
+        "grey_water_disposal": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Platserna anges ha avlopp och servicebyggnaden anger tömning av lungan."
+        }
+      },
+      "notes": "150 markerade platser med el, vatten och avlopp. Servicebyggnaden har dusch, toalett, kök, tvättstuga samt kassett-/avloppstömning.",
       "sources": [
         {
           "id": "simrishamn-husbilar",
@@ -598,6 +661,13 @@
           "title": "Simrishamns kommun - husbilar",
           "url": "https://www.simrishamn.se/gata-park-och-natur/trafik/husbilar",
           "checked_at": "2026-06-29"
+        },
+        {
+          "id": "borrbystrand-camping",
+          "type": "operator",
+          "title": "Borrbystrands Camping - husvagn och tält",
+          "url": "https://www.borrbystrandscamping.com/contact/",
+          "checked_at": "2026-06-30"
         }
       ]
     },
@@ -623,14 +693,34 @@
         "value": true,
         "status": "confirmed"
       },
-      "price": {
-        "text": "Pris hos extern camping/operatör.",
-        "amount": null,
-        "currency": "SEK",
-        "period": "night",
-        "status": "unverified"
+      "capacity": {
+        "value": 130,
+        "status": "confirmed"
       },
-      "facilities": {},
+      "season": {
+        "text": "Öppet 28 mars till 11 oktober under säsongen 2026 enligt Kiviks Camping.",
+        "status": "confirmed"
+      },
+      "price": {
+        "text": "Campingplats 215-390 kr/dygn utan el och 260-435 kr/dygn med el beroende på period enligt Kiviks Camping.",
+        "amount": 215,
+        "currency": "SEK",
+        "period": "day",
+        "status": "confirmed"
+      },
+      "facilities": {
+        "electricity": {
+          "value": true,
+          "status": "confirmed",
+          "text": "100 av 130 campingplatser är elplatser enligt Kiviks Camping."
+        },
+        "grey_water_disposal": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Ordningsreglerna anger tömning av husvagn/husbil via slutna avloppssystem."
+        }
+      },
+      "notes": "130 campingplatser varav 100 elplatser. Prislistan varierar mellan låg-/högsäsong, Kiviks marknad och Äppelmarknad.",
       "sources": [
         {
           "id": "simrishamn-husbilar",
@@ -638,6 +728,13 @@
           "title": "Simrishamns kommun - husbilar",
           "url": "https://www.simrishamn.se/gata-park-och-natur/trafik/husbilar",
           "checked_at": "2026-06-29"
+        },
+        {
+          "id": "kivik-campingplatser",
+          "type": "operator",
+          "title": "Kiviks Camping - campingplatser",
+          "url": "https://www.kivikscamping.se/camping.html",
+          "checked_at": "2026-06-30"
         }
       ]
     },
@@ -664,13 +761,39 @@
         "status": "confirmed"
       },
       "price": {
-        "text": "Pris hos extern aktör/förening.",
-        "amount": null,
+        "text": "200 kr/natt utan el och 250 kr/natt med el enligt Gyllebo IF/Torna ställplats.",
+        "amount": 200,
         "currency": "SEK",
         "period": "night",
-        "status": "unverified"
+        "status": "confirmed"
       },
-      "facilities": {},
+      "facilities": {
+        "toilet": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Kod till toalett fås efter betalning enligt Gyllebo IF."
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Kod till dusch fås efter betalning enligt Gyllebo IF."
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed",
+          "text": "El ingår i 250 kr-alternativet."
+        },
+        "fresh_water": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "black_water_disposal": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Latrintömning och vatten anges på Torna ställplats-sidan."
+        }
+      },
+      "notes": "Betalning sker via Swish/överenskommelse med kontaktperson; skicka skärmbild för kod till toalett och dusch.",
       "sources": [
         {
           "id": "simrishamn-husbilar",
@@ -678,6 +801,13 @@
           "title": "Simrishamns kommun - husbilar",
           "url": "https://www.simrishamn.se/gata-park-och-natur/trafik/husbilar",
           "checked_at": "2026-06-29"
+        },
+        {
+          "id": "gyllebo-if-torna-stallplats",
+          "type": "operator",
+          "title": "Gyllebo IF - Torna ställplats",
+          "url": "https://www.svenskalag.se/gylleboif-tornastallplats",
+          "checked_at": "2026-06-30"
         }
       ]
     },
@@ -703,14 +833,53 @@
         "value": true,
         "status": "confirmed"
       },
+      "capacity": {
+        "value": 80,
+        "status": "confirmed"
+      },
       "price": {
-        "text": "Pris hos extern camping/operatör.",
+        "text": "Betald campingplats; pris visas i Ängdala Campings onlinebokning och exakta dygnspriser publiceras inte som öppen prislista.",
         "amount": null,
         "currency": "SEK",
         "period": "night",
-        "status": "unverified"
+        "status": "unverified",
+        "is_free": false
       },
-      "facilities": {},
+      "facilities": {
+        "toilet": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "shower": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Fria duschar i servicehusen enligt Ängdala Camping."
+        },
+        "electricity": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Cirka 70 av 80 platser har el enligt Ängdala Camping."
+        },
+        "fresh_water": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Vattenpåfyllning med slang enligt Ängdala Camping."
+        },
+        "black_water_disposal": {
+          "value": true,
+          "status": "confirmed"
+        },
+        "grey_water_disposal": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Gråvattentömning på platta enligt Ängdala Camping."
+        },
+        "wifi": {
+          "value": true,
+          "status": "confirmed"
+        }
+      },
+      "notes": "Cirka 80 campingplatser på runt 100 kvm, varav cirka 70 med el. Tre servicehus med kök, toaletter, duschar, disk, latrin, gråvatten och vattenpåfyllning.",
       "sources": [
         {
           "id": "simrishamn-husbilar",
@@ -718,6 +887,13 @@
           "title": "Simrishamns kommun - husbilar",
           "url": "https://www.simrishamn.se/gata-park-och-natur/trafik/husbilar",
           "checked_at": "2026-06-29"
+        },
+        {
+          "id": "angdala-campingplatser",
+          "type": "operator",
+          "title": "Ängdala Camping - campingplatser",
+          "url": "https://www.angdalacamping.se/campingplatser/",
+          "checked_at": "2026-06-30"
         }
       ]
     },
