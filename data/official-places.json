@@ -982,6 +982,11 @@
       "name": "Naturum Vattenriket",
       "municipality": "Kristianstad",
       "category": "parkering",
+      "tags": [
+        "Naturnära",
+        "Våtmark",
+        "Stadsnära"
+      ],
       "coordinates": {
         "lat": 56.0258,
         "lng": 14.1545,
@@ -1444,6 +1449,10 @@
       "name": "Caravan Club Norrviken",
       "municipality": "Båstad",
       "category": "ställplats",
+      "tags": [
+        "Naturnära",
+        "Trädgård"
+      ],
       "coordinates": {
         "lat": 56.45362,
         "lng": 12.78352,
@@ -1537,6 +1546,10 @@
       "name": "Båstad Hamn",
       "municipality": "Båstad",
       "category": "gästhamn",
+      "tags": [
+        "Kustnära",
+        "Hamn"
+      ],
       "coordinates": {
         "lat": 56.4334295,
         "lng": 12.8311287,
@@ -1722,6 +1735,11 @@
       "name": "Vistorps Hamn",
       "municipality": "Båstad",
       "category": "gästhamn",
+      "tags": [
+        "Naturnära",
+        "Kustnära",
+        "Strandnära"
+      ],
       "coordinates": {
         "lat": 56.3525,
         "lng": 12.740833,
@@ -2190,6 +2208,11 @@
       "name": "Tosteberga Hamn",
       "municipality": "Kristianstad",
       "category": "gästhamn",
+      "tags": [
+        "Naturnära",
+        "Kustnära",
+        "Hamn"
+      ],
       "coordinates": {
         "lat": 55.99709,
         "lng": 14.44495,

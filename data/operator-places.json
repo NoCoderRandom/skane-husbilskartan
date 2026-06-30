@@ -8,6 +8,10 @@
       "name": "Ivö Camping",
       "municipality": "Bromölla",
       "category": "camping",
+      "tags": [
+        "Naturnära",
+        "Sjönära"
+      ],
       "coordinates": {
         "lat": 56.110315,
         "lng": 14.384663,
@@ -114,6 +118,10 @@
       "name": "Bromölla Camping & Vandrarhem",
       "municipality": "Bromölla",
       "category": "camping",
+      "tags": [
+        "Naturnära",
+        "Sjönära"
+      ],
       "coordinates": {
         "lat": 56.0662801,
         "lng": 14.4548745,
@@ -244,6 +252,10 @@
       "name": "Tykarpsgrottans Camping",
       "municipality": "Hässleholm",
       "category": "camping",
+      "tags": [
+        "Naturnära",
+        "Skogsnära"
+      ],
       "coordinates": {
         "lat": 56.1175599,
         "lng": 13.8264638,
@@ -386,6 +398,11 @@
       "name": "Asmoarp Natur",
       "municipality": "Hässleholm",
       "category": "ställplats",
+      "tags": [
+        "Naturnära",
+        "Dammnära",
+        "Lantligt"
+      ],
       "coordinates": {
         "lat": 56.07976,
         "lng": 13.761615,
@@ -526,6 +543,11 @@
       "name": "Tostarps Camping",
       "municipality": "Hässleholm",
       "category": "camping",
+      "tags": [
+        "Naturnära",
+        "Sjönära",
+        "Skogsnära"
+      ],
       "coordinates": {
         "lat": 56.122474,
         "lng": 13.681139,
@@ -1005,6 +1027,10 @@
       "name": "Ringsjöstrands Camping",
       "municipality": "Hörby",
       "category": "camping",
+      "tags": [
+        "Naturnära",
+        "Sjönära"
+      ],
       "coordinates": {
         "lat": 55.8497063,
         "lng": 13.5871449,
@@ -2037,6 +2063,10 @@
       "name": "First Camp Åhus - Kristianstad",
       "municipality": "Kristianstad",
       "category": "camping",
+      "tags": [
+        "Kustnära",
+        "Strandnära"
+      ],
       "coordinates": {
         "lat": 55.9418753,
         "lng": 14.3124287,
@@ -3079,6 +3109,10 @@
       "name": "Elfdalens Camping",
       "municipality": "Klippan",
       "category": "camping",
+      "tags": [
+        "Naturnära",
+        "Ånära"
+      ],
       "coordinates": {
         "lat": 56.1349199,
         "lng": 13.1635154,
@@ -3656,6 +3690,10 @@
       "name": "Honungsfarmens ställplats",
       "municipality": "Höör",
       "category": "ställplats",
+      "tags": [
+        "Naturnära",
+        "Lantligt"
+      ],
       "coordinates": {
         "lat": 56.0321559,
         "lng": 13.6218566,
@@ -3726,6 +3764,10 @@
       "name": "Ormanäsgården",
       "municipality": "Höör",
       "category": "ställplats",
+      "tags": [
+        "Naturnära",
+        "Lantligt"
+      ],
       "coordinates": {
         "lat": 55.9154,
         "lng": 13.4629,
@@ -4027,6 +4069,10 @@
       "name": "Hjelmsjö Camping",
       "municipality": "Örkelljunga",
       "category": "camping",
+      "tags": [
+        "Naturnära",
+        "Sjönära"
+      ],
       "coordinates": {
         "lat": 56.2753977,
         "lng": 13.2938627,
@@ -4822,6 +4868,11 @@
       "name": "Spegeldammen",
       "municipality": "Osby",
       "category": "ställplats",
+      "tags": [
+        "Gratis",
+        "Naturnära",
+        "Sjönära"
+      ],
       "coordinates": {
         "lat": 56.3686,
         "lng": 13.9842,

@@ -785,6 +785,7 @@
             <label for="sortSelect">Sortering</label>
             <select id="sortSelect">
               <option value="quality">Säkrast info först</option>
+              <option value="freeNature">Gratis + natur först</option>
               <option value="name">Namn A-Ö</option>
               <option value="municipality">Kommun</option>
               <option value="service">Mest service</option>
@@ -799,6 +800,7 @@
             <label class="toggle"><input type="checkbox" id="latrineFilter"> <span>Latrintömning</span></label>
             <label class="toggle"><input type="checkbox" id="electricityFilter"> <span>El</span></label>
             <label class="toggle"><input type="checkbox" id="waterFilter"> <span>Färskvatten</span></label>
+            <label class="toggle"><input type="checkbox" id="natureFilter"> <span>Naturnära</span></label>
             <label class="toggle"><input type="checkbox" id="servicePointsFilter"> <span>Visa OSM-servicepunkter</span></label>
           </div>
         </section>
@@ -887,6 +889,7 @@
         latrineFilter: document.querySelector("#latrineFilter"),
         electricityFilter: document.querySelector("#electricityFilter"),
         waterFilter: document.querySelector("#waterFilter"),
+        natureFilter: document.querySelector("#natureFilter"),
         servicePointsFilter: document.querySelector("#servicePointsFilter"),
         resetFilters: document.querySelector("#resetFilters")
       };
@@ -941,6 +944,26 @@
         return "unknown";
       }
 
+      function placeTags(place) {
+        return Array.isArray(place.tags) ? place.tags.filter(Boolean).map(String) : [];
+      }
+
+      function isNaturePlace(place) {
+        const explicit = placeTags(place).some((tag) => {
+          const text = norm(tag);
+          return text.includes("natur") || text.includes("sjo") || text.includes("kust") || text.includes("strand") || text.includes("skog") || text.includes("lantligt") || text.includes("vatmark");
+        });
+        if (explicit) return true;
+        const text = norm([place.name, place.category, place.notes].join(" "));
+        return /\b(natur|naturnara|sjonara|kustnara|strandnara|skog|damm|vatmark|vid sjon|vid havet|vid kusten|vid strand)\b/.test(text);
+      }
+
+      function natureScore(place) {
+        return (priceKind(place) === "free" ? 3 : 0)
+          + (isNaturePlace(place) ? 2 : 0)
+          + (place.overnight_allowed?.value === true ? 1 : 0);
+      }
+
       function serviceScore(place) {
         return Object.keys(FIELD_LABELS).reduce((score, key) => {
           return score + (place.facilities?.[key]?.value === true ? 1 : 0);
@@ -958,6 +981,7 @@
           place.category,
           place.notes,
           place.price?.text,
+          placeTags(place).join(" "),
           Object.entries(place.facilities || {})
             .filter(([, field]) => field?.value === true)
             .map(([key]) => FIELD_LABELS[key])
@@ -995,6 +1019,13 @@
               || (statusOrder[a.place_status?.value] ?? 9) - (statusOrder[b.place_status?.value] ?? 9)
               || collator.compare(a.name, b.name);
           }
+          if (sort === "freeNature") {
+            return natureScore(b) - natureScore(a)
+              || (statusOrder[a.place_status?.value] ?? 9) - (statusOrder[b.place_status?.value] ?? 9)
+              || (riskOrder[a.quality?.risk_level] ?? 9) - (riskOrder[b.quality?.risk_level] ?? 9)
+              || collator.compare(a.municipality || "", b.municipality || "")
+              || collator.compare(a.name, b.name);
+          }
           return (statusOrder[a.place_status?.value] ?? 9) - (statusOrder[b.place_status?.value] ?? 9)
             || (riskOrder[a.quality?.risk_level] ?? 9) - (riskOrder[b.quality?.risk_level] ?? 9)
             || collator.compare(a.municipality || "", b.municipality || "")
@@ -1022,6 +1053,7 @@
           if (els.latrineFilter.checked && !hasService(place, "black_water_disposal")) return false;
           if (els.electricityFilter.checked && !hasService(place, "electricity")) return false;
           if (els.waterFilter.checked && !hasService(place, "fresh_water")) return false;
+          if (els.natureFilter.checked && !isNaturePlace(place)) return false;
           if (search && !placeSearchText(place).includes(search)) return false;
           return true;
         });
@@ -1043,6 +1075,16 @@
           .filter((item) => item.text === "Ja")
           .map((item) => buildChip(item.label, item.cls));
         return chips.length ? chips.join("") : buildChip("Service ej bekräftad", "unknown");
+      }
+
+      function tagChips(place) {
+        const chips = [];
+        if (isNaturePlace(place)) chips.push(buildChip("Naturnära", "good"));
+        placeTags(place)
+          .filter((tag) => !["naturnara", "gratis"].includes(norm(tag)))
+          .slice(0, 3)
+          .forEach((tag) => chips.push(buildChip(tag, "")));
+        return chips.join("");
       }
 
       function imagesHtml(place) {
@@ -1081,6 +1123,7 @@
             <span class="meta">${escapeHtml(place.municipality || "Kommun okänd")} · ${escapeHtml(categoryText(place))}</span>
             <span class="chips">
               ${buildChip(priceLabel, price === "unknown" ? "unknown" : price === "free" ? "good" : "warn")}
+              ${tagChips(place)}
               ${place.name_status === "derived" ? buildChip("Namn från OSM/adress", "unknown") : ""}
               ${serviceChips(place)}
             </span>
@@ -1225,6 +1268,7 @@
             <div class="fact"><b>${escapeHtml(priceKind(place) === "free" ? "Gratis" : priceKind(place) === "paid" ? "Betald" : "Okänt")}</b><span>Prisnivå</span></div>
             <div class="fact"><b>${escapeHtml(place.capacity?.text || place.capacity?.value || "Okänt")}</b><span>Antal platser</span></div>
             <div class="fact"><b>${escapeHtml(place.season?.text || "Ej angivet")}</b><span>Säsong</span></div>
+            <div class="fact"><b>${isNaturePlace(place) ? "Ja" : "Nej"}</b><span>Naturnära</span></div>
             ${facilityFacts}
           </div>
 
@@ -1237,6 +1281,10 @@
             <div class="section">
               <h3>Service</h3>
               <p>${serviceChips(place)}</p>
+            </div>
+            <div class="section">
+              <h3>Läge</h3>
+              <p>${tagChips(place) || "Ingen särskild lägesetikett ännu."}</p>
             </div>
             <div class="section">
               <h3>Källor</h3>
@@ -1311,6 +1359,7 @@
           els.latrineFilter,
           els.electricityFilter,
           els.waterFilter,
+          els.natureFilter,
           els.servicePointsFilter
         ].forEach((el) => el.addEventListener("change", filterPlaces));
         els.resetFilters.addEventListener("click", () => {
@@ -1324,6 +1373,7 @@
           els.latrineFilter.checked = false;
           els.electricityFilter.checked = false;
           els.waterFilter.checked = false;
+          els.natureFilter.checked = false;
           els.servicePointsFilter.checked = false;
           filterPlaces();
         });
