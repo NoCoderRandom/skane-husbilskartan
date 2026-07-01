@@ -40,6 +40,39 @@ function requirePlace(places, id, errors) {
   return place;
 }
 
+function norm(value) {
+  return String(value || "")
+    .toLocaleLowerCase("sv-SE")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim();
+}
+
+function priceKind(place) {
+  const price = place.price || {};
+  const text = norm(price.text);
+  if (price.is_free === true || text.includes("gratis")) return "free";
+  if (price.is_free === false || price.amount || text.includes("betald") || text.includes("kr/")) return "paid";
+  return "unknown";
+}
+
+function isNaturePlace(place) {
+  const tags = Array.isArray(place.tags) ? place.tags.map(norm) : [];
+  if (tags.some((tag) => (
+    tag.includes("natur")
+    || tag.includes("sjo")
+    || tag.includes("kust")
+    || tag.includes("strand")
+    || tag.includes("skog")
+    || tag.includes("lantligt")
+    || tag.includes("vatmark")
+    || tag.includes("badplats")
+    || tag.includes("vandringsled")
+  ))) return true;
+  const text = norm([place.name, place.category, place.notes].join(" "));
+  return /\b(natur|naturnara|naturreservat|sjonara|kustnara|strandnara|skog|damm|vatmark|backlandskap|badplats|skaneleden|vandringsled|ronne a|hano bukten|hanobukten|vid sjon|vid havet|vid kusten|vid strand)\b/.test(text);
+}
+
 async function runSmoke() {
   const errors = [];
   const dataUrl = new URL("data/places.json", pageUrl);
@@ -53,12 +86,16 @@ async function runSmoke() {
   if (!html.includes("Skånes husbilskarta")) errors.push("HTML saknar sidtitel");
   if (!html.includes("data/places.json")) errors.push("HTML verkar inte läsa data/places.json");
   if (!html.includes("leaflet")) errors.push("HTML saknar Leaflet/kartkod");
+  if (!html.includes("Trafikverket")) errors.push("HTML saknar Trafikverket-attribution");
 
   const data = JSON.parse(dataText);
   const places = Array.isArray(data.places) ? data.places : [];
   const servicePoints = Array.isArray(data.servicePoints) ? data.servicePoints : [];
   const activePlaces = places.filter((place) => place.place_status?.value === "active");
   const imagePlaces = places.filter((place) => Array.isArray(place.images) && place.images.length);
+  const restAreas = places.filter((place) => place.category === "rastplats");
+  const freePlaces = activePlaces.filter((place) => priceKind(place) === "free");
+  const freeNaturePlaces = freePlaces.filter(isNaturePlace);
 
   if (data.counts?.places !== places.length) errors.push("counts.places matchar inte faktisk platslista");
   if (data.counts?.confirmedActive !== activePlaces.length) {
@@ -68,11 +105,17 @@ async function runSmoke() {
   if (data.counts?.servicePoints !== servicePoints.length) {
     errors.push("counts.servicePoints matchar inte faktisk servicepunktlista");
   }
+  if (data.counts?.trafikverketRestAreas !== restAreas.length) {
+    errors.push("counts.trafikverketRestAreas matchar inte faktisk rastplatslista");
+  }
 
-  if (places.length < 125) errors.push(`för få platser i live-data: ${places.length}`);
-  if (activePlaces.length < 105) errors.push(`för få aktiva platser i live-data: ${activePlaces.length}`);
+  if (places.length < 150) errors.push(`för få platser i live-data: ${places.length}`);
+  if (activePlaces.length < 130) errors.push(`för få aktiva platser i live-data: ${activePlaces.length}`);
   if (imagePlaces.length < 30) errors.push(`för få platser med bild i live-data: ${imagePlaces.length}`);
   if (servicePoints.length < 18) errors.push(`för få servicepunkter i live-data: ${servicePoints.length}`);
+  if (restAreas.length < 23) errors.push(`för få Trafikverket-rastplatser i live-data: ${restAreas.length}`);
+  if (freePlaces.length < 25) errors.push(`för få gratisplatser i live-data: ${freePlaces.length}`);
+  if (freeNaturePlaces.length < 7) errors.push(`för få gratis naturnära platser i live-data: ${freeNaturePlaces.length}`);
 
   const generatedAt = Date.parse(data.generatedAt || "");
   if (!Number.isFinite(generatedAt)) {
@@ -93,6 +136,11 @@ async function runSmoke() {
     "hassleholm-fladergarden",
     "hassleholm-luhrsjobadens-camping",
     "hassleholm-tykarpsgrottan-camping",
+    "trafikverket-rastplats-hallandsas",
+    "trafikverket-rastplats-brosarps-backar",
+    "trafikverket-rastplats-varhallarna",
+    "trafikverket-rastplats-piraten",
+    "trafikverket-rastplats-hasslebro",
     "klagshamn-hamn-closed",
     "trelleborg-skare-skansar"
   ];
@@ -110,6 +158,29 @@ async function runSmoke() {
   const tykarp = requirePlace(places, "hassleholm-tykarpsgrottan-camping", errors);
   if (tykarp && tykarp.facilities?.black_water_disposal?.value !== true) {
     errors.push("Tykarpsgrottan saknar latrintömning i live-data");
+  }
+
+  const hallandsas = requirePlace(places, "trafikverket-rastplats-hallandsas", errors);
+  if (hallandsas) {
+    if (hallandsas.category !== "rastplats") errors.push("Hallandsås ska vara kategori rastplats");
+    if (priceKind(hallandsas) !== "free") errors.push("Hallandsås ska vara gratis enligt live-data");
+    if (hallandsas.overnight_allowed?.value !== true) errors.push("Hallandsås ska tillåta max 24h/rast i live-data");
+    if (hallandsas.facilities?.black_water_disposal?.value !== true) errors.push("Hallandsås ska ha latrintömning i live-data");
+  }
+
+  const brosarp = requirePlace(places, "trafikverket-rastplats-brosarps-backar", errors);
+  if (brosarp) {
+    if (!isNaturePlace(brosarp)) errors.push("Brösarps Backar ska räknas som naturnära");
+    if (!Array.isArray(brosarp.tags) || !brosarp.tags.includes("Naturreservat")) {
+      errors.push("Brösarps Backar saknar Naturreservat-taggen");
+    }
+  }
+
+  for (const id of ["trafikverket-rastplats-varhallarna", "trafikverket-rastplats-piraten", "trafikverket-rastplats-hasslebro"]) {
+    const place = requirePlace(places, id, errors);
+    if (place && (place.category !== "rastplats" || priceKind(place) !== "free" || !isNaturePlace(place))) {
+      errors.push(`${id} ska vara gratis naturnära rastplats`);
+    }
   }
 
   const klagshamn = requirePlace(places, "klagshamn-hamn-closed", errors);
