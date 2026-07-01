@@ -2348,6 +2348,12 @@
       "name": "Mölle kapell",
       "municipality": "Höganäs",
       "category": "ställplats",
+      "tags": [
+        "Naturnära",
+        "Kustnära",
+        "Kullaberg",
+        "Hamn"
+      ],
       "coordinates": {
         "lat": 56.27092,
         "lng": 12.52929,
@@ -2410,7 +2416,7 @@
           "status": "confirmed"
         }
       },
-      "notes": "Kommunal ställplats vid infarten till Kullaberg. Höganäs kommun anger toalett, dricksvatten och sophantering men ingen el, dusch, wifi eller latrintömning.",
+      "notes": "Kommunal ställplats vid infarten till Kullaberg, med gångavstånd till Mölle hamn och salta bad. Höganäs kommun anger toalett, dricksvatten och sophantering men ingen el, dusch, wifi eller latrintömning.",
       "sources": [
         {
           "id": "hoganas-molle-kapell",
@@ -2426,6 +2432,10 @@
       "name": "Höganäs hamn",
       "municipality": "Höganäs",
       "category": "gästhamn",
+      "tags": [
+        "Kustnära",
+        "Hamn"
+      ],
       "coordinates": {
         "lat": 56.1986,
         "lng": 12.5528,

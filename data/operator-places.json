@@ -823,6 +823,12 @@
       "name": "Destination Strandbaden",
       "municipality": "Höganäs",
       "category": "camping",
+      "tags": [
+        "Naturnära",
+        "Kustnära",
+        "Strandnära",
+        "Tallbacken"
+      ],
       "coordinates": {
         "lat": 56.2249501,
         "lng": 12.540964,
@@ -896,7 +902,7 @@
           "text": "Washing machine and dryer are available for an extra fee."
         }
       },
-      "notes": "Camping by the sea with online/phone booking. Check-in from 13:00 and check-out by 11:00 according to Visit Örestrand.",
+      "notes": "Camping by the sea with online/phone booking, close to the Kullaleden/Kattegattleden area and Tallbacken nature reserve. Check-in from 13:00 and check-out by 11:00 according to Visit Örestrand.",
       "sources": [
         {
           "id": "destination-strandbaden-camping",
@@ -912,6 +918,12 @@
       "name": "First Camp Mölle - Höganäs",
       "municipality": "Höganäs",
       "category": "camping",
+      "tags": [
+        "Naturnära",
+        "Kustnära",
+        "Kullaberg",
+        "Skogsnära"
+      ],
       "coordinates": {
         "lat": 56.2699404,
         "lng": 12.5297504,
@@ -973,7 +985,7 @@
           "text": "Wifi finns på begränsade delar av området."
         }
       },
-      "notes": "Camping med stugor, husbil, husvagn och tält. Bistro, butik, pool, barnaktiviteter och servicebutik är säsongsberoende.",
+      "notes": "Camping med stugor, husbil, husvagn och tält nära Kullaberg och Mölle. Bistro, butik, pool, barnaktiviteter och servicebutik är säsongsberoende.",
       "sources": [
         {
           "id": "firstcamp-molle-hoganas",
@@ -2261,6 +2273,11 @@
       "name": "Bananpannkakan",
       "municipality": "Höganäs",
       "category": "ställplats",
+      "tags": [
+        "Naturnära",
+        "Lantligt",
+        "Svedberga kulle"
+      ],
       "coordinates": {
         "lat": 56.16528,
         "lng": 12.668914,
@@ -2312,8 +2329,13 @@
         "waste": {
           "value": true,
           "status": "confirmed"
+        },
+        "wifi": {
+          "value": true,
+          "status": "confirmed"
         }
       },
+      "notes": "Lantlig ställplats med pool och jacuzzi. Höganäs kommun anger 4 km till naturen på Svedberga kulle och att platsen är för gäster från 35 år och uppåt.",
       "sources": [
         {
           "id": "hoganas-stallplatser-bananpannkakan",
@@ -2329,6 +2351,13 @@
       "name": "Bläsinge Gård Camping",
       "municipality": "Höganäs",
       "category": "camping",
+      "tags": [
+        "Naturnära",
+        "Kustnära",
+        "Lantligt",
+        "Kullaleden",
+        "Kattegattleden"
+      ],
       "coordinates": {
         "lat": 56.237646,
         "lng": 12.6554442,
@@ -2381,8 +2410,13 @@
         "waste": {
           "value": true,
           "status": "confirmed"
+        },
+        "wifi": {
+          "value": true,
+          "status": "confirmed"
         }
       },
+      "notes": "Gård i parkmiljö nära kusten. Höganäs kommun anger cirka 1 km till Kullaleden, 500 m till Kattegattleden och 1 km till havet.",
       "sources": [
         {
           "id": "hoganas-stallplatser-blasinge",
@@ -2405,6 +2439,10 @@
       "name": "Lerbergets Camping",
       "municipality": "Höganäs",
       "category": "camping",
+      "tags": [
+        "Kustnära",
+        "Havsnära"
+      ],
       "coordinates": {
         "lat": 56.1858011,
         "lng": 12.5574581,
@@ -2459,6 +2497,7 @@
           "status": "confirmed"
         }
       },
+      "notes": "Camping och ställplatser nära Öresund; operatören beskriver ställplatser med utsikt över havet.",
       "sources": [
         {
           "id": "hoganas-stallplatser-lerberget",
@@ -2481,6 +2520,12 @@
       "name": "Paradiset på Kulla",
       "municipality": "Höganäs",
       "category": "ställplats",
+      "tags": [
+        "Naturnära",
+        "Lantligt",
+        "Svedberga kulle",
+        "Strandnära"
+      ],
       "coordinates": {
         "lat": 56.1988554,
         "lng": 12.7002028,
@@ -2535,6 +2580,7 @@
           "status": "confirmed"
         }
       },
+      "notes": "Lantligt läge på Kullahalvön med restaurang/pub, äventyrsgolf och hundrastgård. Höganäs kommun anger cykelavstånd till stränder i Farhult, Jonstorp och Höganäs samt till Svedberga kulle.",
       "sources": [
         {
           "id": "hoganas-stallplatser-paradiset",
@@ -2557,6 +2603,11 @@
       "name": "St Arilds Golfklubb",
       "municipality": "Höganäs",
       "category": "ställplats",
+      "tags": [
+        "Naturnära",
+        "Golf",
+        "Kustnära"
+      ],
       "coordinates": {
         "lat": 56.255058,
         "lng": 12.5952312,
@@ -2610,8 +2661,14 @@
         "waste": {
           "value": true,
           "status": "confirmed"
+        },
+        "wifi": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Fritt wifi i klubbhus och restaurang enligt Höganäs kommun."
         }
       },
+      "notes": "Ställplats vid golfbanan med havet nära och restaurang i klubbhuset. Höganäs kommun anger el på 4 platser och ingen latrintömning.",
       "sources": [
         {
           "id": "hoganas-stallplatser-st-arild",
@@ -2627,6 +2684,14 @@
       "name": "Svanshalls hamn",
       "municipality": "Höganäs",
       "category": "ställplats",
+      "tags": [
+        "Naturnära",
+        "Kustnära",
+        "Havsnära",
+        "Skogsnära",
+        "Kullaleden",
+        "Hamn"
+      ],
       "coordinates": {
         "lat": 56.2524117,
         "lng": 12.6618387,
@@ -2683,6 +2748,7 @@
           "status": "confirmed"
         }
       },
+      "notes": "Hamnplats i Svanshall med max 24 timmar. Höganäs kommun beskriver läget som havsnära, skogsnära och precis intill Kullaleden; Svanshalls krog ligger intill.",
       "sources": [
         {
           "id": "hoganas-stallplatser-svanshall",
@@ -2698,6 +2764,10 @@
       "name": "Vikens hamn",
       "municipality": "Höganäs",
       "category": "ställplats",
+      "tags": [
+        "Kustnära",
+        "Hamn"
+      ],
       "coordinates": {
         "lat": 56.1420377,
         "lng": 12.5783245,

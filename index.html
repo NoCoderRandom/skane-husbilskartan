@@ -822,7 +822,7 @@
         <section id="detailPanel" class="panel detail" aria-live="polite"></section>
 
         <footer>
-          <p id="dataFootnote">Data läses från lokal GitHub Pages-fil. Kartdata från OpenStreetMap contributors, ODbL.</p>
+          <p id="dataFootnote">Data läses från lokal GitHub Pages-fil. Rastplatsdata från Trafikverket. Kartdata från OpenStreetMap contributors, ODbL.</p>
         </footer>
       </main>
     </div>
@@ -857,6 +857,7 @@
         "camping": "Camping",
         "gästhamn": "Gästhamn",
         "parkering": "Parkering",
+        "rastplats": "Rastplats max 24h",
         "kandidat": "Kandidat"
       };
       const collator = new Intl.Collator("sv-SE", { sensitivity: "base" });
@@ -951,11 +952,11 @@
       function isNaturePlace(place) {
         const explicit = placeTags(place).some((tag) => {
           const text = norm(tag);
-          return text.includes("natur") || text.includes("sjo") || text.includes("kust") || text.includes("strand") || text.includes("skog") || text.includes("lantligt") || text.includes("vatmark");
+          return text.includes("natur") || text.includes("sjo") || text.includes("kust") || text.includes("strand") || text.includes("skog") || text.includes("lantligt") || text.includes("vatmark") || text.includes("badplats") || text.includes("vandringsled");
         });
         if (explicit) return true;
         const text = norm([place.name, place.category, place.notes].join(" "));
-        return /\b(natur|naturnara|sjonara|kustnara|strandnara|skog|damm|vatmark|vid sjon|vid havet|vid kusten|vid strand)\b/.test(text);
+        return /\b(natur|naturnara|naturreservat|sjonara|kustnara|strandnara|skog|damm|vatmark|backlandskap|badplats|skaneleden|vandringsled|ronne a|hano bukten|hanobukten|vid sjon|vid havet|vid kusten|vid strand)\b/.test(text);
       }
 
       function natureScore(place) {

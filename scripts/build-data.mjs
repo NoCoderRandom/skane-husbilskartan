@@ -8,15 +8,21 @@ const officialPath = resolve(root, "data", "official-places.json");
 const operatorPath = resolve(root, "data", "operator-places.json");
 const imagesPath = resolve(root, "data", "place-images.json");
 const osmCachePath = resolve(root, "data", "osm-cache.json");
+const trafikverketParkingCachePath = resolve(root, "data", "trafikverket-parking-cache.json");
 const outputPath = resolve(root, "data", "places.json");
 const OVERPASS_ENDPOINTS = [
   "https://overpass.kumi.systems/api/interpreter",
   "https://overpass-api.de/api/interpreter"
 ];
+const TRAFIKVERKET_API_ENDPOINT = "https://api.trafikinfo.trafikverket.se/v2/data.json";
+const TRAFIKVERKET_API_KEY = process.env.TRAFIKVERKET_API_KEY || "707695ca4c704c93a80ebf62cf9af7b5";
 const USER_AGENT = "skane-husbilsplatser/0.1 (local GitHub Pages data builder)";
 const SKANE_BBOX = "55.30,12.35,56.60,14.75";
 const FORCE_REFRESH_OSM = process.env.FORCE_REFRESH_OSM === "1";
+const FORCE_REFRESH_TRAFFIC = process.env.FORCE_REFRESH_TRAFFIC === "1" || FORCE_REFRESH_OSM;
 const CHECKED_AT = new Date().toISOString().slice(0, 10);
+const TRAFIKVERKET_RESTAREA_URL = "https://www.trafikverket.se/resa-och-trafik/vag/rastplatser/";
+const TRAFIKVERKET_MAP_URL = "https://www.trafikverket.se/trafikinformation/vag/?map_l=100010000000000";
 
 const SKANE_POLYGON = [
   [55.28, 12.72],
@@ -329,6 +335,147 @@ async function fetchOverpass() {
   throw new Error(`Kunde inte hämta OSM-data. ${errors.join(" | ")}`);
 }
 
+function trafikverketParkingQuery() {
+  return `<REQUEST>
+  <LOGIN authenticationkey="${TRAFIKVERKET_API_KEY}"/>
+  <QUERY objecttype="Parking" schemaversion="1">
+    <FILTER><EQ name="CountyNo" value="12" /></FILTER>
+    <INCLUDE>Id</INCLUDE>
+    <INCLUDE>Name</INCLUDE>
+    <INCLUDE>Geometry.WGS84</INCLUDE>
+    <INCLUDE>CountyNo</INCLUDE>
+    <INCLUDE>Equipment</INCLUDE>
+    <INCLUDE>Description</INCLUDE>
+    <INCLUDE>Deleted</INCLUDE>
+    <INCLUDE>ModifiedTime</INCLUDE>
+  </QUERY>
+</REQUEST>`;
+}
+
+async function fetchTrafikverketParking() {
+  if (!FORCE_REFRESH_TRAFFIC && existsSync(trafikverketParkingCachePath)) {
+    console.log("Using cached Trafikverket parking data. Set FORCE_REFRESH_TRAFFIC=1 to refresh.");
+    return JSON.parse(await readFile(trafikverketParkingCachePath, "utf8"));
+  }
+
+  try {
+    const response = await fetch(TRAFIKVERKET_API_ENDPOINT, {
+      method: "POST",
+      headers: {
+        "Content-Type": "text/xml",
+        "User-Agent": USER_AGENT
+      },
+      body: trafikverketParkingQuery()
+    });
+    const text = await response.text();
+    if (!response.ok) throw new Error(`${response.status} ${response.statusText}: ${text.slice(0, 160)}`);
+    const data = JSON.parse(text);
+    const error = data?.RESPONSE?.RESULT?.[0]?.ERROR;
+    if (error) throw new Error(`${error.SOURCE || "Trafikverket"}: ${error.MESSAGE || "okänt fel"}`);
+    return data;
+  } catch (error) {
+    if (existsSync(trafikverketParkingCachePath)) {
+      console.warn(`Trafikverket misslyckades, använder cache. ${error.message}`);
+      return JSON.parse(await readFile(trafikverketParkingCachePath, "utf8"));
+    }
+    throw new Error(`Kunde inte hämta Trafikverket-rastplatser. ${error.message}`);
+  }
+}
+
+function pointFromWgs84(value) {
+  const match = String(value || "").match(/POINT \(([-0-9.]+) ([-0-9.]+)\)/);
+  if (!match) return null;
+  const lng = parseNumber(match[1]);
+  const lat = parseNumber(match[2]);
+  return Number.isFinite(lat) && Number.isFinite(lng) ? { lat, lng, status: "confirmed" } : null;
+}
+
+function trafikverketEquipmentTypes(item) {
+  return toArray(item.Equipment).map((equipment) => String(equipment.Type || "")).filter(Boolean);
+}
+
+function trafikverketHasEquipment(item, type) {
+  return trafikverketEquipmentTypes(item).includes(type);
+}
+
+function fieldFromTrafikverketEquipment(item, type, text = "Anges i Trafikverkets rastplatsdata.") {
+  if (!trafikverketHasEquipment(item, type)) return { value: null, status: "missing" };
+  return { value: true, status: "confirmed", text };
+}
+
+function trafikverketRestAreaTags(item) {
+  const text = norm([item.Name, item.Description].join(" "));
+  const tags = ["Gratis", "Rastplats", "Max 24h"];
+  if (/natur|naturreservat|backlandskap|ronne a|rönne å|skaneleden|skåneleden|hanobukten|hanöbukten|badplats|hallandsas|hallandsås/.test(text)) {
+    tags.push("Naturnära");
+  }
+  if (/badplats|hanobukten|hanöbukten/.test(text)) tags.push("Kustnära");
+  if (/ronne a|rönne å/.test(text)) tags.push("Ånära");
+  if (/skaneleden|skåneleden/.test(text)) tags.push("Vandringsled");
+  if (/naturreservat/.test(text)) tags.push("Naturreservat");
+
+  if (trafikverketHasEquipment(item, "playground")) tags.push("Lekplats");
+  return [...new Set(tags)];
+}
+
+function placeFromTrafikverketParking(item) {
+  const point = pointFromWgs84(item.Geometry?.WGS84);
+  if (!point || item.Deleted) return null;
+  const description = String(item.Description || "").trim();
+  const noteParts = [
+    "Officiell Trafikverket-rastplats. Använd som tillfällig rast/vila, inte som camping eller långtidsuppställning.",
+    description
+  ].filter(Boolean);
+  return {
+    id: `trafikverket-rastplats-${slug(item.Name)}`,
+    name: item.Name,
+    name_status: "confirmed",
+    municipality: cleanMunicipality("", point),
+    category: "rastplats",
+    tags: trafikverketRestAreaTags(item),
+    coordinates: point,
+    place_status: { value: "active", status: "confirmed" },
+    overnight_allowed: {
+      value: true,
+      status: "confirmed",
+      text: "Trafikverket anger att rastplatser och skyltade P-platser i grunden får användas högst 24 timmar."
+    },
+    price: {
+      text: "Gratis offentlig Trafikverket-rastplats. Max 24 timmar, inte camping.",
+      amount: 0,
+      currency: "SEK",
+      period: "24h",
+      status: "confirmed",
+      is_free: true
+    },
+    facilities: {
+      toilet: fieldFromTrafikverketEquipment(item, "toilet", "Trafikverket anger toalett på rastplatsen."),
+      shower: { value: null, status: "missing" },
+      electricity: { value: null, status: "missing" },
+      fresh_water: { value: null, status: "missing" },
+      black_water_disposal: fieldFromTrafikverketEquipment(item, "dumpingStation", "Trafikverket anger latrintömning för lösa latriner."),
+      grey_water_disposal: {
+        value: false,
+        status: "confirmed",
+        text: "Trafikverkets FAQ säger att gråvatten inte får tömmas på rastplatser."
+      },
+      waste: fieldFromTrafikverketEquipment(item, "refuseBin", "Trafikverket anger soptunna på rastplatsen.")
+    },
+    notes: noteParts.join(" "),
+    sources: [
+      source(`trafikverket-${slug(item.Id || item.Name)}`, "official", "Trafikverket - rastplatsdata i trafikinformationskartan", TRAFIKVERKET_MAP_URL, CHECKED_AT),
+      source("trafikverket-rastplatser-regler", "official", "Trafikverket - rastplatser och 24-timmarsregel", TRAFIKVERKET_RESTAREA_URL, CHECKED_AT)
+    ],
+    images: [],
+    last_checked: CHECKED_AT,
+    trafficverket: {
+      id: item.Id,
+      modified_time: item.ModifiedTime,
+      equipment: trafikverketEquipmentTypes(item)
+    },
+    quality: { risk_level: "low", review_needed: false }
+  };
+}
 function elementPoint(element) {
   const lat = parseNumber(element.lat ?? element.center?.lat);
   const lng = parseNumber(element.lon ?? element.center?.lon);
@@ -613,10 +760,15 @@ async function main() {
     : { places: [] };
   const imagesByPlaceId = new Map(toArray(imageData.places).map((item) => [item.id, toArray(item.images)]));
   const osmData = await fetchOverpass();
+  const trafikverketData = await fetchTrafikverketParking();
   await mkdir(dirname(osmCachePath), { recursive: true });
   await writeFile(osmCachePath, `${JSON.stringify(osmData)}\n`, "utf8");
+  await writeFile(trafikverketParkingCachePath, `${JSON.stringify(trafikverketData)}\n`, "utf8");
 
   const elements = toArray(osmData.elements);
+  const trafikverketPlaces = toArray(trafikverketData?.RESPONSE?.RESULT?.[0]?.Parking)
+    .map(placeFromTrafikverketParking)
+    .filter(Boolean);
   const osmPlaces = elements.filter(isVehicleRelevant).map(placeFromOsm).filter((place) => place.coordinates);
   const servicePoints = elements
     .filter((element) => element.tags?.amenity === "sanitary_dump_station")
@@ -638,7 +790,7 @@ async function main() {
     place.quality = { risk_level: "medium", review_needed: true };
     return place;
   });
-  const places = dedupePlaces([...mergedOfficial, ...remainingOsm])
+  const places = dedupePlaces([...mergedOfficial, ...trafikverketPlaces, ...remainingOsm])
     .filter((place) => place.coordinates && Number.isFinite(place.coordinates.lat) && Number.isFinite(place.coordinates.lng))
     .map((place) => imagesByPlaceId.has(place.id) ? { ...place, images: imagesByPlaceId.get(place.id) } : place)
     .sort((a, b) => {
@@ -653,14 +805,15 @@ async function main() {
   const payload = {
     schemaVersion: 1,
     generatedAt: new Date().toISOString(),
-    source: "Officiella seed-källor + OpenStreetMap-kandidater via Overpass",
-    attribution: "OpenStreetMap contributors, ODbL. OSM-data används som kandidater och serviceunderlag.",
+    source: "Officiella seed-källor + Trafikverket-rastplatser + OpenStreetMap-kandidater via Overpass",
+    attribution: "OpenStreetMap contributors, ODbL. Trafikverket rastplatsdata via Trafikinformationskartan. OSM-data används som kandidater och serviceunderlag.",
     warning: "Kandidatplatser från OpenStreetMap är inte automatiskt verifierade som tillåtna nattplatser. Kontrollera alltid skyltning och länkad källa.",
     counts: {
       places: places.length,
       officialSeeds: toArray(official.places).length,
       operatorSeeds: toArray(operator.places).length,
       manualSeeds: manualPlaces.length,
+      trafikverketRestAreas: trafikverketPlaces.length,
       osmCandidatesRaw: remainingOsm.length,
       finalCandidates: places.filter((place) => place.place_status?.value === "candidate").length,
       confirmedActive: places.filter((place) => place.place_status?.value === "active").length,
