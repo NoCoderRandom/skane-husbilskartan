@@ -1274,6 +1274,357 @@
       ]
     },
     {
+      "id": "hassleholm-kvarnbacken",
+      "name": "Kvarnbacken, Hembygdsparken",
+      "municipality": "Hässleholm",
+      "category": "ställplats",
+      "coordinates": {
+        "lat": 56.1559,
+        "lng": 13.7721,
+        "status": "unverified"
+      },
+      "match": [
+        "Kvarnbacken",
+        "Hembygdsparken",
+        "Ställplatser vid Kvarnbacken"
+      ],
+      "tags": [
+        "Gratis",
+        "Naturnära",
+        "Parknära",
+        "Stadsnära"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed",
+        "text": "Visit Hässleholm listar Kvarnbacken som ställplats för husbil."
+      },
+      "price": {
+        "text": "Gratis parkering vid Kvarnbacken enligt Västra Göinge Hembygdsförening.",
+        "amount": 0,
+        "currency": "SEK",
+        "period": "stay",
+        "status": "confirmed",
+        "is_free": true
+      },
+      "facilities": {
+        "toilet": {
+          "value": true,
+          "status": "confirmed",
+          "text": "Toaletter finns i parken, i Kaffestugan och i Hembygdsmuseet enligt hembygdsföreningen."
+        },
+        "electricity": {
+          "value": false,
+          "status": "unverified"
+        },
+        "fresh_water": {
+          "value": null,
+          "status": "missing"
+        },
+        "black_water_disposal": {
+          "value": null,
+          "status": "missing"
+        },
+        "grey_water_disposal": {
+          "value": null,
+          "status": "missing"
+        }
+      },
+      "notes": "Grönområdesnära plats i Hembygdsparken. Källorna bekräftar fri parkering och toaletter, men ingen el, vattenpåfyllning eller tömning är bekräftad.",
+      "sources": [
+        {
+          "id": "visithassleholm-stallplatser",
+          "type": "official-tourism",
+          "title": "Visit Hässleholm - ställplatser",
+          "url": "https://www.visithassleholm.se/vh/boende/stallplatser-",
+          "checked_at": "2026-07-01"
+        },
+        {
+          "id": "hembygd-kvarnbacken",
+          "type": "operator",
+          "title": "Västra Göinge Hembygdsförening - Hembygdsparken i Hässleholm",
+          "url": "https://www.hembygd.se/vastra-goinge/page/7674",
+          "checked_at": "2026-07-01"
+        }
+      ]
+    },
+    {
+      "id": "lund-slattervagen-24h",
+      "name": "Slåttervägen 24-timmarsparkering",
+      "municipality": "Lund",
+      "category": "parkering",
+      "coordinates": {
+        "lat": 55.7167,
+        "lng": 13.1739,
+        "status": "unverified"
+      },
+      "match": [
+        "Slåttervägen",
+        "24-timmarsparkering Slåttervägen"
+      ],
+      "tags": [
+        "Gratis",
+        "Stadsnära"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed",
+        "text": "Övernattning i husbil är tillåten på avsedd plats, men campingverksamhet som möbler eller annan utrustning får inte förekomma."
+      },
+      "price": {
+        "text": "Gratis 24-timmarsparkering för husbil enligt LKP och Visit Lund.",
+        "amount": 0,
+        "currency": "SEK",
+        "period": "day",
+        "status": "confirmed",
+        "is_free": true
+      },
+      "capacity": {
+        "value": 2,
+        "status": "confirmed",
+        "text": "Två platser enligt LKP."
+      },
+      "facilities": {
+        "electricity": {
+          "value": false,
+          "status": "confirmed"
+        },
+        "fresh_water": {
+          "value": false,
+          "status": "confirmed"
+        }
+      },
+      "notes": "Skyltad P-plats med tilläggstavla för husbil. Max 24 timmar helgfri måndag-fredag; helg fri parkering enligt LKP. Ingen el eller vatten enligt källorna.",
+      "sources": [
+        {
+          "id": "lkp-husbil-parkering",
+          "type": "official",
+          "title": "LKP - Husbil och husvagn",
+          "url": "https://lkpab.se/vara-tjanster/husbil-och-husvagn/",
+          "checked_at": "2026-07-01"
+        },
+        {
+          "id": "visitlund-husbil",
+          "type": "official-tourism",
+          "title": "Visit Lund - Husbil och camping i Lund",
+          "url": "https://visitlund.se/boende-och-resa/husbil-och-camping-i-lund",
+          "checked_at": "2026-07-01"
+        }
+      ]
+    },
+    {
+      "id": "lund-ulrikedalsvagen-24h",
+      "name": "Ulrikedalsvägen 24-timmarsparkering",
+      "municipality": "Lund",
+      "category": "parkering",
+      "coordinates": {
+        "lat": 55.6973,
+        "lng": 13.2047,
+        "status": "unverified"
+      },
+      "match": [
+        "Ulrikedalsvägen",
+        "24-timmarsparkering Ulrikedalsvägen"
+      ],
+      "tags": [
+        "Gratis",
+        "Stadsnära"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed",
+        "text": "Övernattning i husbil är tillåten på avsedd plats, men campingverksamhet som möbler eller annan utrustning får inte förekomma."
+      },
+      "price": {
+        "text": "Gratis 24-timmarsparkering för husbil enligt LKP och Visit Lund.",
+        "amount": 0,
+        "currency": "SEK",
+        "period": "day",
+        "status": "confirmed",
+        "is_free": true
+      },
+      "capacity": {
+        "value": 2,
+        "status": "confirmed",
+        "text": "Två platser enligt LKP."
+      },
+      "facilities": {
+        "electricity": {
+          "value": false,
+          "status": "confirmed"
+        },
+        "fresh_water": {
+          "value": false,
+          "status": "confirmed"
+        }
+      },
+      "notes": "Skyltad P-plats med tilläggstavla för husbil. Max 24 timmar helgfri måndag-fredag; helg fri parkering enligt LKP. Ingen el eller vatten enligt källorna.",
+      "sources": [
+        {
+          "id": "lkp-husbil-parkering",
+          "type": "official",
+          "title": "LKP - Husbil och husvagn",
+          "url": "https://lkpab.se/vara-tjanster/husbil-och-husvagn/",
+          "checked_at": "2026-07-01"
+        },
+        {
+          "id": "visitlund-husbil",
+          "type": "official-tourism",
+          "title": "Visit Lund - Husbil och camping i Lund",
+          "url": "https://visitlund.se/boende-och-resa/husbil-och-camping-i-lund",
+          "checked_at": "2026-07-01"
+        }
+      ]
+    },
+    {
+      "id": "lund-masvagen-24h",
+      "name": "Måsvägen 24-timmarsparkering",
+      "municipality": "Lund",
+      "category": "parkering",
+      "coordinates": {
+        "lat": 55.7092,
+        "lng": 13.1723,
+        "status": "unverified"
+      },
+      "match": [
+        "Måsvägen",
+        "24-timmarsparkering Måsvägen"
+      ],
+      "tags": [
+        "Gratis",
+        "Stadsnära"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed",
+        "text": "Övernattning i husbil är tillåten på avsedd plats, men campingverksamhet som möbler eller annan utrustning får inte förekomma."
+      },
+      "price": {
+        "text": "Gratis 24-timmarsparkering för husbil enligt LKP och Visit Lund.",
+        "amount": 0,
+        "currency": "SEK",
+        "period": "day",
+        "status": "confirmed",
+        "is_free": true
+      },
+      "capacity": {
+        "value": 1,
+        "status": "confirmed",
+        "text": "En plats enligt LKP."
+      },
+      "facilities": {
+        "electricity": {
+          "value": false,
+          "status": "confirmed"
+        },
+        "fresh_water": {
+          "value": false,
+          "status": "confirmed"
+        }
+      },
+      "notes": "Skyltad P-plats med tilläggstavla för husbil. Max 24 timmar helgfri måndag-fredag; helg fri parkering enligt LKP. Ingen el eller vatten enligt källorna.",
+      "sources": [
+        {
+          "id": "lkp-husbil-parkering",
+          "type": "official",
+          "title": "LKP - Husbil och husvagn",
+          "url": "https://lkpab.se/vara-tjanster/husbil-och-husvagn/",
+          "checked_at": "2026-07-01"
+        },
+        {
+          "id": "visitlund-husbil",
+          "type": "official-tourism",
+          "title": "Visit Lund - Husbil och camping i Lund",
+          "url": "https://visitlund.se/boende-och-resa/husbil-och-camping-i-lund",
+          "checked_at": "2026-07-01"
+        }
+      ]
+    },
+    {
+      "id": "lund-tage-erlanders-vag-24h",
+      "name": "Tage Erlanders väg 24-timmarsparkering",
+      "municipality": "Lund",
+      "category": "parkering",
+      "coordinates": {
+        "lat": 55.7053,
+        "lng": 13.1617,
+        "status": "unverified"
+      },
+      "match": [
+        "Tage Erlanders väg",
+        "24-timmarsparkering Tage Erlanders väg"
+      ],
+      "tags": [
+        "Gratis",
+        "Stadsnära"
+      ],
+      "place_status": {
+        "value": "active",
+        "status": "confirmed"
+      },
+      "overnight_allowed": {
+        "value": true,
+        "status": "confirmed",
+        "text": "Övernattning i husbil är tillåten på avsedd plats, men campingverksamhet som möbler eller annan utrustning får inte förekomma."
+      },
+      "price": {
+        "text": "Gratis 24-timmarsparkering för husbil enligt LKP och Visit Lund.",
+        "amount": 0,
+        "currency": "SEK",
+        "period": "day",
+        "status": "confirmed",
+        "is_free": true
+      },
+      "capacity": {
+        "value": 2,
+        "status": "confirmed",
+        "text": "Två platser enligt LKP."
+      },
+      "facilities": {
+        "electricity": {
+          "value": false,
+          "status": "confirmed"
+        },
+        "fresh_water": {
+          "value": false,
+          "status": "confirmed"
+        }
+      },
+      "notes": "Skyltad P-plats med tilläggstavla för husbil. Max 24 timmar helgfri måndag-fredag; helg fri parkering enligt LKP. Ingen el eller vatten enligt källorna.",
+      "sources": [
+        {
+          "id": "lkp-husbil-parkering",
+          "type": "official",
+          "title": "LKP - Husbil och husvagn",
+          "url": "https://lkpab.se/vara-tjanster/husbil-och-husvagn/",
+          "checked_at": "2026-07-01"
+        },
+        {
+          "id": "visitlund-husbil",
+          "type": "official-tourism",
+          "title": "Visit Lund - Husbil och camping i Lund",
+          "url": "https://visitlund.se/boende-och-resa/husbil-och-camping-i-lund",
+          "checked_at": "2026-07-01"
+        }
+      ]
+    },
+    {
       "id": "helsingborg-norra-hamnen",
       "name": "Norra Hamnen Marina AB",
       "municipality": "Helsingborg",

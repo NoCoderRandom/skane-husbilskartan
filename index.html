@@ -1245,7 +1245,7 @@
               ? "Detta är en kandidat från öppen data. Kontrollera länkad källa eller skyltning innan du planerar övernattning."
               : place.quality?.risk_level === "low"
                 ? "Den viktigaste informationen är bekräftad av kommun, operatör eller officiell turismkälla."
-                : "Platsen har bekräftad källa men vissa detaljer, ofta pris eller service, behöver kontrolleras hos operatören.";
+                : "Platsen är bekräftad, men vissa serviceuppgifter eller den exakta kartpositionen saknar full kontroll.";
 
         const facilityFacts = Object.entries(FIELD_LABELS).map(([key, label]) => {
           const info = boolInfo(place.facilities?.[key]);
