@@ -167,7 +167,8 @@
 
       input[type="search"],
       select,
-      .reset-button {
+      .reset-button,
+      .preset-button {
         width: 100%;
         min-height: 48px;
         border: 1px solid var(--line);
@@ -185,10 +186,26 @@
         font-weight: 850;
       }
 
+      .preset-button {
+        border-color: #b8e2c9;
+        background: var(--good-bg);
+        color: var(--good);
+        cursor: pointer;
+        font-weight: 850;
+      }
+
       .reset-button:hover,
-      .reset-button:focus-visible {
+      .reset-button:focus-visible,
+      .preset-button:hover,
+      .preset-button:focus-visible {
         background: var(--accent-strong);
+        border-color: var(--accent-strong);
         outline: 0;
+      }
+
+      .preset-button:hover,
+      .preset-button:focus-visible {
+        color: #fff;
       }
 
       .toggle-row {
@@ -792,6 +809,10 @@
             </select>
           </div>
           <div class="field">
+            <label for="freeNaturePreset">Snabbval</label>
+            <button id="freeNaturePreset" class="preset-button" type="button">Gratis i natur</button>
+          </div>
+          <div class="field">
             <label for="resetFilters">Rensa</label>
             <button id="resetFilters" class="reset-button" type="button">Rensa filter</button>
           </div>
@@ -892,6 +913,7 @@
         waterFilter: document.querySelector("#waterFilter"),
         natureFilter: document.querySelector("#natureFilter"),
         servicePointsFilter: document.querySelector("#servicePointsFilter"),
+        freeNaturePreset: document.querySelector("#freeNaturePreset"),
         resetFilters: document.querySelector("#resetFilters")
       };
 
@@ -1363,6 +1385,20 @@
           els.natureFilter,
           els.servicePointsFilter
         ].forEach((el) => el.addEventListener("change", filterPlaces));
+        els.freeNaturePreset.addEventListener("click", () => {
+          els.searchInput.value = "";
+          els.municipalitySelect.value = "";
+          els.categorySelect.value = "";
+          els.statusSelect.value = "active";
+          els.priceSelect.value = "free";
+          els.sortSelect.value = "freeNature";
+          els.toiletFilter.checked = false;
+          els.latrineFilter.checked = false;
+          els.electricityFilter.checked = false;
+          els.waterFilter.checked = false;
+          els.natureFilter.checked = true;
+          filterPlaces();
+        });
         els.resetFilters.addEventListener("click", () => {
           els.searchInput.value = "";
           els.municipalitySelect.value = "";

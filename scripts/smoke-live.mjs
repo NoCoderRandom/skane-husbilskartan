@@ -87,6 +87,7 @@ async function runSmoke() {
   if (!html.includes("data/places.json")) errors.push("HTML verkar inte läsa data/places.json");
   if (!html.includes("leaflet")) errors.push("HTML saknar Leaflet/kartkod");
   if (!html.includes("Trafikverket")) errors.push("HTML saknar Trafikverket-attribution");
+  if (!html.includes("Gratis i natur")) errors.push("HTML saknar snabbvalet Gratis i natur");
 
   const data = JSON.parse(dataText);
   const places = Array.isArray(data.places) ? data.places : [];
@@ -111,7 +112,7 @@ async function runSmoke() {
 
   if (places.length < 150) errors.push(`för få platser i live-data: ${places.length}`);
   if (activePlaces.length < 130) errors.push(`för få aktiva platser i live-data: ${activePlaces.length}`);
-  if (imagePlaces.length < 30) errors.push(`för få platser med bild i live-data: ${imagePlaces.length}`);
+  if (imagePlaces.length < 40) errors.push(`för få platser med bild i live-data: ${imagePlaces.length}`);
   if (servicePoints.length < 18) errors.push(`för få servicepunkter i live-data: ${servicePoints.length}`);
   if (restAreas.length < 23) errors.push(`för få Trafikverket-rastplatser i live-data: ${restAreas.length}`);
   if (freePlaces.length < 25) errors.push(`för få gratisplatser i live-data: ${freePlaces.length}`);
@@ -146,6 +147,21 @@ async function runSmoke() {
   ];
 
   for (const id of requiredIds) requirePlace(places, id, errors);
+
+  const requiredImageIds = [
+    "trafikverket-rastplats-hallandsas",
+    "hassleholm-kvarnbacken",
+    "trafikverket-rastplats-hasslebro",
+    "osby-spegeldammen",
+    "trafikverket-rastplats-brosarps-backar",
+    "trafikverket-rastplats-varhallarna"
+  ];
+  for (const id of requiredImageIds) {
+    const place = requirePlace(places, id, errors);
+    if (place && (!Array.isArray(place.images) || !place.images.length)) {
+      errors.push(`${id} ska ha verifierad fri bild i live-data`);
+    }
+  }
 
   const hassleholmCount = places.filter((place) => place.municipality === "Hässleholm").length;
   if (hassleholmCount < 9) errors.push(`för få Hässleholm-platser: ${hassleholmCount}`);

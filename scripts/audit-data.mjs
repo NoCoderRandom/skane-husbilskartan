@@ -53,6 +53,31 @@ function priceTextSignalsFree(text) {
   return /\b(gratis|avgiftsfri|kostnadsfri|fee no|utan avgift)\b/.test(value);
 }
 
+function isFreePlace(place) {
+  return place.price?.is_free === true || priceTextSignalsFree(place.price?.text || "");
+}
+
+function placeTags(place) {
+  return Array.isArray(place.tags) ? place.tags.map(String) : [];
+}
+
+function isNaturePlace(place) {
+  const tags = placeTags(place).map(norm);
+  if (tags.some((tag) => (
+    tag.includes("natur")
+    || tag.includes("sjo")
+    || tag.includes("kust")
+    || tag.includes("strand")
+    || tag.includes("skog")
+    || tag.includes("lantligt")
+    || tag.includes("vatmark")
+    || tag.includes("badplats")
+    || tag.includes("vandringsled")
+  ))) return true;
+  const text = norm([place.name, place.category, place.notes].join(" "));
+  return /\b(natur|naturnara|naturreservat|sjonara|kustnara|strandnara|skog|damm|vatmark|backlandskap|badplats|skaneleden|vandringsled|ronne a|hano bukten|hanobukten|vid sjon|vid havet|vid kusten|vid strand)\b/.test(text);
+}
+
 const seenIds = new Set();
 const placeIds = new Set();
 for (const place of places) {
@@ -132,6 +157,27 @@ if (data.counts?.finalCandidates !== places.filter((place) => place.place_status
 }
 if (data.counts?.withImages !== places.filter((place) => Array.isArray(place.images) && place.images.length).length) {
   fail("counts.withImages matchar inte aktuell data");
+}
+
+const activePlaces = places.filter((place) => place.place_status?.value === "active");
+const freeNaturePlaces = activePlaces.filter((place) => isFreePlace(place) && isNaturePlace(place));
+if (freeNaturePlaces.length < 7) {
+  fail(`för få aktiva gratisplatser i natur: ${freeNaturePlaces.length}`);
+}
+
+for (const id of [
+  "trafikverket-rastplats-hallandsas",
+  "hassleholm-kvarnbacken",
+  "trafikverket-rastplats-hasslebro",
+  "osby-spegeldammen",
+  "trafikverket-rastplats-brosarps-backar",
+  "trafikverket-rastplats-varhallarna"
+]) {
+  const place = places.find((item) => item.id === id);
+  if (!place) fail(`${id}: gratis/naturplats saknas`);
+  if (place && !isFreePlace(place)) fail(`${id}: ska vara gratis enligt data`);
+  if (place && !isNaturePlace(place)) fail(`${id}: ska räknas som naturnära`);
+  if (place && (!Array.isArray(place.images) || !place.images.length)) fail(`${id}: saknar verifierad fri bild`);
 }
 
 for (const point of servicePoints) {

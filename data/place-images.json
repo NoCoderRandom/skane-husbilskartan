@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-06-30",
+  "checkedAt": "2026-07-02",
   "source": "Kuraterade fria bilder från Wikimedia Commons. Bilderna visar platsen eller närområdet och är inte hämtade från kommersiella kataloger.",
   "places": [
     {
@@ -599,6 +599,96 @@
           "author": "Tekniska museet / Blomgrens Atelier",
           "license": "CC BY 2.0",
           "license_url": "https://creativecommons.org/licenses/by/2.0/",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
+      "id": "trafikverket-rastplats-hallandsas",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hallands%C3%A5s-2037_-_Flickr_-_Ragnhild_%26_Neil_Crawford.jpg/960px-Hallands%C3%A5s-2037_-_Flickr_-_Ragnhild_%26_Neil_Crawford.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Hallands%C3%A5s-2037_-_Flickr_-_Ragnhild_%26_Neil_Crawford.jpg",
+          "title": "Hallandsås",
+          "caption": "Hallandsås, närområde till rastplatsen",
+          "author": "Ragnhild & Neil Crawford",
+          "license": "CC BY-SA 2.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
+      "id": "hassleholm-kvarnbacken",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/%C3%96landskvarn_i_H%C3%A4ssleholms_hembygdspark-1.jpg/960px-%C3%96landskvarn_i_H%C3%A4ssleholms_hembygdspark-1.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:%C3%96landskvarn_i_H%C3%A4ssleholms_hembygdspark-1.jpg",
+          "title": "Ölandskvarn i Hässleholms hembygdspark",
+          "caption": "Hembygdsparken vid Kvarnbacken",
+          "author": "David Castor (dcastor)",
+          "license": "Public domain",
+          "license_url": "https://commons.wikimedia.org/wiki/Public_domain",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
+      "id": "trafikverket-rastplats-hasslebro",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/R%C3%B6nne_%C3%A5_vid_Stockam%C3%B6llan.jpg/960px-R%C3%B6nne_%C3%A5_vid_Stockam%C3%B6llan.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:R%C3%B6nne_%C3%A5_vid_Stockam%C3%B6llan.jpg",
+          "title": "Rönne å vid Stockamöllan",
+          "caption": "Rönne å vid Stockamöllan, nära Hasslebro",
+          "author": "Jorchr",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
+      "id": "osby-spegeldammen",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Osbysj%C3%B6n_badplats_september_2021.jpg/960px-Osbysj%C3%B6n_badplats_september_2021.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Osbysj%C3%B6n_badplats_september_2021.jpg",
+          "title": "Osbysjöns badplats",
+          "caption": "Osbysjöns badplats, närområde till Spegeldammen",
+          "author": "Johannes Scherman",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
+      "id": "trafikverket-rastplats-brosarps-backar",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Br%C3%B6sarps_backar_okt_2005.jpg/960px-Br%C3%B6sarps_backar_okt_2005.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Br%C3%B6sarps_backar_okt_2005.jpg",
+          "title": "Brösarps backar",
+          "caption": "Brösarps backar vid rastplatsens naturreservat",
+          "author": "TS Eriksson",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "status": "free-license"
+        }
+      ]
+    },
+    {
+      "id": "trafikverket-rastplats-varhallarna",
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Hooded_crow_-_V%C3%A5rhallarna_%2829413023641%29.jpg/960px-Hooded_crow_-_V%C3%A5rhallarna_%2829413023641%29.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Hooded_crow_-_V%C3%A5rhallarna_(29413023641).jpg",
+          "title": "Vårhallarna",
+          "caption": "Vårhallarna, kustnära natur vid rastplatsen",
+          "author": "Susanne Nilsson",
+          "license": "CC BY-SA 2.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
           "status": "free-license"
         }
       ]
